@@ -10,7 +10,7 @@
   "sideEffects": false,
   "scripts": {
     "lint": "eslint *.js .internal/**/*.js test/**/*.js",
-    "test": "mocha -r esm --ignore test/utils.js test/*.js",
+    "test": "mocha -r esm test/*.test.js",
     "test:coverage": "nyc npm test",
     "validate": "npm run style && npm run test"
   },

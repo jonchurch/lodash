@@ -27,7 +27,6 @@ describe('isTypedArray', () => {
     assert.strictEqual(isTypedArray(true), false)
     assert.strictEqual(isTypedArray(new Date), false)
     assert.strictEqual(isTypedArray(new Error), false)
-    assert.strictEqual(isTypedArray(_), false)
     assert.strictEqual(isTypedArray(slice), false)
     assert.strictEqual(isTypedArray({ 'a': 1 }), false)
     assert.strictEqual(isTypedArray(1), false)

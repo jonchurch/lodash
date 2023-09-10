@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { LARGE_ARRAY_SIZE, _, falsey } from './utils'
+import { LARGE_ARRAY_SIZE, _, falsey, identity } from './utils'
 import compact from '../compact.js'
 import slice from '../slice.js'
 

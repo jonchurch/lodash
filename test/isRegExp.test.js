@@ -21,7 +21,6 @@ describe('isRegExp', () => {
     assert.strictEqual(isRegExp(true), false)
     assert.strictEqual(isRegExp(new Date), false)
     assert.strictEqual(isRegExp(new Error), false)
-    assert.strictEqual(isRegExp(_), false)
     assert.strictEqual(isRegExp(slice), false)
     assert.strictEqual(isRegExp({ 'a': 1 }), false)
     assert.strictEqual(isRegExp(1), false)

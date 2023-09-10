@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { _, LARGE_ARRAY_SIZE } from './utils'
+import { _, LARGE_ARRAY_SIZE, square } from './utils'
 import countBy from '../countBy.js'
 
 describe('countBy', () => {

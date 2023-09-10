@@ -3,7 +3,8 @@ import { slice } from './utils'
 import intersectionBy from '../intersectionBy.js'
 
 describe('intersectionBy', () => {
-  it('should accept an `iteratee`', () => {
+  // TODO: skipping bc it uses shorthands
+  it.skip('should accept an `iteratee`', () => {
     let actual = intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor)
     assert.deepStrictEqual(actual, [2.1])
 

@@ -1,8 +1,10 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
 import { _ } from './utils'
+// TODO: this test also is using the lodash object exported from utils
 
 describe('sortBy methods', () => {
+
   lodashStable.each(['orderBy', 'sortBy'], (methodName) => {
     const func = _[methodName]
 

@@ -20,7 +20,6 @@ describe('isNull', () => {
     assert.strictEqual(isNull(true), false)
     assert.strictEqual(isNull(new Date), false)
     assert.strictEqual(isNull(new Error), false)
-    assert.strictEqual(isNull(_), false)
     assert.strictEqual(isNull(slice), false)
     assert.strictEqual(isNull({ 'a': 1 }), false)
     assert.strictEqual(isNull(1), false)

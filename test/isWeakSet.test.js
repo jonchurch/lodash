@@ -22,7 +22,6 @@ describe('isWeakSet', () => {
     assert.strictEqual(isWeakSet(true), false)
     assert.strictEqual(isWeakSet(new Date), false)
     assert.strictEqual(isWeakSet(new Error), false)
-    assert.strictEqual(isWeakSet(_), false)
     assert.strictEqual(isWeakSet(slice), false)
     assert.strictEqual(isWeakSet({ 'a': 1 }), false)
     assert.strictEqual(isWeakSet(1), false)

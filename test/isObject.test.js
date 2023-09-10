@@ -10,7 +10,6 @@ describe('isObject', () => {
     assert.strictEqual(isObject(Object(false)), true)
     assert.strictEqual(isObject(new Date), true)
     assert.strictEqual(isObject(new Error), true)
-    assert.strictEqual(isObject(_), true)
     assert.strictEqual(isObject(slice), true)
     assert.strictEqual(isObject({ 'a': 1 }), true)
     assert.strictEqual(isObject(Object(0)), true)

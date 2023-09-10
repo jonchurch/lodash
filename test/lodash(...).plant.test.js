@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { square, isNpm } from './utils'
+import { _, square, isNpm } from './utils'
 import compact from '../compact.js'
 
 describe('lodash(...).plant', () => {

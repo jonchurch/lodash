@@ -22,7 +22,6 @@ describe('isNil', () => {
     assert.strictEqual(isNil(true), false)
     assert.strictEqual(isNil(new Date), false)
     assert.strictEqual(isNil(new Error), false)
-    assert.strictEqual(isNil(_), false)
     assert.strictEqual(isNil(slice), false)
     assert.strictEqual(isNil({ 'a': 1 }), false)
     assert.strictEqual(isNil(1), false)

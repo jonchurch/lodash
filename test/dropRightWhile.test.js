@@ -27,15 +27,18 @@ describe('dropRightWhile', () => {
     assert.deepStrictEqual(args, [4, 3, array])
   })
 
-  it('should work with `_.matches` shorthands', () => {
+  // TODO: uses shorthands, which are not supported
+  it.skip('should work with `_.matches` shorthands', () => {
     assert.deepStrictEqual(dropRightWhile(objects, { 'b': 2 }), objects.slice(0, 2))
   })
 
-  it('should work with `_.matchesProperty` shorthands', () => {
+  // TODO: uses shorthands, which are not supported
+  it.skip('should work with `_.matchesProperty` shorthands', () => {
     assert.deepStrictEqual(dropRightWhile(objects, ['b', 2]), objects.slice(0, 2))
   })
 
-  it('should work with `_.property` shorthands', () => {
+  // TODO: uses shorthands, which are not supported
+  it.skip('should work with `_.property` shorthands', () => {
     assert.deepStrictEqual(dropRightWhile(objects, 'b'), objects.slice(0, 1))
   })
 

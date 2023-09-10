@@ -1,6 +1,8 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
 
+import { _ } from './utils'
+
 describe('lodash(...) methods that return new wrapped values', () => {
   const funcs = [
     'castArray',

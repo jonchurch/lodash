@@ -1,8 +1,14 @@
 import assert from 'assert';
 import lodashStable from 'lodash';
+// TODO: Since removing partial and partialRight are on the roadmap, deleting this might be easier
+// TODO: we end up testing the barrel lodash we export from utils
+// not sure yet how I want to approach this, there is no mocking in the suites currently
+// so idk how I feel about this manual monkey patching.
 import { _, identity, slice } from './utils';
 import placeholder from '../placeholder.js';
 import curry from '../curry.js';
+
+let placeholder = {}
 
 describe('partial methods', function() {
   lodashStable.each(['partial', 'partialRight'], function(methodName) {
@@ -51,6 +57,9 @@ describe('partial methods', function() {
       }
     });
 
+    // TODO: ahhh, these placeholder tests make more sense once you see the original Qunit test
+    // https://github.com/lodash/lodash/blob/f299b52f39486275a9e6483b60a410e06520c538/test/test.js#L17414C5-L17429C8
+    // the test was monkeypatching library internal _.placeholder, to test the behavior of these methods
     it('`_.' + methodName + '` should use `_.placeholder` when set', function() {
       var _ph = placeholder = {},
           fn = function() { return slice.call(arguments); },

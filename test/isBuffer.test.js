@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { falsey, stubFalse, args, slice, symbol, isStrict, lodashBizarro } from './utils'
+import { _, falsey, stubFalse, args, slice, symbol, isStrict, lodashBizarro } from './utils'
 import isBuffer from '../isBuffer.js'
 
 describe('isBuffer', () => {

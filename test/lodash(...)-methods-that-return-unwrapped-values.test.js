@@ -103,7 +103,7 @@ describe('lodash(...) methods that return unwrapped values', () => {
   lodashStable.each(funcs, (methodName) => {
     it(`\`_(...).${methodName}\` should return an unwrapped value when implicitly chaining`, () => {
       const actual = _()[methodName]()
-      assert.notOk(actual instanceof _)
+      assert.strictEqual(actual instanceof _, false)
     })
 
     it(`\`_(...).${methodName}\` should return a wrapped value when explicitly chaining`, () => {

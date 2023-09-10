@@ -1,3 +1,4 @@
+import _ from 'lodash'
 /** Used to detect when a function becomes hot. */
 const HOT_COUNT = 150
 
@@ -37,26 +38,27 @@ const arrayProto = Array.prototype,
   stringProto = String.prototype
 
 /** Method and object shortcuts. */
-let phantom = root.phantom,
-  process = root.process,
-  amd = root.define ? define.amd : undefined,
-  args = toArgs([1, 2, 3]),
-  argv = process ? process.argv : undefined,
-  defineProperty = Object.defineProperty,
-  document = phantom ? undefined : root.document,
-  body = root.document ? root.document.body : undefined,
-  create = Object.create,
-  fnToString = funcProto.toString,
-  freeze = Object.freeze,
-  getSymbols = Object.getOwnPropertySymbols,
-  identity = function(value) { return value },
-  noop = function() {},
-  objToString = objectProto.toString,
-  params = argv,
-  push = arrayProto.push,
-  realm = {},
-  slice = arrayProto.slice,
-  strictArgs = (function() { 'use strict'; return arguments }(1, 2, 3))
+const phantom = root.phantom
+const process = root.process
+// const amd = root.define ? define.amd : undefined
+const args = toArgs([1, 2, 3])
+const argv = process ? process.argv : undefined
+const defineProperty = Object.defineProperty
+const document = phantom ? undefined : root.document
+const body = root.document ? root.document.body : undefined
+const create = Object.create
+const fnToString = funcProto.toString
+const freeze = Object.freeze
+const getSymbols = Object.getOwnPropertySymbols
+const identity = function(value) { return value }
+const noop = function() {}
+const objToString = objectProto.toString
+const push = arrayProto.push
+const realm = {}
+const slice = arrayProto.slice
+const strictArgs = (function() { 'use strict'; return arguments }(1, 2, 3))
+
+let params = argv
 
 const ArrayBuffer = root.ArrayBuffer,
   Buffer = root.Buffer,
@@ -215,15 +217,15 @@ const filePath = (function() {
   const last = result[result.length - 1]
   result = (result.length > min && !/test(?:\.js)?$/.test(last)) ? last : '../node_modules/lodash/lodash.js'
 
-  if (!amd) {
-    try {
-      result = require('fs').realpathSync(result)
-    } catch (e) {}
+  // if (!amd) {
+  try {
+    result = require('fs').realpathSync(result)
+  } catch (e) {}
 
-    try {
-      result = require.resolve(result)
-    } catch (e) {}
-  }
+  try {
+    result = require.resolve(result)
+  } catch (e) {}
+  // }
   return result
 }())
 
@@ -286,7 +288,7 @@ if (!lodashStable) {
 }
 
 /** The `lodash` function to test. */
-const _ = root._ || (root._ = interopRequire(filePath))
+// const _ = root._ || (root._ = interopRequire(filePath))
 
 /** Used to test pseudo private map caches. */
 const mapCaches = (function() {
@@ -711,7 +713,7 @@ export {
   numberProto,
   stringProto,
   phantom,
-  amd,
+  // amd,
   args,
   argv,
   defineProperty,

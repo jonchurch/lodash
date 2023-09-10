@@ -3,6 +3,7 @@ import lodashStable from 'lodash'
 import Stack from '../.internal/Stack'
 
 import {
+  root,
   map,
   set,
   realm,

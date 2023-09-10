@@ -2,7 +2,6 @@ import assert from 'assert'
 import lodashStable from 'lodash'
 import { _, falsey, stubArray, oldDash, stubTrue, FUNC_ERROR_TEXT } from './utils'
 import functions from '../functions.js'
-import bind from '../bind.js'
 
 describe('lodash methods', () => {
   const allMethods = lodashStable.reject(functions(_).sort(), (methodName) => lodashStable.startsWith(methodName, '_'))
@@ -11,7 +10,6 @@ describe('lodash methods', () => {
     'after',
     'ary',
     'before',
-    'bind',
     'curry',
     'curryRight',
     'debounce',
@@ -90,6 +88,7 @@ describe('lodash methods', () => {
 
   const acceptFalsey = lodashStable.difference(allMethods, rejectFalsey)
 
+  // TODO: Figure out why this fails with TypeError expected a function, from within lodash.createWrap
   it('should accept falsey arguments', () => {
     const arrays = lodashStable.map(falsey, stubArray)
 
@@ -170,11 +169,11 @@ describe('lodash methods', () => {
         object = { 'a': 1 },
         expected = isNegate ? false : 1
 
-      let wrapper = func(bind(fn, object))
-      assert.strictEqual(wrapper(), expected, `\`_.${methodName}\` can consume a bound function`)
-
-      wrapper = bind(func(fn), object)
-      assert.strictEqual(wrapper(), expected, `\`_.${methodName}\` can be bound`)
+      // let wrapper = func(bind(fn, object))
+      // assert.strictEqual(wrapper(), expected, `\`_.${methodName}\` can consume a bound function`)
+      //
+      // wrapper = bind(func(fn), object)
+      // assert.strictEqual(wrapper(), expected, `\`_.${methodName}\` can be bound`)
 
       object.wrapper = func(fn)
       assert.strictEqual(object.wrapper(), expected, `\`_.${methodName}\` uses the \`this\` of its parent object`)

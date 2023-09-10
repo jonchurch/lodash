@@ -7,11 +7,13 @@ describe('has methods', () => {
     const func = _[methodName],
       isHas = methodName == 'has',
       sparseArgs = toArgs([1]),
-      sparseArray = Array(1),
-      sparseString = Object('a')
+      sparseArray = Array(1)
+      // const sparseString = Object('a')
 
     delete sparseArgs[0]
-    delete sparseString[0]
+    // TODO: wut, this throws a typeerror, did this ever work??
+    // commenting it out bc it literally breaks js lol
+    // delete sparseString[0]
 
     it(`\`_.${methodName}\` should check for own properties`, () => {
       const object = { 'a': 1 }
@@ -104,7 +106,7 @@ describe('has methods', () => {
     })
 
     it(`\`_.${methodName}\` should return \`true\` for indexes of sparse values`, () => {
-      const values = [sparseArgs, sparseArray, sparseString],
+      const values = [sparseArgs, sparseArray],
         expected = lodashStable.map(values, stubTrue)
 
       const actual = lodashStable.map(values, (value) => func(value, 0))
@@ -113,7 +115,7 @@ describe('has methods', () => {
     })
 
     it(`\`_.${methodName}\` should return \`true\` for indexes of sparse values with deep paths`, () => {
-      const values = [sparseArgs, sparseArray, sparseString],
+      const values = [sparseArgs, sparseArray],
         expected = lodashStable.map(values, lodashStable.constant([true, true]))
 
       const actual = lodashStable.map(values, (value) => lodashStable.map(['a[0]', ['a', '0']], (path) => func({ 'a': value }, path)))
@@ -176,7 +178,7 @@ describe('has methods', () => {
     })
 
     it(`\`_.${methodName}\` should return \`false\` over sparse values of deep paths`, () => {
-      const values = [sparseArgs, sparseArray, sparseString],
+      const values = [sparseArgs, sparseArray],
         expected = lodashStable.map(values, lodashStable.constant([false, false]))
 
       const actual = lodashStable.map(values, (value) => lodashStable.map(['a[0].b', ['a', '0', 'b']], (path) => func({ 'a': value }, path)))

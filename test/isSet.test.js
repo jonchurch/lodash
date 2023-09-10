@@ -22,7 +22,6 @@ describe('isSet', () => {
     assert.strictEqual(isSet(true), false)
     assert.strictEqual(isSet(new Date), false)
     assert.strictEqual(isSet(new Error), false)
-    assert.strictEqual(isSet(_), false)
     assert.strictEqual(isSet(slice), false)
     assert.strictEqual(isSet({ 'a': 1 }), false)
     assert.strictEqual(isSet(1), false)

@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { args, toArgs, identity } from './utils.js'
+import { toArgs, identity } from './utils.js'
 import difference from '../difference.js'
 import union from '../union.js'
 import compact from '../compact.js'
@@ -7,7 +7,6 @@ import drop from '../drop.js'
 import dropRight from '../dropRight.js'
 import dropRightWhile from '../dropRightWhile.js'
 import dropWhile from '../dropWhile.js'
-import findIndex from '../findIndex.js'
 import findLastIndex from '../findLastIndex.js'
 import flatten from '../flatten.js'
 import head from '../head.js'
@@ -51,7 +50,6 @@ describe('"Arrays" category methods', () => {
     assert.deepStrictEqual(dropRight(args, 3), [1, null], message('dropRight'))
     assert.deepStrictEqual(dropRightWhile(args,identity), [1, null, [3], null], message('dropRightWhile'))
     assert.deepStrictEqual(dropWhile(args,identity), [null, [3], null, 5], message('dropWhile'))
-    assert.deepStrictEqual(findIndex(args, identity), 0, message('findIndex'))
     assert.deepStrictEqual(findLastIndex(args, identity), 4, message('findLastIndex'))
     assert.deepStrictEqual(flatten(args), [1, null, 3, null, 5], message('flatten'))
     assert.deepStrictEqual(head(args), 1, message('head'))

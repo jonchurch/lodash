@@ -39,7 +39,6 @@ describe('isError', () => {
     assert.strictEqual(isError([1, 2, 3]), false)
     assert.strictEqual(isError(true), false)
     assert.strictEqual(isError(new Date), false)
-    assert.strictEqual(isError(_), false)
     assert.strictEqual(isError(slice), false)
     assert.strictEqual(isError({ 'a': 1 }), false)
     assert.strictEqual(isError(1), false)

@@ -1,5 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
+import Stack from '../.internal/Stack'
 
 import {
   map,
@@ -12,7 +13,6 @@ import {
   _,
   LARGE_ARRAY_SIZE,
   isNpm,
-  mapCaches,
   arrayBuffer,
   stubTrue,
   objectProto,
@@ -125,7 +125,7 @@ describe('clone methods', function() {
 
     assert.ok(isNpm
       ? actual.constructor.name == 'Stack'
-      : actual instanceof mapCaches.Stack
+      : actual instanceof Stack
     )
   })
 

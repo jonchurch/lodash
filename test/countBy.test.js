@@ -11,7 +11,8 @@ describe('countBy', () => {
     assert.deepStrictEqual(actual, { '4': 1, '6': 2 })
   })
 
-  it('should use `_.identity` when `iteratee` is nullish', () => {
+  // TODO: another casuality of removing shorthand accesses
+  it.skip('should use `_.identity` when `iteratee` is nullish', () => {
     const array = [4, 6, 6],
       values = [, null, undefined],
       expected = lodashStable.map(values, lodashStable.constant({ '4': 1, '6':  2 }))
@@ -21,7 +22,8 @@ describe('countBy', () => {
     assert.deepStrictEqual(actual, expected)
   })
 
-  it('should work with `_.property` shorthands', () => {
+  // TODO: another casuality of removing shorthand accesses
+  it.skip('should work with `_.property` shorthands', () => {
     const actual = countBy(['one', 'two', 'three'], 'length')
     assert.deepStrictEqual(actual, { '3': 2, '5': 1 })
   })
@@ -33,7 +35,8 @@ describe('countBy', () => {
     assert.deepStrictEqual(actual.hasOwnProperty, 2)
   })
 
-  it('should work with a number for `iteratee`', () => {
+  // TODO: another casuality of removing shorthand accesses
+  it.skip('should work with a number for `iteratee`', () => {
     const array = [
       [1, 'a'],
       [2, 'a'],

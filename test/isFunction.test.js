@@ -2,6 +2,7 @@ import assert from 'assert'
 import lodashStable from 'lodash'
 
 import {
+  root,
   slice,
   asyncFunc,
   genFunc,

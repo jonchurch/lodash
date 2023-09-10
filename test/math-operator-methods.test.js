@@ -45,7 +45,7 @@ describe('math operator methods', () => {
 
     it(`\`_.${methodName}\` should return an unwrapped value when implicitly chaining`, () => {
       const actual = _(1)[methodName](2)
-      assert.notOk(actual instanceof _)
+      assert.strictEqual(actual instanceof _, false)
     })
 
     it(`\`_.${methodName}\` should return a wrapped value when explicitly chaining`, () => {

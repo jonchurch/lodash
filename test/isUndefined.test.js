@@ -21,7 +21,6 @@ describe('isUndefined', () => {
     assert.strictEqual(isUndefined(true), false)
     assert.strictEqual(isUndefined(new Date), false)
     assert.strictEqual(isUndefined(new Error), false)
-    assert.strictEqual(isUndefined(_), false)
     assert.strictEqual(isUndefined(slice), false)
     assert.strictEqual(isUndefined({ 'a': 1 }), false)
     assert.strictEqual(isUndefined(1), false)

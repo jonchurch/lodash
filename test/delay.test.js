@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { slice } from './utils'
+import { root, setProperty, slice } from './utils'
 import delay from '../delay.js'
 
 describe('delay', () => {

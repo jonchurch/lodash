@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { emojiVar, comboMarks, fitzModifiers } from './utils.js'
+import { emojiVar, comboMarks, fitzModifiers } from './utils'
 import repeat from '../repeat.js'
 import camelCase from '../camelCase.js'
 import capitalize from '../capitalize.js'

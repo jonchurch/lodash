@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice, _, push, HOT_COUNT } from './utils.js'
+import { slice, _, push, HOT_COUNT } from './utils'
 import bind from '../bind.js'
 import bindKey from '../bindKey.js'
 import partial from '../partial.js'

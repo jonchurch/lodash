@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { identity, isModularize, argv, isPhantom } from './utils.js'
+import { identity, isModularize, argv, isPhantom } from './utils'
 import throttle from '../throttle.js'
 import runInContext from '../runInContext.js'
 

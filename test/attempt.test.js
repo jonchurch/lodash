@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice, errors, stubTrue, CustomError, realm } from './utils.js'
+import { slice, errors, stubTrue, CustomError, realm } from './utils'
 import attempt from '../attempt.js'
 
 describe('attempt', () => {

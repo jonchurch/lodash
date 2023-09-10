@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { LARGE_ARRAY_SIZE, stubZero } from './utils.js'
+import { LARGE_ARRAY_SIZE, stubZero } from './utils'
 import intersectionWith from '../intersectionWith.js'
 
 describe('intersectionWith', () => {

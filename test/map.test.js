@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { identity, falsey, stubArray, document, noop, LARGE_ARRAY_SIZE, square } from './utils.js'
+import { identity, falsey, stubArray, document, noop, LARGE_ARRAY_SIZE, square } from './utils'
 import map from '../map.js'
 
 describe('map', () => {

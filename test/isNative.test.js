@@ -14,7 +14,7 @@ import {
   filePath,
   emptyObject,
   interopRequire
-} from './utils.js'
+} from './utils'
 
 import isNative from '../isNative.js'
 import runInContext from '../runInContext.js'

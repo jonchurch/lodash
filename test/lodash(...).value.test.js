@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { isNpm } from './utils.js'
+import { isNpm } from './utils'
 import prototype from '../prototype.js'
 
 describe('lodash(...).value', () => {

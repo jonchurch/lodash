@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { isEven, slice } from './utils.js'
+import { isEven, slice } from './utils'
 import remove from '../remove.js'
 
 describe('remove', () => {

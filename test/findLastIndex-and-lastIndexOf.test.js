@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { identity, stubZero, falsey } from './utils.js'
+import { identity, stubZero, falsey } from './utils'
 import findLastIndex from '../findLastIndex.js'
 import lastIndexOf from '../lastIndexOf.js'
 

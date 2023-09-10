@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice, getUnwrappedValue, noop } from './utils.js'
+import { slice, getUnwrappedValue, noop } from './utils'
 import has from '../has.js'
 import mixin from '../mixin.js'
 import prototype from '../prototype.js'

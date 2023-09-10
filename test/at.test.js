@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { empties, stubOne, falsey, args, LARGE_ARRAY_SIZE, square, identity } from './utils.js'
+import { empties, stubOne, falsey, args, LARGE_ARRAY_SIZE, square, identity } from './utils'
 import at from '../at.js'
 
 describe('at', () => {

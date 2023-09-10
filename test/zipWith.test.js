@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice } from './utils.js'
+import { slice } from './utils'
 import zipWith from '../zipWith.js'
 import zip from '../zip.js'
 

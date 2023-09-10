@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice, noop, stubC, falsey, stubFalse } from './utils.js'
+import { slice, noop, stubC, falsey, stubFalse } from './utils'
 import isEqualWith from '../isEqualWith.js'
 import isString from '../isString.js'
 import without from '../without.js'

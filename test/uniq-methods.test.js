@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { _, LARGE_ARRAY_SIZE, isEven } from './utils.js'
+import { _, LARGE_ARRAY_SIZE, isEven } from './utils'
 import sortBy from '../sortBy.js'
 
 describe('uniq methods', () => {

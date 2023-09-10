@@ -14,7 +14,7 @@ import {
   symbol,
   document,
   realm
-} from './utils.js'
+} from './utils'
 
 import isFunction from '../isFunction.js'
 

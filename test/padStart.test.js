@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { stubTrue } from './utils.js'
+import { stubTrue } from './utils'
 import padStart from '../padStart.js'
 
 describe('padStart', () => {

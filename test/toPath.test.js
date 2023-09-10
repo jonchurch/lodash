@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { symbol } from './utils.js'
+import { symbol } from './utils'
 import toPath from '../toPath.js'
 
 describe('toPath', () => {

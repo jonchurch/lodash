@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { stubTrue, stubOne, stubA, stubFalse, slice } from './utils.js'
+import { stubTrue, stubOne, stubA, stubFalse, slice } from './utils'
 import overEvery from '../overEvery.js'
 
 describe('overEvery', () => {

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { args, falsey } from './utils.js'
+import { args, falsey } from './utils'
 import findLast from '../findLast.js'
 
 describe('findLast', () => {

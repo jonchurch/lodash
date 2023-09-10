@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { _, slice } from './utils.js'
+import { _, slice } from './utils'
 import curry from '../curry.js'
 
 describe('curry methods', () => {

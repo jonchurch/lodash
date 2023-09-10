@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { stubOne, _, stubTwo, stubThree, stubFour, noop, slice } from './utils.js'
+import { stubOne, _, stubTwo, stubThree, stubFour, noop, slice } from './utils'
 import constant from '../constant.js'
 
 describe('methodOf', () => {

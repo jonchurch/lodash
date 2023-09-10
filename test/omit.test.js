@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { args, toArgs, objectProto, stringProto } from './utils.js'
+import { args, toArgs, objectProto, stringProto } from './utils'
 import omit from '../omit.js'
 
 describe('omit', () => {

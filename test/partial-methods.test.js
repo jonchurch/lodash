@@ -1,6 +1,6 @@
 import assert from 'assert';
 import lodashStable from 'lodash';
-import { _, identity, slice } from './utils.js';
+import { _, identity, slice } from './utils';
 import placeholder from '../placeholder.js';
 import curry from '../curry.js';
 

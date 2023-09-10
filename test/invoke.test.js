@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { noop, stubA, stubB, stubOne } from './utils.js'
+import { noop, stubA, stubB, stubOne } from './utils'
 import invoke from '../invoke.js'
 
 describe('invoke', () => {

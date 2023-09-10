@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { stubB } from './utils.js'
+import { stubB } from './utils'
 import result from '../result.js'
 
 describe('result', () => {

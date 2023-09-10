@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { arrayProto, LARGE_ARRAY_SIZE } from './utils.js'
+import { arrayProto, LARGE_ARRAY_SIZE } from './utils'
 import toArray from '../toArray.js'
 
 describe('toArray', () => {

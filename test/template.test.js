@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { numberTag, stubString, stubTrue, stubFalse } from './utils.js'
+import { numberTag, stubString, stubTrue, stubFalse } from './utils'
 import template from '../template.js'
 import templateSettings from '../templateSettings.js'
 

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { stubTrue, stubFalse, args, symbol } from './utils.js'
+import { stubTrue, stubFalse, args, symbol } from './utils'
 import isFinite from '../isFinite.js'
 
 describe('isFinite', () => {

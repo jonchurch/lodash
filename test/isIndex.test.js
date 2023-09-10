@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { MAX_SAFE_INTEGER, stubTrue, stubFalse } from './utils.js'
+import { MAX_SAFE_INTEGER, stubTrue, stubFalse } from './utils'
 import _isIndex from '../.internal/isIndex.js'
 
 describe('isIndex', () => {

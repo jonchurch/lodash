@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { args, _ } from './utils.js'
+import { args, _ } from './utils'
 import flatten from '../flatten.js'
 import flattenDeep from '../flattenDeep.js'
 import flattenDepth from '../flattenDepth.js'

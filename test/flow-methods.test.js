@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { add, square, noop, identity } from './utils.js'
+import { add, square, noop, identity } from './utils'
 import head from '../head.js'
 import map from '../map.js'
 import uniq from '../uniq.js'

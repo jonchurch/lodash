@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { noop, identity, isNpm, mapCaches } from './utils.js'
+import { noop, identity, isNpm, mapCaches } from './utils'
 import mergeWith from '../mergeWith.js'
 import last from '../last.js'
 

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { arrayBuffer, falsey, stubFalse, args, slice, symbol, realm } from './utils.js'
+import { arrayBuffer, falsey, stubFalse, args, slice, symbol, realm } from './utils'
 import isArrayBuffer from '../isArrayBuffer.js'
 
 describe('isArrayBuffer', () => {

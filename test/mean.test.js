@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { empties, stubNaN } from './utils.js'
+import { empties, stubNaN } from './utils'
 import mean from '../mean.js'
 
 describe('mean', () => {

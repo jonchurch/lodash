@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { _, primitives, stubTrue, defineProperty, slice } from './utils.js'
+import { _, primitives, stubTrue, defineProperty, slice } from './utils'
 import has from '../has.js'
 
 describe('object assignments', () => {

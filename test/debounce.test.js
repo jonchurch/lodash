@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { identity, argv, isPhantom, push } from './utils.js'
+import { identity, argv, isPhantom, push } from './utils'
 import debounce from '../debounce.js'
 
 describe('debounce', () => {

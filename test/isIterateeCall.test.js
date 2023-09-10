@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { MAX_SAFE_INTEGER } from './utils.js'
+import { MAX_SAFE_INTEGER } from './utils'
 import _isIterateeCall from '../.internal/isIterateeCall.js'
 
 describe('isIterateeCall', () => {

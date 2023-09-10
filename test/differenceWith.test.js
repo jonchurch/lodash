@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { LARGE_ARRAY_SIZE, stubOne } from './utils.js'
+import { LARGE_ARRAY_SIZE, stubOne } from './utils'
 import differenceWith from '../differenceWith.js'
 
 describe('differenceWith', () => {

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice, doubled, falsey, stubArray } from './utils.js'
+import { slice, doubled, falsey, stubArray } from './utils'
 import times from '../times.js'
 import identity from '../identity.js'
 

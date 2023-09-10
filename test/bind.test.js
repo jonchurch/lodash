@@ -1,6 +1,6 @@
 import assert from 'assert';
 import lodashStable from 'lodash';
-import { push, falsey, stubTrue } from './utils.js';
+import { push, falsey, stubTrue } from './utils';
 import bind from '../bind.js';
 import placeholder from '../placeholder.js';
 

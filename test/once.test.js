@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { _ } from './utils.js'
+import { _ } from './utils'
 
 describe('once', () => {
   it('should invoke `func` once', () => {

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { MAX_INTEGER, stubTrue } from './utils.js'
+import { MAX_INTEGER, stubTrue } from './utils'
 import random from '../random.js'
 
 describe('random', () => {

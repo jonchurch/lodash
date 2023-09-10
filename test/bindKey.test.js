@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { slice } from './utils.js'
+import { slice } from './utils'
 import bindKey from '../bindKey.js'
 
 describe('bindKey', () => {

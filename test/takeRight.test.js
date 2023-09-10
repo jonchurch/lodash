@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { falsey, LARGE_ARRAY_SIZE, isEven } from './utils.js'
+import { falsey, LARGE_ARRAY_SIZE, isEven } from './utils'
 import takeRight from '../takeRight.js'
 
 describe('takeRight', () => {

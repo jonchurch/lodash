@@ -24,6 +24,8 @@ const funcTag = '[object Function]',
   numberTag = '[object Number]',
   objectTag = '[object Object]'
 
+const LODASH_NODE_MODULE_PATH = '../../node_modules/lodash/lodash.js'
+
 /** Used as a reference to the global object. */
 const root = (typeof global === 'object' && global) || this
 
@@ -215,7 +217,7 @@ const filePath = (function() {
     result = params = phantom.args || require('system').args
   }
   const last = result[result.length - 1]
-  result = (result.length > min && !/test(?:\.js)?$/.test(last)) ? last : '../node_modules/lodash/lodash.js'
+  result = (result.length > min && !/test(?:\.js)?$/.test(last)) ? last : LODASH_NODE_MODULE_PATH
 
   // if (!amd) {
   try {
@@ -280,7 +282,7 @@ try {
 let lodashStable = root.lodashStable
 if (!lodashStable) {
   try {
-    lodashStable = interopRequire('../node_modules/lodash/lodash.js')
+    lodashStable = interopRequire(LODASH_NODE_MODULE_PATH)
   } catch (e) {
     console.log('Error: The stable lodash dev dependency should be at least a version behind master branch.')
   }

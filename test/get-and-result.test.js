@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { _, symbol, noop, numberProto, empties } from './utils.js'
+import { _, symbol, noop, numberProto, empties } from './utils'
 
 describe('get and result', () => {
   lodashStable.each(['get', 'result'], (methodName) => {

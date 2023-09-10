@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { falsey, stubZero, args, push, arrayProto, realm, MAX_SAFE_INTEGER } from './utils.js'
+import { falsey, stubZero, args, push, arrayProto, realm, MAX_SAFE_INTEGER } from './utils'
 import size from '../size.js'
 
 describe('size', () => {

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { identity } from './utils.js'
+import { identity } from './utils'
 import flatMapDepth from '../flatMapDepth.js'
 
 describe('flatMapDepth', () => {

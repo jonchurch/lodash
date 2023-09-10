@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { oldDash, coverage, document, isModularize, realm, filePath } from './utils.js'
+import { oldDash, coverage, document, isModularize, realm, filePath } from './utils'
 import noConflict from '../noConflict.js'
 
 describe('noConflict', () => {

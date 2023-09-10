@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { MAX_SAFE_INTEGER, falsey, stubTrue } from './utils.js'
+import { MAX_SAFE_INTEGER, falsey, stubTrue } from './utils'
 import endsWith from '../endsWith.js'
 
 describe('endsWith', () => {

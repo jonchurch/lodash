@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { burredLetters, deburredLetters, comboMarks } from './utils.js'
+import { burredLetters, deburredLetters, comboMarks } from './utils'
 import deburr from '../deburr.js'
 
 describe('deburr', () => {

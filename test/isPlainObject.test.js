@@ -10,7 +10,7 @@ import {
   symbol,
   defineProperty,
   realm
-} from './utils.js'
+} from './utils'
 
 import isPlainObject from '../isPlainObject.js'
 

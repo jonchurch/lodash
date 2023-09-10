@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { args } from './utils.js'
+import { args } from './utils'
 import toPlainObject from '../toPlainObject.js'
 
 describe('toPlainObject', () => {

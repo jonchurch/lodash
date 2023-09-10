@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { stubTrue, stubFalse, noop, numberProto } from './utils.js'
+import { stubTrue, stubFalse, noop, numberProto } from './utils'
 import matchesProperty from '../matchesProperty.js'
 
 describe('matchesProperty', () => {

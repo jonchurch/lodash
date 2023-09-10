@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { set, falsey, stubFalse, args, slice, symbol, weakSet, realm } from './utils.js'
+import { set, falsey, stubFalse, args, slice, symbol, weakSet, realm } from './utils'
 import isSet from '../isSet.js'
 
 describe('isSet', () => {

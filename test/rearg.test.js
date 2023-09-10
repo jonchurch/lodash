@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice, empties } from './utils.js'
+import { slice, empties } from './utils'
 import rearg from '../rearg.js'
 
 describe('rearg', () => {

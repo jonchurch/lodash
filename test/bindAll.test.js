@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { args, toArgs, arrayProto } from './utils.js'
+import { args, toArgs, arrayProto } from './utils'
 import bindAll from '../bindAll.js'
 
 describe('bindAll', () => {

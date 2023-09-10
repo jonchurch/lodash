@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { identity, noop } from './utils.js'
+import { identity, noop } from './utils'
 import functions from '../functions.js'
 
 describe('functions', () => {

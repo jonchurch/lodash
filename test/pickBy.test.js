@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { stubTrue } from './utils.js'
+import { stubTrue } from './utils'
 import pickBy from '../pickBy.js'
 
 describe('pickBy', () => {

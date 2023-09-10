@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { falsey } from './utils.js'
+import { falsey } from './utils'
 import defaultTo from '../defaultTo.js'
 
 describe('defaultTo', () => {

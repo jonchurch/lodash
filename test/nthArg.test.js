@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { args, falsey, stubA, stubB, noop } from './utils.js'
+import { args, falsey, stubA, stubB, noop } from './utils'
 import nthArg from '../nthArg.js'
 
 describe('nthArg', () => {

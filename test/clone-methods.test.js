@@ -23,7 +23,7 @@ import {
   arrayViews,
   slice,
   noop
-} from './utils.js'
+} from './utils'
 
 import cloneDeep from '../cloneDeep.js'
 import cloneDeepWith from '../cloneDeepWith.js'

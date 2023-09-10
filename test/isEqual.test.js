@@ -13,7 +13,7 @@ import {
   defineProperty,
   document,
   stubFalse
-} from './utils.js'
+} from './utils'
 
 import isEqual from '../isEqual.js'
 

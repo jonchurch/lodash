@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { args, slice, document, body, symbol, falsey, stubFalse, realm } from './utils.js'
+import { args, slice, document, body, symbol, falsey, stubFalse, realm } from './utils'
 import isObject from '../isObject.js'
 
 describe('isObject', () => {

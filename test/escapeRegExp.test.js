@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { stubString } from './utils.js'
+import { stubString } from './utils'
 import escapeRegExp from '../escapeRegExp.js'
 
 describe('escapeRegExp', () => {

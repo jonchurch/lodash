@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { LARGE_ARRAY_SIZE, isEven } from './utils.js'
+import { LARGE_ARRAY_SIZE, isEven } from './utils'
 import uniqWith from '../uniqWith.js'
 
 describe('uniqWith', () => {

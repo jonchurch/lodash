@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { slice } from './utils.js'
+import { slice } from './utils'
 import defer from '../defer.js'
 
 describe('defer', () => {

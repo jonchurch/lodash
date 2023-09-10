@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice, _, isNpm, push, stubFalse } from './utils.js'
+import { slice, _, isNpm, push, stubFalse } from './utils'
 import partial from '../partial.js'
 import partialRight from '../partialRight.js'
 import map from '../map.js'

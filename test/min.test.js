@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { falsey, noop } from './utils.js'
+import { falsey, noop } from './utils'
 import min from '../min.js'
 
 describe('min', () => {

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice, noop, stubA, falsey, stubFalse, isNpm, mapCaches } from './utils.js'
+import { slice, noop, stubA, falsey, stubFalse, isNpm, mapCaches } from './utils'
 import isMatchWith from '../isMatchWith.js'
 import isString from '../isString.js'
 import last from '../last.js'

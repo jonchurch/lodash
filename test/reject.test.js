@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { isEven } from './utils.js'
+import { isEven } from './utils'
 import reject from '../reject.js'
 
 describe('reject', () => {

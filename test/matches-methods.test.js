@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { _, stubTrue, noop, numberProto, stubFalse, empties } from './utils.js'
+import { _, stubTrue, noop, numberProto, stubFalse, empties } from './utils'
 import isMatch from '../isMatch.js'
 
 describe('matches methods', () => {

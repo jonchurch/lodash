@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { LARGE_ARRAY_SIZE } from './utils.js'
+import { LARGE_ARRAY_SIZE } from './utils'
 import last from '../last.js'
 
 describe('last', () => {

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { _, empties, LARGE_ARRAY_SIZE, slice } from './utils.js'
+import { _, empties, LARGE_ARRAY_SIZE, slice } from './utils'
 import each from '../each.js'
 
 describe('find methods', () => {

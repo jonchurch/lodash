@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { noop } from './utils.js'
+import { noop } from './utils'
 import property from '../property.js'
 
 describe('property', () => {

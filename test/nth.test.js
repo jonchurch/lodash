@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { falsey, stubA, stubB, noop } from './utils.js'
+import { falsey, stubA, stubB, noop } from './utils'
 import nth from '../nth.js'
 
 describe('nth', () => {

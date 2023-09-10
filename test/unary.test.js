@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice } from './utils.js'
+import { slice } from './utils'
 import unary from '../unary.js'
 
 describe('unary', () => {

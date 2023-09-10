@@ -11,7 +11,7 @@ import {
   LARGE_ARRAY_SIZE,
   symbol,
   setProperty
-} from './utils.js'
+} from './utils'
 
 import _VERSION from '../.internal/VERSION.js'
 import VERSION from '../VERSION.js'

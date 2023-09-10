@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { slice, doubled, square, identity, noop } from './utils.js'
+import { slice, doubled, square, identity, noop } from './utils'
 import overArgs from '../overArgs.js'
 
 describe('overArgs', () => {

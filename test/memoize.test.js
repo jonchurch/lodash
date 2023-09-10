@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { noop, stubTrue, identity } from './utils.js'
+import { noop, stubTrue, identity } from './utils'
 import memoize from '../memoize.js'
 import isFunction from '../isFunction.js'
 

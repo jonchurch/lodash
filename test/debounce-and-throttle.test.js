@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { _, noop, push, isModularize } from './utils.js'
+import { _, noop, push, isModularize } from './utils'
 import runInContext from '../runInContext.js'
 
 describe('debounce and throttle', () => {

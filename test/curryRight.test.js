@@ -1,6 +1,6 @@
 import assert from 'assert';
 import lodashStable from 'lodash';
-import { slice, stubArray } from './utils.js';
+import { slice, stubArray } from './utils';
 import curryRight from '../curryRight.js';
 import placeholder from '../placeholder.js';
 import bind from '../bind.js';

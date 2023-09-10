@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { slice } from './utils.js'
+import { slice } from './utils'
 import reduce from '../reduce.js'
 import head from '../head.js'
 import keys from '../keys.js'

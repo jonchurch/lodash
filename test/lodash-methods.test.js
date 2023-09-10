@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { _, falsey, stubArray, oldDash, stubTrue, FUNC_ERROR_TEXT } from './utils.js'
+import { _, falsey, stubArray, oldDash, stubTrue, FUNC_ERROR_TEXT } from './utils'
 import functions from '../functions.js'
 import bind from '../bind.js'
 

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { symbol, numberProto, stringProto, defineProperty } from './utils.js'
+import { symbol, numberProto, stringProto, defineProperty } from './utils'
 import unset from '../unset.js'
 
 describe('unset', () => {

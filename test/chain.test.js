@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { square } from './utils.js'
+import { square } from './utils'
 import chain from '../chain.js'
 
 describe('chain', () => {

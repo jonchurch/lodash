@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { objectProto } from './utils.js'
+import { objectProto } from './utils'
 import defaults from '../defaults.js'
 
 describe('defaults', () => {

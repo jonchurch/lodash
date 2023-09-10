@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { burredLetters, _, stubArray } from './utils.js'
+import { burredLetters, _, stubArray } from './utils'
 import words from '../words.js'
 
 describe('words', () => {

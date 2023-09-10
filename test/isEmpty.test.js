@@ -11,7 +11,7 @@ import {
   arrayProto,
   realm,
   MAX_SAFE_INTEGER
-} from './utils.js'
+} from './utils'
 
 import isEmpty from '../isEmpty.js'
 

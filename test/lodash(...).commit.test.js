@@ -1,5 +1,7 @@
 import assert from 'assert'
 
+import { _ } from './utils'
+
 describe('lodash(...).commit', () => {
   it('should execute the chained sequence and returns the wrapped result', () => {
     const array = [1],

@@ -1,23 +1,23 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import mapKeys from '../mapKeys.js'
+import mapKey from '../mapKey.js'
 
-describe('mapKeys', () => {
+describe('mapKey', () => {
   const array = [1, 2],
     object = { 'a': 1, 'b': 2 }
 
   it('should map keys in `object` to a new object', () => {
-    const actual = mapKeys(object, String)
+    const actual = mapKey(object, String)
     assert.deepStrictEqual(actual, { '1': 1, '2': 2 })
   })
 
   it('should treat arrays like objects', () => {
-    const actual = mapKeys(array, String)
+    const actual = mapKey(array, String)
     assert.deepStrictEqual(actual, { '1': 1, '2': 2 })
   })
 
   it('should work with `_.property` shorthands', () => {
-    const actual = mapKeys({ 'a': { 'b': 'c' } }, 'b')
+    const actual = mapKey({ 'a': { 'b': 'c' } }, 'b')
     assert.deepStrictEqual(actual, { 'c': { 'b': 'c' } })
   })
 
@@ -26,7 +26,7 @@ describe('mapKeys', () => {
       values = [, null, undefined],
       expected = lodashStable.map(values, lodashStable.constant({ '1': 1, '2': 2 }))
 
-    const actual = lodashStable.map(values, (value, index) => index ? mapKeys(object, value) : mapKeys(object))
+    const actual = lodashStable.map(values, (value, index) => index ? mapKey(object, value) : mapKey(object))
 
     assert.deepStrictEqual(actual, expected)
   })

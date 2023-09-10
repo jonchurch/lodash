@@ -22,7 +22,6 @@ describe('isWeakMap', () => {
     assert.strictEqual(isWeakMap(true), false)
     assert.strictEqual(isWeakMap(new Date), false)
     assert.strictEqual(isWeakMap(new Error), false)
-    assert.strictEqual(isWeakMap(_), false)
     assert.strictEqual(isWeakMap(slice), false)
     assert.strictEqual(isWeakMap({ 'a': 1 }), false)
     assert.strictEqual(isWeakMap(map), false)

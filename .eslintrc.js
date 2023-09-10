@@ -1,6 +1,6 @@
 module.exports = {
   'extends': ['plugin:import/errors'],
-  'plugins': ['import'],
+  'plugins': ['import', 'mocha'],
   'env': {
     'es6': true,
     'node': true
@@ -13,6 +13,14 @@ module.exports = {
       'objectLiteralDuplicateProperties': false
     }
   },
+  overrides: [
+    {
+      files: ['test/**/*.js'],
+      env: {
+        mocha: true
+      }
+    }
+  ],
   'rules': {
     'array-bracket-spacing': ['error', 'never'],
 
@@ -122,4 +130,4 @@ module.exports = {
 
     'template-curly-spacing': ['error', 'never']
   }
-};
+}

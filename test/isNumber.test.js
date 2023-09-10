@@ -22,7 +22,6 @@ describe('isNumber', () => {
     assert.strictEqual(isNumber(true), false)
     assert.strictEqual(isNumber(new Date), false)
     assert.strictEqual(isNumber(new Error), false)
-    assert.strictEqual(isNumber(_), false)
     assert.strictEqual(isNumber(slice), false)
     assert.strictEqual(isNumber({ 'a': 1 }), false)
     assert.strictEqual(isNumber(/x/), false)

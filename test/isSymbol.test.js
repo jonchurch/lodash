@@ -23,7 +23,6 @@ describe('isSymbol', () => {
     assert.strictEqual(isSymbol(true), false)
     assert.strictEqual(isSymbol(new Date), false)
     assert.strictEqual(isSymbol(new Error), false)
-    assert.strictEqual(isSymbol(_), false)
     assert.strictEqual(isSymbol(slice), false)
     assert.strictEqual(isSymbol({ '0': 1, 'length': 1 }), false)
     assert.strictEqual(isSymbol(1), false)

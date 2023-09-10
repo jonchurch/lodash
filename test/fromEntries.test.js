@@ -39,7 +39,10 @@ describe('fromEntries', () => {
   it('should work in a lazy sequence', () => {
     const array = lodashStable.times(LARGE_ARRAY_SIZE, (index) => [`key${index}`, index])
     console.log(array)
-    const actual = lodashStable(array).fromEntries().map(square).filter(isEven).take().value()
+    // TODO: this is using a renamed function for its comparison, fromPairs was renamed to fromEntries
+    // probably don't need to do much, but wanted to leave a note
+    // still dunno how i feel about testing against prev versions
+    const actual = lodashStable(array).fromPairs().map(square).filter(isEven).take().value()
 
     assert.deepEqual(actual, lodashStable.take(lodashStable.filter(lodashStable.map(fromEntries(array), square), isEven)))
   })

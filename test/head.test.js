@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { arrayProto, LARGE_ARRAY_SIZE } from './utils'
+import { _, arrayProto, LARGE_ARRAY_SIZE, isEven } from './utils'
 import head from '../head.js'
 import first from '../first.js'
 

@@ -1,7 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
 import { stubOne, _, stubTwo, stubThree, stubFour, noop, slice } from './utils'
-import constant from '../constant.js'
 
 describe('methodOf', () => {
   it('should create a function that calls a method of a given key', () => {
@@ -24,17 +23,18 @@ describe('methodOf', () => {
   })
 
   it('should work with a non-string `path`', () => {
-    const array = lodashStable.times(3, constant)
+    const array = [0, 1, 3]
 
     lodashStable.each([1, [1]], (path) => {
       const methodOf = _.methodOf(array)
+      // TODO: func.call is not a function
       assert.strictEqual(methodOf(path), 1)
     })
   })
 
   it('should coerce `path` to a string', () => {
     function fn() {}
-    fn.toString = lodashStable.constant('fn')
+    fn.toString = () => 'fn'
 
     const expected = [1, 2, 3, 4],
       object = { 'null': stubOne, 'undefined': stubTwo, 'fn': stubThree, '[object Object]': stubFour },

@@ -20,7 +20,7 @@ import isFunction from '../isFunction.js'
 
 describe('isFunction', () => {
   it('should return `true` for functions', () => {
-    assert.strictEqual(isFunction(_), true)
+    assert.strictEqual(isFunction(() => {}), true)
     assert.strictEqual(isFunction(slice), true)
   })
 

@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { slice } from './utils'
+import { _, slice } from './utils'
 import dropRightWhile from '../dropRightWhile.js'
 
 describe('dropRightWhile', () => {

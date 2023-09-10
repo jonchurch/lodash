@@ -4,7 +4,6 @@ import { slice, noop, stubC, falsey, stubFalse } from './utils'
 import isEqualWith from '../isEqualWith.js'
 import isString from '../isString.js'
 import without from '../without.js'
-import partial from '../partial.js'
 
 describe('isEqualWith', () => {
   it('should provide correct `customizer` arguments', () => {
@@ -74,13 +73,16 @@ describe('isEqualWith', () => {
     assert.deepStrictEqual(actual, expected)
   })
 
+  // TODO: this doesn't test what it says it does
   it('should ensure `customizer` is a function', () => {
-    const array = [1, 2, 3],
-      eq = partial(isEqualWith, array),
-      actual = lodashStable.map([array, [1, 0, 3]], eq)
+    const array = [1, 2, 3];
 
-    assert.deepStrictEqual(actual, [true, false])
-  })
+    const eq = (otherArray) => isEqualWith(array, otherArray);
+
+    const actual = [array, [1, 0, 3]].map(eq);
+
+    assert.deepStrictEqual(actual, [true, false]);
+  });
 
   it('should call `customizer` for values maps and sets', () => {
     const value = { 'a': { 'b': 2 } }

@@ -42,6 +42,7 @@ const symbolValueOf = Symbol.prototype.valueOf
  * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
  */
 function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
+  let convert
   switch (tag) {
     case dataViewTag:
       if ((object.byteLength != other.byteLength) ||
@@ -76,7 +77,7 @@ function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
       return object == `${other}`
 
     case mapTag:
-      let convert = mapToArray
+      convert = mapToArray
 
     case setTag:
       const isPartial = bitmask & COMPARE_PARTIAL_FLAG

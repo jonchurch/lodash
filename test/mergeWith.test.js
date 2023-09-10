@@ -1,8 +1,9 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { noop, identity, isNpm, mapCaches } from './utils'
+import { noop, identity, isNpm } from './utils'
 import mergeWith from '../mergeWith.js'
 import last from '../last.js'
+import Stack from '../.internal/Stack'
 
 describe('mergeWith', () => {
   it('should handle merging when `customizer` returns `undefined`', () => {
@@ -36,7 +37,7 @@ describe('mergeWith', () => {
 
     assert.ok(isNpm
       ? actual.constructor.name == 'Stack'
-      : actual instanceof mapCaches.Stack
+      : actual instanceof Stack
     )
   })
 

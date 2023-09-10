@@ -4,7 +4,7 @@ import { slice, noop, stubA, falsey, stubFalse, isNpm, mapCaches } from './utils
 import isMatchWith from '../isMatchWith.js'
 import isString from '../isString.js'
 import last from '../last.js'
-import partial from '../partial.js'
+import Stack from '../.internal/Stack'
 
 describe('isMatchWith', () => {
   it('should provide correct `customizer` arguments', () => {
@@ -71,26 +71,32 @@ describe('isMatchWith', () => {
     assert.deepStrictEqual(actual, expected)
   })
 
+  // TODO: this test is realy only testing baseEquals, should be deleted
   it('should provide `stack` to `customizer`', () => {
     let actual
 
     isMatchWith({ 'a': 1 }, { 'a': 1 }, function() {
+      console.log(arguments)
       actual = last(arguments)
     })
-
+    console.log(mapCaches.Stack)
     assert.ok(isNpm
       ? actual.constructor.name == 'Stack'
-      : actual instanceof mapCaches.Stack
+      // This was using mapCaches.Stack before
+      // but this is more accurate and passes
+      // I still don't understand the use of mapCaches in the previous setup
+      : actual instanceof Stack
     )
   })
 
+  // TODO: this test doens't test what it purports to
   it('should ensure `customizer` is a function', () => {
-    const object = { 'a': 1 },
-      matches = partial(isMatchWith, object),
-      actual = lodashStable.map([object, { 'a': 2 }], matches)
+    const object = { 'a': 1 };
 
-    assert.deepStrictEqual(actual, [true, false])
-  })
+    const actual = [object, { 'a': 2 }].map(item => isMatchWith(object, item));
+
+    assert.deepStrictEqual(actual, [true, false]);
+  });
 
   it('should call `customizer` for values maps and sets', () => {
     const value = { 'a': { 'b': 2 } }

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { slice, LARGE_ARRAY_SIZE } from './utils'
+import { _, slice, LARGE_ARRAY_SIZE } from './utils'
 import dropWhile from '../dropWhile.js'
 
 describe('dropWhile', () => {

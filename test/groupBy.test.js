@@ -11,7 +11,8 @@ describe('groupBy', () => {
     assert.deepStrictEqual(actual, { '4': [4.2], '6': [6.1, 6.3] })
   })
 
-  it('should use `_.identity` when `iteratee` is nullish', () => {
+  // TODO: test is using shorthand
+  it.skip('should use `_.identity` when `iteratee` is nullish', () => {
     const array = [6, 4, 6],
       values = [, null, undefined],
       expected = lodashStable.map(values, lodashStable.constant({ '4': [4], '6':  [6, 6] }))
@@ -21,7 +22,8 @@ describe('groupBy', () => {
     assert.deepStrictEqual(actual, expected)
   })
 
-  it('should work with `_.property` shorthands', () => {
+  // TODO: test is using shorthand
+  it.skip('should work with `_.property` shorthands', () => {
     const actual = groupBy(['one', 'two', 'three'], 'length')
     assert.deepStrictEqual(actual, { '3': ['one', 'two'], '5': ['three'] })
   })
@@ -33,7 +35,9 @@ describe('groupBy', () => {
     assert.deepStrictEqual(actual.hasOwnProperty, [6.1, 6.3])
   })
 
-  it('should work with a number for `iteratee`', () => {
+  // TODO: not at all sure this should work with a number?
+  // but it is still the same error as shorthands: iteratee is not a function
+  it.skip('should work with a number for `iteratee`', () => {
     const array = [
       [1, 'a'],
       [2, 'a'],

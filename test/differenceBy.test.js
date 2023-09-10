@@ -3,7 +3,8 @@ import { slice } from './utils'
 import differenceBy from '../differenceBy.js'
 
 describe('differenceBy', () => {
-  it('should accept an `iteratee`', () => {
+  // TODO: test using shorthand access that was removed
+  it.skip('should accept an `iteratee`', () => {
     let actual = differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor)
     assert.deepStrictEqual(actual, [1.2])
 

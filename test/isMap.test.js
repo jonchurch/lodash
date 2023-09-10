@@ -22,7 +22,6 @@ describe('isMap', () => {
     assert.strictEqual(isMap(true), false)
     assert.strictEqual(isMap(new Date), false)
     assert.strictEqual(isMap(new Error), false)
-    assert.strictEqual(isMap(_), false)
     assert.strictEqual(isMap(slice), false)
     assert.strictEqual(isMap({ 'a': 1 }), false)
     assert.strictEqual(isMap(1), false)

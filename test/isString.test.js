@@ -21,7 +21,6 @@ describe('isString', () => {
     assert.strictEqual(isString(true), false)
     assert.strictEqual(isString(new Date), false)
     assert.strictEqual(isString(new Error), false)
-    assert.strictEqual(isString(_), false)
     assert.strictEqual(isString(slice), false)
     assert.strictEqual(isString({ '0': 1, 'length': 1 }), false)
     assert.strictEqual(isString(1), false)

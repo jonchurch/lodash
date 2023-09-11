@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { lodashBizarro, whitespace, stubZero } from './utils'
+import { _, lodashBizarro, whitespace, stubZero } from './utils'
 import parseInt from '../parseInt.js'
 
 describe('parseInt', () => {

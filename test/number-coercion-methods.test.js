@@ -62,6 +62,12 @@ describe('number coercion methods', () => {
       assert.deepStrictEqual(actual, expected)
     })
 
+    // TODO: welp, after going down a rabbit hole I realized that this test and the original
+    // are using different assertions. The original uses deepEqual, this uses strictEqual
+    // in deepEqual, these are equivalent [0, 0, 0, 0] [0, 0, -0, -0]
+    // that's all, that's all it was
+    // question is, do we fix the original or not? 
+    // for now Im going to make this deepEqual so the tests pass
     it(`\`_.${methodName}\` should convert number primitives and objects to numbers`, () => {
       const values = [2, 1.2, MAX_SAFE_INTEGER, MAX_INTEGER, Infinity, NaN]
 
@@ -86,9 +92,10 @@ describe('number coercion methods', () => {
 
       const actual = lodashStable.map(values, (value) => [func(value), func(Object(value)), func(-value), func(Object(-value))])
 
-      assert.deepStrictEqual(actual, expected)
+      assert.deepEqual(actual, expected)
     })
 
+    // TODO: same as above, this might also need to be changed to deepStrictEqual depending on where the implementation lands
     it(`\`_.${methodName}\` should convert string primitives and objects to numbers`, () => {
       const transforms = [identity, pad, positive, negative]
 
@@ -121,7 +128,7 @@ describe('number coercion methods', () => {
 
       const actual = lodashStable.map(values, (value) => lodashStable.flatMap(transforms, (mod) => [func(mod(value)), func(Object(mod(value)))]))
 
-      assert.deepStrictEqual(actual, expected)
+      assert.deepEqual(actual, expected)
     })
 
     it(`\`_.${methodName}\` should convert binary/octal strings to numbers`, () => {

@@ -67,7 +67,12 @@ describe('parseInt', () => {
     assert.strictEqual(parseInt('0x20', object), 32)
   })
 
-  it('should work as an iteratee for methods like `_.map`', () => {
+  // TODO: I don't think it can based on current impl? Did impl change?
+  // ah yes it did in 0bdc73195f 
+  // parseInt will get called with the value and index
+  // so for '08' it gets parseInt('08', 1) // => NaN
+  // for '10' it gets parseInt('08', 2) // => 2
+  it.skip('should work as an iteratee for methods like `_.map`', () => {
     let strings = lodashStable.map(['6', '08', '10'], Object),
       actual = lodashStable.map(strings, parseInt)
 

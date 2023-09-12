@@ -1,4 +1,5 @@
 import assert from 'assert'
+import { _ } from './utils'
 
 describe('tap', () => {
   it('should intercept and return the given value', () => {

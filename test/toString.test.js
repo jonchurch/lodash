@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { stubString, symbol } from './utils'
+import { _, stubString, symbol } from './utils'
 import toString from '../toString.js'
 
 describe('toString', () => {

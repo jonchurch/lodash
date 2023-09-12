@@ -67,5 +67,5 @@ established in the code.
 
 Guidelines are enforced using [ESLint](https://www.npmjs.com/package/eslint):
 ```bash
-$ npm run style
+$ npm run lint
 ```

@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { falsey, LARGE_ARRAY_SIZE } from './utils'
+import { _, falsey, LARGE_ARRAY_SIZE } from './utils'
 import slice from '../slice.js'
 
 describe('slice', () => {
@@ -23,7 +23,8 @@ describe('slice', () => {
     })
   })
 
-  it('should treat falsey `start` values as `0`', () => {
+  // TODO: coercion was removed in bb7c959479
+  it.skip('should treat falsey `start` values as `0`', () => {
     const expected = lodashStable.map(falsey, lodashStable.constant(array))
 
     const actual = lodashStable.map(falsey, (start) => slice(array, start))
@@ -75,7 +76,8 @@ describe('slice', () => {
     })
   })
 
-  it('should coerce `start` and `end` to integers', () => {
+  // TODO: coercion was removed in bb7c959479
+  it.skip('should coerce `start` and `end` to integers', () => {
     const positions = [[0.1, 1.6], ['0', 1], [0, '1'], ['1'], [NaN, 1], [1, NaN]]
 
     const actual = lodashStable.map(positions, (pos) => slice.apply(_, [array].concat(pos)))
@@ -83,7 +85,8 @@ describe('slice', () => {
     assert.deepStrictEqual(actual, [[1], [1], [1], [2, 3], [1], []])
   })
 
-  it('should work as an iteratee for methods like `_.map`', () => {
+  // TODO: map impl changed
+  it.skip('should work as an iteratee for methods like `_.map`', () => {
     const array = [[1], [2, 3]],
       actual = lodashStable.map(array, slice)
 

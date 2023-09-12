@@ -1,6 +1,6 @@
 import assert from 'assert'
 import lodashStable from 'lodash'
-import { falsey, stubArray, LARGE_ARRAY_SIZE } from './utils'
+import { _, falsey, isEven, stubArray, LARGE_ARRAY_SIZE } from './utils'
 import tail from '../tail.js'
 
 describe('tail', () => {

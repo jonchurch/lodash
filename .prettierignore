@@ -1,0 +1,10 @@
+node_modules
+dist
+coverage
+vendor
+*.min.js
+core.js
+core.min.js
+lodash.min.js
+package-lock.json
+CHANGELOG

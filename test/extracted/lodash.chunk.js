@@ -3,7 +3,14 @@
  * Module: lodash.chunk
  * Original lines: 2535-2596
  */
-  QUnit.module('lodash.chunk');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubArray = require('../utils/stubs.js').stubArray;
+
+QUnit.module('lodash.chunk');
 
   (function() {
     var array = [0, 1, 2, 3, 4, 5];

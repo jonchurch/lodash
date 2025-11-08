@@ -3,23 +3,25 @@
  * Module: lodash.add
  * Original lines: 1169-1189
  */
-  QUnit.module('lodash.add');
 
-  (function() {
-    QUnit.test('should add two numbers', function(assert) {
-      assert.expect(3);
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
 
-      assert.strictEqual(_.add(6, 4), 10);
-      assert.strictEqual(_.add(-6, 4), -2);
-      assert.strictEqual(_.add(-6, -4), -10);
-    });
+QUnit.module('lodash.add');
 
-    QUnit.test('should not coerce arguments to numbers', function(assert) {
-      assert.expect(2);
+(function() {
+  QUnit.test('should add two numbers', function(assert) {
+    assert.expect(3);
 
-      assert.strictEqual(_.add('6', '4'), '64');
-      assert.strictEqual(_.add('x', 'y'), 'xy');
-    });
-  }());
+    assert.strictEqual(_.add(6, 4), 10);
+    assert.strictEqual(_.add(-6, 4), -2);
+    assert.strictEqual(_.add(-6, -4), -10);
+  });
 
-  /*--------------------------------------------------------------------------*/
+  QUnit.test('should not coerce arguments to numbers', function(assert) {
+    assert.expect(2);
+
+    assert.strictEqual(_.add('6', '4'), '64');
+    assert.strictEqual(_.add('x', 'y'), 'xy');
+  });
+}());

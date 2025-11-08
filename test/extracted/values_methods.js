@@ -3,7 +3,14 @@
  * Module: values methods
  * Original lines: 25367-25420
  */
-  QUnit.module('values methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var strictArgs = require('../utils/helpers.js').strictArgs;
+
+QUnit.module('values methods');
 
   lodashStable.each(['values', 'valuesIn'], function(methodName) {
     var func = _[methodName],

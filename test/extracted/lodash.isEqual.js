@@ -3,7 +3,20 @@
  * Module: lodash.isEqual
  * Original lines: 9532-10365
  */
-  QUnit.module('lodash.isEqual');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var args = require('../utils/helpers.js').args;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var arrayViews = require('../utils/fixtures.js').arrayViews;
+var map = require('../utils/es6.js').map;
+var promise = require('../utils/es6.js').promise;
+var set = require('../utils/es6.js').set;
+
+QUnit.module('lodash.isEqual');
 
   (function() {
     var symbol1 = Symbol ? Symbol('a') : true,

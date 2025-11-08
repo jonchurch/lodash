@@ -3,7 +3,14 @@
  * Module: lodash.chain
  * Original lines: 2433-2534
  */
-  QUnit.module('lodash.chain');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var square = require('../utils/stubs.js').square;
+
+QUnit.module('lodash.chain');
 
   (function() {
     QUnit.test('should return a wrapped value', function(assert) {

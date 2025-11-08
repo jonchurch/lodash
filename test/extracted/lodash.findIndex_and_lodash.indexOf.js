@@ -3,7 +3,15 @@
  * Module: lodash.findIndex and lodash.indexOf
  * Original lines: 6188-6263
  */
-  QUnit.module('lodash.findIndex and lodash.indexOf');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var identity = require('../utils/stubs.js').identity;
+var falsey = require('../utils/fixtures.js').falsey;
+var stubZero = require('../utils/stubs.js').stubZero;
+
+QUnit.module('lodash.findIndex and lodash.indexOf');
 
   lodashStable.each(['findIndex', 'indexOf'], function(methodName) {
     var array = [1, 2, 3, 1, 2, 3],

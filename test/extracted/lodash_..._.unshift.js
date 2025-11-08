@@ -3,7 +3,15 @@
  * Module: lodash(...).unshift
  * Original lines: 26427-26468
  */
-  QUnit.module('lodash(...).unshift');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash(...).unshift');
 
   (function() {
     QUnit.test('should prepend elements to `array`', function(assert) {

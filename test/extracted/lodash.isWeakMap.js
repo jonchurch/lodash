@@ -3,7 +3,20 @@
  * Module: lodash.isWeakMap
  * Original lines: 11945-12011
  */
-  QUnit.module('lodash.isWeakMap');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var args = require('../utils/helpers.js').args;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var weakMap = require('../utils/es6.js').weakMap;
+var symbol = require('../utils/es6.js').symbol;
+var map = require('../utils/es6.js').map;
+var slice = require('../utils/stubs.js').slice;
+
+QUnit.module('lodash.isWeakMap');
 
   (function() {
     QUnit.test('should return `true` for weak maps', function(assert) {

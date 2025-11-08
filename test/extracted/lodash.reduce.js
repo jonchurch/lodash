@@ -3,7 +3,12 @@
  * Module: lodash.reduce
  * Original lines: 18826-18887
  */
-  QUnit.module('lodash.reduce');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var slice = Array.prototype.slice;
+
+QUnit.module('lodash.reduce');
 
   (function() {
     var array = [1, 2, 3];

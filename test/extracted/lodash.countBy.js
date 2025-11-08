@@ -3,7 +3,16 @@
  * Module: lodash.countBy
  * Original lines: 3628-3712
  */
-  QUnit.module('lodash.countBy');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var square = require('../utils/stubs.js').square;
+var isEven = require('../utils/stubs.js').isEven;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.countBy');
 
   (function() {
     var array = [6.1, 4.2, 6.3];

@@ -3,7 +3,12 @@
  * Module: lodash.unary
  * Original lines: 24615-24647
  */
-  QUnit.module('lodash.unary');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.unary');
 
   (function() {
     function fn() {

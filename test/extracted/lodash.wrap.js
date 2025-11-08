@@ -3,7 +3,14 @@
  * Module: lodash.wrap
  * Original lines: 25596-25649
  */
-  QUnit.module('lodash.wrap');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+var stubA = require('../utils/stubs.js').stubA;
+
+QUnit.module('lodash.wrap');
 
   (function() {
     QUnit.test('should create a wrapped function', function(assert) {

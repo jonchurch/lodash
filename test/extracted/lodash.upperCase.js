@@ -3,7 +3,11 @@
  * Module: lodash.upperCase
  * Original lines: 25339-25352
  */
-  QUnit.module('lodash.upperCase');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.upperCase');
 
   (function() {
     QUnit.test('should uppercase as space-separated words', function(assert) {

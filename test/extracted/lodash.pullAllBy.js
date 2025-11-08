@@ -3,7 +3,11 @@
  * Module: lodash.pullAllBy
  * Original lines: 18270-18300
  */
-  QUnit.module('lodash.pullAllBy');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.pullAllBy');
 
   (function() {
     QUnit.test('should accept an `iteratee`', function(assert) {

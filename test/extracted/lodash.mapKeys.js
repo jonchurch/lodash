@@ -3,7 +3,12 @@
  * Module: lodash.mapKeys
  * Original lines: 13633-13676
  */
-  QUnit.module('lodash.mapKeys');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.mapKeys');
 
   (function() {
     var array = [1, 2],

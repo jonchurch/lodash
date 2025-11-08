@@ -3,7 +3,13 @@
  * Module: lodash.padStart
  * Original lines: 17159-17198
  */
-  QUnit.module('lodash.padStart');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+QUnit.module('lodash.padStart');
 
   (function() {
     var string = 'abc';

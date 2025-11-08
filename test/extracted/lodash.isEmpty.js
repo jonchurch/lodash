@@ -3,7 +3,22 @@
  * Module: lodash.isEmpty
  * Original lines: 9380-9531
  */
-  QUnit.module('lodash.isEmpty');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var args = require('../utils/helpers.js').args;
+var arrayProto = require('../utils/helpers.js').arrayProto;
+var realm = require('../utils/helpers.js').realm;
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+var isNpm = require('../utils/helpers.js').isNpm;
+var slice = require('../utils/helpers.js').slice;
+
+QUnit.module('lodash.isEmpty');
 
   (function() {
     QUnit.test('should return `true` for empty values', function(assert) {

@@ -3,7 +3,17 @@
  * Module: lodash methods
  * Original lines: 26864-27078
  */
-  QUnit.module('lodash methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubArray = require('../utils/stubs.js').stubArray;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var FUNC_ERROR_TEXT = require('../utils/constants.js').FUNC_ERROR_TEXT;
+
+QUnit.module('lodash methods');
 
   (function() {
     var allMethods = lodashStable.reject(_.functions(_).sort(), function(methodName) {

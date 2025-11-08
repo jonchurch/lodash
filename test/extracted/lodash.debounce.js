@@ -3,7 +3,12 @@
  * Module: lodash.debounce
  * Original lines: 4187-4485
  */
-  QUnit.module('lodash.debounce');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var identity = require('../utils/stubs.js').identity;
+
+QUnit.module('lodash.debounce');
 
   (function() {
     QUnit.test('should debounce a function', function(assert) {

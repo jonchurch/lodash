@@ -3,7 +3,14 @@
  * Module: lodash.words
  * Original lines: 25452-25595
  */
-  QUnit.module('lodash.words');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var burredLetters = require('../utils/unicode.js').burredLetters;
+var stubArray = require('../utils/stubs.js').stubArray;
+
+QUnit.module('lodash.words');
 
   (function() {
     QUnit.test('should match words containing Latin Unicode letters', function(assert) {

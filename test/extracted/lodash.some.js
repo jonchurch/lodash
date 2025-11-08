@@ -3,7 +3,16 @@
  * Module: lodash.some
  * Original lines: 20635-20726
  */
-  QUnit.module('lodash.some');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var identity = require('../utils/stubs.js').identity;
+
+QUnit.module('lodash.some');
 
   (function() {
     QUnit.test('should return `true` if `predicate` returns truthy for any element', function(assert) {

@@ -3,7 +3,13 @@
  * Module: lodash.unzipWith
  * Original lines: 25246-25289
  */
-  QUnit.module('lodash.unzipWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var slice = Array.prototype.slice;
+
+QUnit.module('lodash.unzipWith');
 
   (function() {
     QUnit.test('should unzip arrays combining regrouped elements with `iteratee`', function(assert) {

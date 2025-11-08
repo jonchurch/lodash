@@ -3,7 +3,13 @@
  * Module: lodash.runInContext
  * Original lines: 19929-19971
  */
-  QUnit.module('lodash.runInContext');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.runInContext');
 
   (function() {
     QUnit.test('should not require a fully populated `context` object', function(assert) {

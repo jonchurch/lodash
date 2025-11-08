@@ -3,7 +3,12 @@
  * Module: lodash.flip
  * Original lines: 6375-6391
  */
-  QUnit.module('lodash.flip');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var slice = require('../utils/helpers.js').slice;
+
+QUnit.module('lodash.flip');
 
   (function() {
     function fn() {

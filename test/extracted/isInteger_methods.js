@@ -3,7 +3,18 @@
  * Module: isInteger methods
  * Original lines: 10726-10785
  */
-  QUnit.module('isInteger methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var MAX_INTEGER = require('../utils/constants.js').MAX_INTEGER;
+var falsey = require('../utils/fixtures.js').falsey;
+var args = require('../utils/helpers.js').args;
+var symbol = require('../utils/es6.js').symbol;
+
+QUnit.module('isInteger methods');
 
   lodashStable.each(['isInteger', 'isSafeInteger'], function(methodName) {
     var func = _[methodName],

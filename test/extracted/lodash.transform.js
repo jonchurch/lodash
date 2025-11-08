@@ -3,7 +3,19 @@
  * Module: lodash.transform
  * Original lines: 24103-24315
  */
-  QUnit.module('lodash.transform');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var typedArrays = require('../utils/fixtures.js').typedArrays;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var stubObject = require('../utils/stubs.js').stubObject;
+var square = require('../utils/stubs.js').square;
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.transform');
 
   (function() {
     function Foo() {

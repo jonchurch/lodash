@@ -3,7 +3,14 @@
  * Module: partial methods
  * Original lines: 17356-17492
  */
-  QUnit.module('partial methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var identity = require('../utils/stubs.js').identity;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('partial methods');
 
   lodashStable.each(['partial', 'partialRight'], function(methodName) {
     var func = _[methodName],

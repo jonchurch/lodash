@@ -3,7 +3,11 @@
  * Module: lodash.sumBy
  * Original lines: 21482-21520
  */
-  QUnit.module('lodash.sumBy');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.sumBy');
 
   (function() {
     var array = [6, 4, 2],

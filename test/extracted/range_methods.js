@@ -3,7 +3,13 @@
  * Module: range methods
  * Original lines: 18637-18737
  */
-  QUnit.module('range methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+
+QUnit.module('range methods');
 
   lodashStable.each(['range', 'rangeRight'], function(methodName) {
     var func = _[methodName],

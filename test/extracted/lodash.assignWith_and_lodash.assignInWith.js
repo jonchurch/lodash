@@ -3,7 +3,13 @@
  * Module: lodash.assignWith and lodash.assignInWith
  * Original lines: 1467-1491
  */
-  QUnit.module('lodash.assignWith and lodash.assignInWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.assignWith and lodash.assignInWith');
 
   lodashStable.each(['assignWith', 'assignInWith'], function(methodName) {
     var func = _[methodName];

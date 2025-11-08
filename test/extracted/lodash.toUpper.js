@@ -3,7 +3,11 @@
  * Module: lodash.toUpper
  * Original lines: 23408-23421
  */
-  QUnit.module('lodash.toUpper');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.toUpper');
 
   (function() {
     QUnit.test('should convert whole string to upper case', function(assert) {

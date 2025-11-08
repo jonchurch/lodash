@@ -3,7 +3,13 @@
  * Module: lodash.concat
  * Original lines: 3229-3309
  */
-  QUnit.module('lodash.concat');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.concat');
 
   (function() {
     QUnit.test('should shallow clone `array`', function(assert) {

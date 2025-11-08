@@ -3,7 +3,19 @@
  * Module: lodash.invoke
  * Original lines: 8717-8813
  */
-  QUnit.module('lodash.invoke');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var stubA = require('../utils/stubs.js').stubA;
+var stubB = require('../utils/stubs.js').stubB;
+var stubOne = require('../utils/stubs.js').stubOne;
+
+var isNpm = typeof module == 'object' && module.exports;
+
+QUnit.module('lodash.invoke');
 
   (function() {
     QUnit.test('should invoke a method on `object`', function(assert) {

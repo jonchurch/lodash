@@ -3,7 +3,16 @@
  * Module: lodash.times
  * Original lines: 23238-23324
  */
-  QUnit.module('lodash.times');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var doubled = require('../utils/stubs.js').doubled;
+var falsey = require('../utils/fixtures.js').falsey;
+var stubArray = require('../utils/stubs.js').stubArray;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.times');
 
   (function() {
     QUnit.test('should coerce non-finite `n` values to `0`', function(assert) {

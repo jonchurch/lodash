@@ -3,40 +3,45 @@
  * Module: lodash.meanBy
  * Original lines: 14620-14657
  */
-  QUnit.module('lodash.meanBy');
 
-  (function() {
-    var objects = [{ 'a': 2 }, { 'a': 3 }, { 'a': 1 }];
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var slice = require('../utils/helpers.js').slice;
 
-    QUnit.test('should work with an `iteratee`', function(assert) {
-      assert.expect(1);
+QUnit.module('lodash.meanBy');
 
-      var actual = _.meanBy(objects, function(object) {
-        return object.a;
-      });
+(function() {
+  var objects = [{ 'a': 2 }, { 'a': 3 }, { 'a': 1 }];
 
-      assert.deepEqual(actual, 2);
+  QUnit.test('should work with an `iteratee`', function(assert) {
+    assert.expect(1);
+
+    var actual = _.meanBy(objects, function(object) {
+      return object.a;
     });
 
-    QUnit.test('should provide correct `iteratee` arguments', function(assert) {
-      assert.expect(1);
+    assert.deepEqual(actual, 2);
+  });
 
-      var args;
+  QUnit.test('should provide correct `iteratee` arguments', function(assert) {
+    assert.expect(1);
 
-      _.meanBy(objects, function() {
-        args || (args = slice.call(arguments));
-      });
+    var args;
 
-      assert.deepEqual(args, [{ 'a': 2 }]);
+    _.meanBy(objects, function() {
+      args || (args = slice.call(arguments));
     });
 
-    QUnit.test('should work with `_.property` shorthands', function(assert) {
-      assert.expect(2);
+    assert.deepEqual(args, [{ 'a': 2 }]);
+  });
 
-      var arrays = [[2], [3], [1]];
-      assert.strictEqual(_.meanBy(arrays, 0), 2);
-      assert.strictEqual(_.meanBy(objects, 'a'), 2);
-    });
-  }());
+  QUnit.test('should work with `_.property` shorthands', function(assert) {
+    assert.expect(2);
+
+    var arrays = [[2], [3], [1]];
+    assert.strictEqual(_.meanBy(arrays, 0), 2);
+    assert.strictEqual(_.meanBy(objects, 'a'), 2);
+  });
+}());
 
   /*--------------------------------------------------------------------------*/

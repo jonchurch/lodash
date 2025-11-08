@@ -3,7 +3,19 @@
  * Module: has methods
  * Original lines: 7820-8060
  */
-  QUnit.module('has methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var defineProperty = require('../utils/helpers.js').defineProperty;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var toArgs = require('../utils/helpers.js').toArgs;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var symbol = require('../utils/es6.js').symbol;
+
+QUnit.module('has methods');
 
   lodashStable.each(['has', 'hasIn'], function(methodName) {
     var func = _[methodName],

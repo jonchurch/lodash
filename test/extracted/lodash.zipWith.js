@@ -3,7 +3,12 @@
  * Module: lodash.zipWith
  * Original lines: 25877-25929
  */
-  QUnit.module('lodash.zipWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.zipWith');
 
   (function() {
     QUnit.test('should zip arrays combining grouped elements with `iteratee`', function(assert) {

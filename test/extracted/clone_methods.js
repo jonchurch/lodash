@@ -3,7 +3,17 @@
  * Module: clone methods
  * Original lines: 2679-3164
  */
-  QUnit.module('clone methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var errors = require('../utils/fixtures.js').errors;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var arrayViews = require('../utils/fixtures.js').arrayViews;
+var symbol = require('../utils/es6.js').symbol;
+var arrayBuffer = require('../utils/es6.js').arrayBuffer;
+
+QUnit.module('clone methods');
 
   (function() {
     function Foo() {

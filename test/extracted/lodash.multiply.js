@@ -3,7 +3,11 @@
  * Module: lodash.multiply
  * Original lines: 16008-16028
  */
-  QUnit.module('lodash.multiply');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.multiply');
 
   (function() {
     QUnit.test('should multiply two numbers', function(assert) {

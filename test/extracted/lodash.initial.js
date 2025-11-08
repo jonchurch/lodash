@@ -3,7 +3,18 @@
  * Module: lodash.initial
  * Original lines: 8296-8371
  */
-  QUnit.module('lodash.initial');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubArray = require('../utils/stubs.js').stubArray;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var isNpm = require('../utils/helpers.js').isNpm;
+
+QUnit.module('lodash.initial');
 
   (function() {
     var array = [1, 2, 3];

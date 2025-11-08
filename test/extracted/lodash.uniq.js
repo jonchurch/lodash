@@ -3,7 +3,12 @@
  * Module: lodash.uniq
  * Original lines: 24943-24957
  */
-  QUnit.module('lodash.uniq');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.uniq');
 
   (function() {
     QUnit.test('should perform an unsorted uniq when used as an iteratee for methods like `_.map`', function(assert) {

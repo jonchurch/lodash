@@ -3,7 +3,16 @@
  * Module: lodash.constant
  * Original lines: 3576-3627
  */
-  QUnit.module('lodash.constant');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.constant');
 
   (function() {
     QUnit.test('should create a function that returns `value`', function(assert) {

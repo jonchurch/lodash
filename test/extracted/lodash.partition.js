@@ -3,7 +3,15 @@
  * Module: lodash.partition
  * Original lines: 17721-17778
  */
-  QUnit.module('lodash.partition');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var identity = require('../utils/stubs.js').identity;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+
+QUnit.module('lodash.partition');
 
   (function() {
     var array = [1, 0, 1];

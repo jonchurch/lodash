@@ -3,7 +3,19 @@
  * Module: lodash.isNative
  * Original lines: 11084-11182
  */
-  QUnit.module('lodash.isNative');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var args = require('../utils/helpers.js').args;
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var noop = require('../utils/stubs.js').noop;
+var emptyObject = require('../utils/helpers.js').emptyObject;
+
+QUnit.module('lodash.isNative');
 
   (function() {
     QUnit.test('should return `true` for native methods', function(assert) {

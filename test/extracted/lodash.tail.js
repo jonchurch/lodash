@@ -3,7 +3,17 @@
  * Module: lodash.tail
  * Original lines: 21566-21664
  */
-  QUnit.module('lodash.tail');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubArray = require('../utils/stubs.js').stubArray;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.tail');
 
   (function() {
     var array = [1, 2, 3];

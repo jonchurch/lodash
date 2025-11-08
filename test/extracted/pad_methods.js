@@ -3,7 +3,12 @@
  * Module: pad methods
  * Original lines: 17199-17257
  */
-  QUnit.module('pad methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('pad methods');
 
   lodashStable.each(['pad', 'padStart', 'padEnd'], function(methodName) {
     var func = _[methodName],

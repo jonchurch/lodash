@@ -3,7 +3,18 @@
  * Module: lodash.cond
  * Original lines: 3310-3387
  */
-  QUnit.module('lodash.cond');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubA = require('../utils/stubs.js').stubA;
+var stubB = require('../utils/stubs.js').stubB;
+var stubC = require('../utils/stubs.js').stubC;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var slice = require('../utils/helpers.js').slice;
+
+QUnit.module('lodash.cond');
 
   (function() {
     QUnit.test('should create a conditional function', function(assert) {

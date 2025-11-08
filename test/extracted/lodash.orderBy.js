@@ -3,7 +3,13 @@
  * Module: lodash.orderBy
  * Original lines: 16029-16098
  */
-  QUnit.module('lodash.orderBy');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+
+QUnit.module('lodash.orderBy');
 
   (function() {
     var objects = [

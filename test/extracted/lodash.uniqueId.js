@@ -3,7 +3,12 @@
  * Module: lodash.uniqueId
  * Original lines: 25072-25100
  */
-  QUnit.module('lodash.uniqueId');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.uniqueId');
 
   (function() {
     QUnit.test('should generate unique ids', function(assert) {

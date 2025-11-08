@@ -3,7 +3,11 @@
  * Module: lodash.lowerCase
  * Original lines: 13255-13268
  */
-  QUnit.module('lodash.lowerCase');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.lowerCase');
 
   (function() {
     QUnit.test('should lowercase as space-separated words', function(assert) {

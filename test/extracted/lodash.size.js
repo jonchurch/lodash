@@ -3,7 +3,17 @@
  * Module: lodash.size
  * Original lines: 20366-20466
  */
-  QUnit.module('lodash.size');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubZero = require('../utils/stubs.js').stubZero;
+var args = require('../utils/helpers.js').args;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+
+QUnit.module('lodash.size');
 
   (function() {
     var array = [1, 2, 3];

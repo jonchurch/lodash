@@ -3,7 +3,15 @@
  * Module: lodash(...).shift
  * Original lines: 26293-26338
  */
-  QUnit.module('lodash(...).shift');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash(...).shift');
 
   (function() {
     QUnit.test('should remove elements from the front of `array`', function(assert) {

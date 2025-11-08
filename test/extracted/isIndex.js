@@ -3,7 +3,16 @@
  * Module: isIndex
  * Original lines: 930-973
  */
-  QUnit.module('isIndex');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('isIndex');
 
   (function() {
     var func = _._isIndex;

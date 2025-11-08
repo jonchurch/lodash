@@ -3,7 +3,12 @@
  * Module: lodash.pickBy
  * Original lines: 17847-17873
  */
-  QUnit.module('lodash.pickBy');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+QUnit.module('lodash.pickBy');
 
   (function() {
     QUnit.test('should work with a predicate argument', function(assert) {

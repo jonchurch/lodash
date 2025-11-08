@@ -3,7 +3,15 @@
  * Module: lodash.invokeMap
  * Original lines: 8814-8948
  */
-  QUnit.module('lodash.invokeMap');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubOne = require('../utils/stubs.js').stubOne;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+
+QUnit.module('lodash.invokeMap');
 
   (function() {
     QUnit.test('should invoke a methods on each element of `collection`', function(assert) {

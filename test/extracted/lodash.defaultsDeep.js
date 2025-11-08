@@ -3,7 +3,13 @@
  * Module: lodash.defaultsDeep
  * Original lines: 4598-4729
  */
-  QUnit.module('lodash.defaultsDeep');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.defaultsDeep');
 
   (function() {
     QUnit.test('should deep assign source properties if missing on `object`', function(assert) {

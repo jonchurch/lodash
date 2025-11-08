@@ -3,7 +3,16 @@
  * Module: sortedIndexBy methods
  * Original lines: 21009-21075
  */
-  QUnit.module('sortedIndexBy methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var MAX_ARRAY_LENGTH = require('../utils/constants.js').MAX_ARRAY_LENGTH;
+var MAX_ARRAY_INDEX = require('../utils/constants.js').MAX_ARRAY_INDEX;
+
+var slice = Array.prototype.slice;
+
+QUnit.module('sortedIndexBy methods');
 
   lodashStable.each(['sortedIndexBy', 'sortedLastIndexBy'], function(methodName) {
     var func = _[methodName],

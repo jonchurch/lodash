@@ -3,7 +3,12 @@
  * Module: lodash.bindKey
  * Original lines: 2136-2215
  */
-  QUnit.module('lodash.bindKey');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.bindKey');
 
   (function() {
     QUnit.test('should work when the target function is overwritten', function(assert) {

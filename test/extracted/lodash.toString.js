@@ -3,7 +3,16 @@
  * Module: lodash.toString
  * Original lines: 24025-24102
  */
-  QUnit.module('lodash.toString');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubString = require('../utils/stubs.js').stubString;
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var isNpm = require('../utils/helpers.js').isNpm;
+
+QUnit.module('lodash.toString');
 
   (function() {
     QUnit.test('should treat nullish values as empty strings', function(assert) {

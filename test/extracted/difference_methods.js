@@ -3,7 +3,16 @@
  * Module: difference methods
  * Original lines: 4894-4995
  */
-  QUnit.module('difference methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var stubOne = require('../utils/stubs.js').stubOne;
+var stubNaN = require('../utils/stubs.js').stubNaN;
+var args = require('../utils/helpers.js').args;
+
+QUnit.module('difference methods');
 
   lodashStable.each(['difference', 'differenceBy', 'differenceWith'], function(methodName) {
     var func = _[methodName];

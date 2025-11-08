@@ -3,7 +3,11 @@
  * Module: lodash.without
  * Original lines: 25421-25451
  */
-  QUnit.module('lodash.without');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.without');
 
   (function() {
     QUnit.test('should return the difference of values', function(assert) {

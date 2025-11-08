@@ -3,7 +3,18 @@
  * Module: lodash.isString
  * Original lines: 11717-11766
  */
-  QUnit.module('lodash.isString');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var args = require('../utils/helpers.js').args;
+var slice = require('../utils/helpers.js').slice;
+var symbol = require('../utils/es6.js').symbol;
+var realm = require('../utils/realm.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.isString');
 
   (function() {
     QUnit.test('should return `true` for strings', function(assert) {

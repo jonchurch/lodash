@@ -3,7 +3,15 @@
  * Module: lodash(...).push
  * Original lines: 26251-26292
  */
-  QUnit.module('lodash(...).push');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash(...).push');
 
   (function() {
     QUnit.test('should append elements to `array`', function(assert) {

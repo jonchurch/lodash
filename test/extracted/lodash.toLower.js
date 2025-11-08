@@ -3,7 +3,11 @@
  * Module: lodash.toLower
  * Original lines: 23394-23407
  */
-  QUnit.module('lodash.toLower');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.toLower');
 
   (function() {
     QUnit.test('should convert whole string to lower case', function(assert) {

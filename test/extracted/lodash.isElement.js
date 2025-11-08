@@ -3,7 +3,18 @@
  * Module: lodash.isElement
  * Original lines: 9306-9379
  */
-  QUnit.module('lodash.isElement');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var args = require('../utils/helpers.js').args;
+var slice = require('../utils/helpers.js').slice;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var symbol = require('../utils/es6.js').symbol;
+
+QUnit.module('lodash.isElement');
 
   (function() {
     QUnit.test('should return `true` for elements', function(assert) {

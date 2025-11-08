@@ -3,7 +3,16 @@
  * Module: lodash.find and lodash.findLast
  * Original lines: 6046-6073
  */
-  QUnit.module('lodash.find and lodash.findLast');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var square = require('../utils/stubs.js').square;
+var isEven = require('../utils/stubs.js').isEven;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.find and lodash.findLast');
 
   lodashStable.each(['find', 'findLast'], function(methodName) {
     var isFind = methodName == 'find';

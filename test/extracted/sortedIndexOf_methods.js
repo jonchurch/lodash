@@ -3,7 +3,12 @@
  * Module: sortedIndexOf methods
  * Original lines: 21076-21091
  */
-  QUnit.module('sortedIndexOf methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('sortedIndexOf methods');
 
   lodashStable.each(['sortedIndexOf', 'sortedLastIndexOf'], function(methodName) {
     var func = _[methodName],

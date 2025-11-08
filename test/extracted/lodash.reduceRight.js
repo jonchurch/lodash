@@ -3,7 +3,13 @@
  * Module: lodash.reduceRight
  * Original lines: 18888-18949
  */
-  QUnit.module('lodash.reduceRight');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var slice = Array.prototype.slice;
+
+QUnit.module('lodash.reduceRight');
 
   (function() {
     var array = [1, 2, 3];

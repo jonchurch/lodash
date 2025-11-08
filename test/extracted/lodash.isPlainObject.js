@@ -3,7 +3,20 @@
  * Module: lodash.isPlainObject
  * Original lines: 11463-11601
  */
-  QUnit.module('lodash.isPlainObject');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var create = require('../utils/helpers.js').create;
+var objectProto = require('../utils/helpers.js').objectProto;
+var defineProperty = require('../utils/helpers.js').defineProperty;
+var realm = require('../utils/helpers.js').realm;
+
+QUnit.module('lodash.isPlainObject');
 
   (function() {
     var element = document && document.createElement('div');

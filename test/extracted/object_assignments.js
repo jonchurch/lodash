@@ -3,7 +3,15 @@
  * Module: object assignments
  * Original lines: 7256-7460
  */
-  QUnit.module('object assignments');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var primitives = require('../utils/fixtures.js').primitives;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('object assignments');
 
   lodashStable.each(['assign', 'assignIn', 'defaults', 'defaultsDeep', 'merge'], function(methodName) {
     var func = _[methodName],

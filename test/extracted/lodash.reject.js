@@ -3,7 +3,12 @@
  * Module: lodash.reject
  * Original lines: 19044-19057
  */
-  QUnit.module('lodash.reject');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var isEven = require('../utils/stubs.js').isEven;
+
+QUnit.module('lodash.reject');
 
   (function() {
     var array = [1, 2, 3];

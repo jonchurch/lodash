@@ -3,7 +3,13 @@
  * Module: union methods
  * Original lines: 24692-24729
  */
-  QUnit.module('union methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+
+QUnit.module('union methods');
 
   lodashStable.each(['union', 'unionBy', 'unionWith'], function(methodName) {
     var func = _[methodName];

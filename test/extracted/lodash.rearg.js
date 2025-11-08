@@ -3,7 +3,13 @@
  * Module: lodash.rearg
  * Original lines: 18738-18825
  */
-  QUnit.module('lodash.rearg');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+
+QUnit.module('lodash.rearg');
 
   (function() {
     function fn() {

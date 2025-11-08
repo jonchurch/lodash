@@ -3,7 +3,14 @@
  * Module: lodash.throttle
  * Original lines: 22768-23037
  */
-  QUnit.module('lodash.throttle');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var identity = require('../utils/helpers.js').identity;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.throttle');
 
   (function() {
     QUnit.test('should throttle a function', function(assert) {

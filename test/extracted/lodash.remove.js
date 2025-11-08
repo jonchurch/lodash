@@ -3,7 +3,13 @@
  * Module: lodash.remove
  * Original lines: 19184-19280
  */
-  QUnit.module('lodash.remove');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var isEven = require('../utils/stubs.js').isEven;
+var slice = require('../utils/helpers.js').slice;
+
+QUnit.module('lodash.remove');
 
   (function() {
     QUnit.test('should modify the array and return removed elements', function(assert) {

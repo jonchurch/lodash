@@ -3,7 +3,13 @@
  * Module: stub methods
  * Original lines: 21346-21378
  */
-  QUnit.module('stub methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+
+QUnit.module('stub methods');
 
   lodashStable.each(['noop', 'stubTrue', 'stubFalse', 'stubArray', 'stubObject', 'stubString'], function(methodName) {
     var func = _[methodName];

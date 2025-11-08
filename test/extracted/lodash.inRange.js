@@ -3,7 +3,14 @@
  * Module: lodash.inRange
  * Original lines: 8372-8437
  */
-  QUnit.module('lodash.inRange');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+QUnit.module('lodash.inRange');
 
   (function() {
     QUnit.test('should work with an `end`', function(assert) {

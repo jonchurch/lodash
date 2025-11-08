@@ -3,7 +3,16 @@
  * Module: keys methods
  * Original lines: 12971-13169
  */
-  QUnit.module('keys methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var strictArgs = require('../utils/helpers.js').strictArgs;
+var primitives = require('../utils/fixtures.js').primitives;
+var stubArray = require('../utils/stubs.js').stubArray;
+
+QUnit.module('keys methods');
 
   lodashStable.each(['keys', 'keysIn'], function(methodName) {
     var func = _[methodName],

@@ -3,7 +3,11 @@
  * Module: lodash.startCase
  * Original lines: 21226-21239
  */
-  QUnit.module('lodash.startCase');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.startCase');
 
   (function() {
     QUnit.test('should uppercase only the first character of each word', function(assert) {

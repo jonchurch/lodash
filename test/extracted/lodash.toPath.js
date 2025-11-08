@@ -3,7 +3,14 @@
  * Module: lodash.toPath
  * Original lines: 23908-23988
  */
-  QUnit.module('lodash.toPath');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.toPath');
 
   (function() {
     QUnit.test('should convert a string to a path', function(assert) {

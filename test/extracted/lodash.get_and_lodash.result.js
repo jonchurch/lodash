@@ -3,7 +3,18 @@
  * Module: lodash.get and lodash.result
  * Original lines: 19394-19575
  */
-  QUnit.module('lodash.get and lodash.result');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var empties = require('../utils/fixtures.js').empties;
+var noop = require('../utils/stubs.js').noop;
+
+var numberProto = Number.prototype;
+
+QUnit.module('lodash.get and lodash.result');
 
   lodashStable.each(['get', 'result'], function(methodName) {
     var func = _[methodName];

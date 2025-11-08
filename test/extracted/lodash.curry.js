@@ -3,7 +3,14 @@
  * Module: lodash.curry
  * Original lines: 3814-3971
  */
-  QUnit.module('lodash.curry');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubArray = require('../utils/stubs.js').stubArray;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.curry');
 
   (function() {
     function fn(a, b, c, d) {

@@ -3,7 +3,16 @@
  * Module: lodash.mapKeys and lodash.mapValues
  * Original lines: 13722-13765
  */
-  QUnit.module('lodash.mapKeys and lodash.mapValues');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubObject = require('../utils/stubs.js').stubObject;
+var noop = require('../utils/stubs.js').noop;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.mapKeys and lodash.mapValues');
 
   lodashStable.each(['mapKeys', 'mapValues'], function(methodName) {
     var func = _[methodName],

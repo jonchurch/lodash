@@ -3,7 +3,12 @@
  * Module: lodash.truncate
  * Original lines: 22681-22767
  */
-  QUnit.module('lodash.truncate');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.truncate');
 
   (function() {
     var string = 'hi-diddly-ho there, neighborino';

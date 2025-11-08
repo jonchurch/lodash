@@ -3,7 +3,11 @@
  * Module: lodash.eq
  * Original lines: 5475-5499
  */
-  QUnit.module('lodash.eq');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.eq');
 
   (function() {
     QUnit.test('should perform a `SameValueZero` comparison of two values', function(assert) {

@@ -3,7 +3,15 @@
  * Module: uncommon symbols
  * Original lines: 24442-24614
  */
-  QUnit.module('uncommon symbols');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var emojiVar = require('../utils/unicode.js').emojiVar;
+var comboMarks = require('../utils/unicode.js').comboMarks;
+var fitzModifiers = require('../utils/unicode.js').fitzModifiers;
+
+QUnit.module('uncommon symbols');
 
   (function() {
     var flag = '\ud83c\uddfa\ud83c\uddf8',

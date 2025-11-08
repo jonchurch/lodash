@@ -3,7 +3,12 @@
  * Module: forOwn methods
  * Original lines: 6838-6855
  */
-  QUnit.module('forOwn methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('forOwn methods');
 
   lodashStable.each(['forOwn', 'forOwnRight'], function(methodName) {
     var func = _[methodName];

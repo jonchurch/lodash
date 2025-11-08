@@ -3,7 +3,16 @@
  * Module: map caches
  * Original lines: 1042-1109
  */
-  QUnit.module('map caches');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var symbol = require('../utils/es6.js').symbol;
+var noop = require('../utils/stubs.js').noop;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var mapCaches = require('../utils/test-utils.js').mapCaches;
+
+QUnit.module('map caches');
 
   (function() {
     var keys = [null, undefined, false, true, 1, -Infinity, NaN, {}, 'a', symbol || noop];

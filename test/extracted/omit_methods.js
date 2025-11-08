@@ -3,7 +3,15 @@
  * Module: omit methods
  * Original lines: 16598-16728
  */
-  QUnit.module('omit methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var symbol = require('../utils/es6.js').symbol;
+var defineProperty = require('../utils/helpers.js').defineProperty;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('omit methods');
 
   lodashStable.each(['omit', 'omitBy'], function(methodName) {
     var expected = { 'b': 2, 'd': 4 },

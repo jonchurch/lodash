@@ -3,7 +3,19 @@
  * Module: lodash.unset
  * Original lines: 25101-25245
  */
-  QUnit.module('lodash.unset');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+var numberProto = Number.prototype;
+var stringProto = String.prototype;
+var defineProperty = Object.defineProperty;
+var isStrict = false;
+
+QUnit.module('lodash.unset');
 
   (function() {
     QUnit.test('should unset property values', function(assert) {

@@ -3,6 +3,11 @@
  * Module: lodash.sortBy
  * Original lines: 20727-20818
  */
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
   QUnit.module('lodash.sortBy');
 
   (function() {

@@ -3,7 +3,14 @@
  * Module: lodash.mergeWith
  * Original lines: 15276-15353
  */
-  QUnit.module('lodash.mergeWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+var identity = require('../utils/stubs.js').identity;
+
+QUnit.module('lodash.mergeWith');
 
   (function() {
     QUnit.test('should handle merging when `customizer` returns `undefined`', function(assert) {

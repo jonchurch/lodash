@@ -3,7 +3,13 @@
  * Module: lodash.invert
  * Original lines: 8616-8660
  */
-  QUnit.module('lodash.invert');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var isNpm = require('../utils/helpers.js').isNpm;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.invert');
 
   (function() {
     QUnit.test('should invert an object', function(assert) {

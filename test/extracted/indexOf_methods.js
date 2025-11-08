@@ -3,7 +3,14 @@
  * Module: indexOf methods
  * Original lines: 13405-13477
  */
-  QUnit.module('indexOf methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('indexOf methods');
 
   lodashStable.each(['indexOf', 'lastIndexOf', 'sortedIndexOf', 'sortedLastIndexOf'], function(methodName) {
     var func = _[methodName],

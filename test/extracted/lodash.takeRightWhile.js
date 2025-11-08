@@ -3,7 +3,15 @@
  * Module: lodash.takeRightWhile
  * Original lines: 21829-21948
  */
-  QUnit.module('lodash.takeRightWhile');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var square = require('../utils/stubs.js').square;
+
+QUnit.module('lodash.takeRightWhile');
 
   (function() {
     var array = [1, 2, 3, 4];

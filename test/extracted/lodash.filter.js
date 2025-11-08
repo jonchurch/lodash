@@ -3,7 +3,16 @@
  * Module: lodash.filter
  * Original lines: 5850-6045
  */
-  QUnit.module('lodash.filter');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var isEven = require('../utils/stubs.js').isEven;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+
+QUnit.module('lodash.filter');
 
   (function() {
     var array = [1, 2, 3];

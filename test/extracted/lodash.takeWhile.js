@@ -3,7 +3,18 @@
  * Module: lodash.takeWhile
  * Original lines: 21949-22081
  */
-  QUnit.module('lodash.takeWhile');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var square = require('../utils/stubs.js').square;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+
+var slice = Array.prototype.slice;
+var isNpm = typeof module != 'undefined' && module.exports;
+
+QUnit.module('lodash.takeWhile');
 
   (function() {
     var array = [1, 2, 3, 4];

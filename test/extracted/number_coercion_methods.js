@@ -3,7 +3,20 @@
  * Module: number coercion methods
  * Original lines: 23532-23805
  */
-  QUnit.module('number coercion methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var identity = require('../utils/stubs.js').identity;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var symbol = require('../utils/es6.js').symbol;
+var whitespace = require('../utils/unicode.js').whitespace;
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+var MAX_INTEGER = require('../utils/constants.js').MAX_INTEGER;
+var MAX_ARRAY_LENGTH = require('../utils/constants.js').MAX_ARRAY_LENGTH;
+
+QUnit.module('number coercion methods');
 
   lodashStable.each(['toFinite', 'toInteger', 'toNumber', 'toSafeInteger'], function(methodName) {
     var func = _[methodName];

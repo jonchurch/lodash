@@ -3,7 +3,12 @@
  * Module: lodash.before
  * Original lines: 1741-1778
  */
-  QUnit.module('lodash.before');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.before');
 
   (function() {
     function before(n, times) {

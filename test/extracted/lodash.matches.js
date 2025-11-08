@@ -3,7 +3,12 @@
  * Module: lodash.matches
  * Original lines: 13766-13800
  */
-  QUnit.module('lodash.matches');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.matches');
 
   (function() {
     QUnit.test('should not change behavior if `source` is modified', function(assert) {

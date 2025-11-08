@@ -3,7 +3,13 @@
  * Module: extremum methods
  * Original lines: 15694-15773
  */
-  QUnit.module('extremum methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('extremum methods');
 
   lodashStable.each(['max', 'maxBy', 'min', 'minBy'], function(methodName) {
     var func = _[methodName],

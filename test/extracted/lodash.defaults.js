@@ -3,7 +3,13 @@
  * Module: lodash.defaults
  * Original lines: 4520-4597
  */
-  QUnit.module('lodash.defaults');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var objectProto = Object.prototype;
+
+QUnit.module('lodash.defaults');
 
   (function() {
     QUnit.test('should assign source properties if missing on `object`', function(assert) {

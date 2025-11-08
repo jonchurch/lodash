@@ -3,7 +3,13 @@
  * Module: lodash.setWith
  * Original lines: 20104-20126
  */
-  QUnit.module('lodash.setWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.setWith');
 
   (function() {
     QUnit.test('should work with a `customizer` callback', function(assert) {

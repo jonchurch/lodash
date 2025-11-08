@@ -3,7 +3,12 @@
  * Module: update methods
  * Original lines: 25313-25338
  */
-  QUnit.module('update methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('update methods');
 
   lodashStable.each(['update', 'updateWith'], function(methodName) {
     var func = _[methodName],

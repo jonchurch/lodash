@@ -3,7 +3,15 @@
  * Module: methods using `createWrapper`
  * Original lines: 17513-17720
  */
-  QUnit.module('methods using `createWrapper`');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var HOT_COUNT = require('../utils/constants.js').HOT_COUNT;
+var slice = [].slice;
+var push = [].push;
+
+QUnit.module('methods using `createWrapper`');
 
   (function() {
     function fn() {

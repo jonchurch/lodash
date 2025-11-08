@@ -3,7 +3,15 @@
  * Module: lodash constructor
  * Original lines: 1110-1168
  */
-  QUnit.module('lodash constructor');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash constructor');
 
   (function() {
     var values = empties.concat(true, 1, 'a'),

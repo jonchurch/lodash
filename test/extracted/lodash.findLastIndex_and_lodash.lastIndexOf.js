@@ -3,7 +3,15 @@
  * Module: lodash.findLastIndex and lodash.lastIndexOf
  * Original lines: 13327-13404
  */
-  QUnit.module('lodash.findLastIndex and lodash.lastIndexOf');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var identity = require('../utils/stubs.js').identity;
+var stubZero = require('../utils/stubs.js').stubZero;
+var falsey = require('../utils/fixtures.js').falsey;
+
+QUnit.module('lodash.findLastIndex and lodash.lastIndexOf');
 
   lodashStable.each(['findLastIndex', 'lastIndexOf'], function(methodName) {
     var array = [1, 2, 3, 1, 2, 3],

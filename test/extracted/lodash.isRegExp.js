@@ -3,6 +3,16 @@
  * Module: lodash.isRegExp
  * Original lines: 11602-11649
  */
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var args = require('../utils/helpers.js').args;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var symbol = require('../utils/es6.js').symbol;
+
   QUnit.module('lodash.isRegExp');
 
   (function() {

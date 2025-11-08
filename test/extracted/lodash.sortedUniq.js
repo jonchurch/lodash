@@ -3,7 +3,12 @@
  * Module: lodash.sortedUniq
  * Original lines: 21092-21107
  */
-  QUnit.module('lodash.sortedUniq');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.sortedUniq');
 
   (function() {
     QUnit.test('should return unique values of a sorted array', function(assert) {

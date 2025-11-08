@@ -3,7 +3,16 @@
  * Module: filter methods
  * Original lines: 19058-19183
  */
-  QUnit.module('filter methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+var square = require('../utils/stubs.js').square;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('filter methods');
 
   lodashStable.each(['filter', 'reject'], function(methodName) {
     var array = [1, 2, 3, 4],

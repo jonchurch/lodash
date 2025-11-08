@@ -3,7 +3,14 @@
  * Module: lodash.unzip and lodash.zip
  * Original lines: 25930-26010
  */
-  QUnit.module('lodash.unzip and lodash.zip');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubArray = require('../utils/stubs.js').stubArray;
+
+QUnit.module('lodash.unzip and lodash.zip');
 
   lodashStable.each(['unzip', 'zip'], function(methodName, index) {
     var func = _[methodName];

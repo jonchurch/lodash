@@ -3,7 +3,12 @@
  * Module: curry methods
  * Original lines: 4131-4186
  */
-  QUnit.module('curry methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('curry methods');
 
   lodashStable.each(['curry', 'curryRight'], function(methodName) {
     var func = _[methodName],

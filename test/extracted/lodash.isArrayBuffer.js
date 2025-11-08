@@ -3,7 +3,20 @@
  * Module: lodash.isArrayBuffer
  * Original lines: 9044-9096
  */
-  QUnit.module('lodash.isArrayBuffer');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var args = require('../utils/helpers.js').args;
+var slice = require('../utils/helpers.js').slice;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var symbol = require('../utils/es6.js').symbol;
+var arrayBuffer = require('../utils/es6.js').arrayBuffer;
+var realm = require('../utils/helpers.js').realm;
+
+QUnit.module('lodash.isArrayBuffer');
 
   (function() {
     QUnit.test('should return `true` for array buffers', function(assert) {

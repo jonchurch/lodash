@@ -3,7 +3,16 @@
  * Module: lodash.takeRight
  * Original lines: 21747-21828
  */
-  QUnit.module('lodash.takeRight');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.takeRight');
 
   (function() {
     var array = [1, 2, 3];

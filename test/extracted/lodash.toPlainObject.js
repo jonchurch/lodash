@@ -3,7 +3,13 @@
  * Module: lodash.toPlainObject
  * Original lines: 23989-24024
  */
-  QUnit.module('lodash.toPlainObject');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+
+QUnit.module('lodash.toPlainObject');
 
   (function() {
     QUnit.test('should flatten inherited string keyed properties', function(assert) {

@@ -3,7 +3,11 @@
  * Module: lodash.conforms
  * Original lines: 3388-3406
  */
-  QUnit.module('lodash.conforms');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.conforms');
 
   (function() {
     QUnit.test('should not change behavior if `source` is modified', function(assert) {

@@ -3,7 +3,15 @@
  * Module: lodash.omit
  * Original lines: 16493-16579
  */
-  QUnit.module('lodash.omit');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var toArgs = require('../utils/helpers.js').toArgs;
+var objectProto = require('../utils/helpers.js').objectProto;
+var stringProto = require('../utils/helpers.js').stringProto;
+
+QUnit.module('lodash.omit');
 
   (function() {
     var args = toArgs(['a', 'c']),

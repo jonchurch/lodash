@@ -3,7 +3,16 @@
  * Module: lodash.nth
  * Original lines: 16339-16417
  */
-  QUnit.module('lodash.nth');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubA = require('../utils/stubs.js').stubA;
+var stubB = require('../utils/stubs.js').stubB;
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.nth');
 
   (function() {
     var array = ['a', 'b', 'c', 'd'];

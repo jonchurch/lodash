@@ -3,7 +3,16 @@
  * Module: lodash.isFinite
  * Original lines: 10579-10634
  */
-  QUnit.module('lodash.isFinite');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var symbol = require('../utils/es6.js').symbol;
+
+QUnit.module('lodash.isFinite');
 
   (function() {
     QUnit.test('should return `true` for finite values', function(assert) {

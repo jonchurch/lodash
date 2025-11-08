@@ -3,7 +3,14 @@
  * Module: lodash.random
  * Original lines: 18515-18636
  */
-  QUnit.module('lodash.random');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var MAX_INTEGER = require('../utils/constants.js').MAX_INTEGER;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+QUnit.module('lodash.random');
 
   (function() {
     var array = Array(1000);

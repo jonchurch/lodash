@@ -3,7 +3,15 @@
  * Module: lodash.memoize
  * Original lines: 14658-14852
  */
-  QUnit.module('lodash.memoize');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var identity = require('../utils/stubs.js').identity;
+
+QUnit.module('lodash.memoize');
 
   (function() {
     function CustomCache() {

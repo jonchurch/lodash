@@ -3,7 +3,19 @@
  * Module: lodash.isSymbol
  * Original lines: 11767-11819
  */
-  QUnit.module('lodash.isSymbol');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var args = require('../utils/helpers.js').args;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var symbol = require('../utils/es6.js').symbol;
+var slice = require('../utils/stubs.js').slice;
+var realm = require('../utils/realm.js');
+
+QUnit.module('lodash.isSymbol');
 
   (function() {
     QUnit.test('should return `true` for symbols', function(assert) {

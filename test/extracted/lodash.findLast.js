@@ -3,7 +3,14 @@
  * Module: lodash.findLast
  * Original lines: 6264-6374
  */
-  QUnit.module('lodash.findLast');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var falsey = require('../utils/fixtures.js').falsey;
+
+QUnit.module('lodash.findLast');
 
   (function() {
     var resolve = lodashStable.curry(lodashStable.eq);

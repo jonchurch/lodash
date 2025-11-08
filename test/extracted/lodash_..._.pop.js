@@ -3,7 +3,15 @@
  * Module: lodash(...).pop
  * Original lines: 26205-26250
  */
-  QUnit.module('lodash(...).pop');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+QUnit.module('lodash(...).pop');
 
   (function() {
     QUnit.test('should remove elements from the end of `array`', function(assert) {

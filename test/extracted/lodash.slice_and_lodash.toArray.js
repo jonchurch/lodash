@@ -3,7 +3,14 @@
  * Module: lodash.slice and lodash.toArray
  * Original lines: 23422-23474
  */
-  QUnit.module('lodash.slice and lodash.toArray');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.slice and lodash.toArray');
 
   lodashStable.each(['slice', 'toArray'], function(methodName) {
     var array = [1, 2, 3],

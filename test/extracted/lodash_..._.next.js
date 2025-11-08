@@ -3,7 +3,15 @@
  * Module: lodash(...).next
  * Original lines: 26049-26146
  */
-  QUnit.module('lodash(...).next');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+
+QUnit.module('lodash(...).next');
 
   lodashStable.each([false, true], function(implicit) {
     function chain(value) {

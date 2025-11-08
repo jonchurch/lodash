@@ -3,7 +3,16 @@
  * Module: math operator methods
  * Original lines: 21400-21481
  */
-  QUnit.module('math operator methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+var isNpm = (typeof require === 'function' && !require.resolve.toString().match(/\[native code\]/)) ? true : false;
+
+QUnit.module('math operator methods');
 
   lodashStable.each(['add', 'divide', 'multiply', 'subtract'], function(methodName) {
     var func = _[methodName],

@@ -3,7 +3,16 @@
  * Module: lodash.overEvery
  * Original lines: 16849-16956
  */
-  QUnit.module('lodash.overEvery');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubOne = require('../utils/stubs.js').stubOne;
+var stubA = require('../utils/stubs.js').stubA;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var slice = require('../utils/helpers.js').slice;
+
+QUnit.module('lodash.overEvery');
 
   (function() {
     QUnit.test('should create a function that returns `true` if all predicates return truthy', function(assert) {

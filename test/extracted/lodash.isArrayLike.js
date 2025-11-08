@@ -3,7 +3,21 @@
  * Module: lodash.isArrayLike
  * Original lines: 9097-9153
  */
-  QUnit.module('lodash.isArrayLike');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var asyncFunc = require('../utils/helpers.js').asyncFunc;
+var genFunc = require('../utils/helpers.js').genFunc;
+var slice = require('../utils/helpers.js').slice;
+var realm = require('../utils/helpers.js').realm;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var symbol = require('../utils/es6.js').symbol;
+
+QUnit.module('lodash.isArrayLike');
 
   (function() {
     QUnit.test('should return `true` for array-like values', function(assert) {

@@ -3,7 +3,16 @@
  * Module: lodash.fill
  * Original lines: 5685-5849
  */
-  QUnit.module('lodash.fill');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+var isNpm = typeof module == 'object' && module.exports;
+
+QUnit.module('lodash.fill');
 
   (function() {
     QUnit.test('should use a default `start` of `0` and a default `end` of `length`', function(assert) {

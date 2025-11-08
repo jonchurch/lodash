@@ -3,7 +3,13 @@
  * Module: lodash.flatMapDepth
  * Original lines: 6392-6432
  */
-  QUnit.module('lodash.flatMapDepth');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var identity = require('../utils/stubs.js').identity;
+
+QUnit.module('lodash.flatMapDepth');
 
   (function() {
     var array = [1, [2, [3, [4]], 5]];

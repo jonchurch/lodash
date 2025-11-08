@@ -3,7 +3,12 @@
  * Module: lodash.pullAllWith
  * Original lines: 18301-18316
  */
-  QUnit.module('lodash.pullAllWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.pullAllWith');
 
   (function() {
     QUnit.test('should work with a `comparator`', function(assert) {

@@ -3,7 +3,16 @@
  * Module: lodash.assign and lodash.assignIn
  * Original lines: 1352-1454
  */
-  QUnit.module('lodash.assign and lodash.assignIn');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubOne = require('../utils/stubs.js').stubOne;
+var noop = require('../utils/stubs.js').noop;
+var stubNaN = require('../utils/stubs.js').stubNaN;
+var defineProperty = require('../utils/helpers.js').setProperty;
+
+QUnit.module('lodash.assign and lodash.assignIn');
 
   lodashStable.each(['assign', 'assignIn'], function(methodName) {
     var func = _[methodName];

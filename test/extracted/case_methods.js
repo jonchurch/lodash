@@ -3,7 +3,16 @@
  * Module: case methods
  * Original lines: 2216-2356
  */
-  QUnit.module('case methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var burredLetters = require('../utils/unicode.js').burredLetters;
+var deburredLetters = require('../utils/unicode.js').deburredLetters;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('case methods');
 
   lodashStable.each(['camel', 'kebab', 'lower', 'snake', 'start', 'upper'], function(caseName) {
     var methodName = caseName + 'Case',

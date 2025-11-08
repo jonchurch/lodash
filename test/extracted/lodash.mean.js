@@ -3,7 +3,14 @@
  * Module: lodash.mean
  * Original lines: 14598-14619
  */
-  QUnit.module('lodash.mean');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var stubNaN = require('../utils/stubs.js').stubNaN;
+
+QUnit.module('lodash.mean');
 
   (function() {
     QUnit.test('should return the mean of an array of numbers', function(assert) {

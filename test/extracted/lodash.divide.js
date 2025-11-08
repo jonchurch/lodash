@@ -3,7 +3,11 @@
  * Module: lodash.divide
  * Original lines: 5054-5074
  */
-  QUnit.module('lodash.divide');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.divide');
 
   (function() {
     QUnit.test('should divide two numbers', function(assert) {

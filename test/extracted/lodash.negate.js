@@ -3,7 +3,14 @@
  * Module: lodash.negate
  * Original lines: 16206-16251
  */
-  QUnit.module('lodash.negate');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var isEven = require('../utils/stubs.js').isEven;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+QUnit.module('lodash.negate');
 
   (function() {
     QUnit.test('should create a function that negates the result of `func`', function(assert) {

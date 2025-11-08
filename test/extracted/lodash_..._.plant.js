@@ -3,7 +3,14 @@
  * Module: lodash(...).plant
  * Original lines: 26147-26204
  */
-  QUnit.module('lodash(...).plant');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var square = require('../utils/stubs.js').square;
+
+QUnit.module('lodash(...).plant');
 
   (function() {
     QUnit.test('should clone the chained sequence planting `value` as the wrapped value', function(assert) {

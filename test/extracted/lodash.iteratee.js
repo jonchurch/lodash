@@ -3,7 +3,13 @@
  * Module: lodash.iteratee
  * Original lines: 12116-12301
  */
-  QUnit.module('lodash.iteratee');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubFalse = require('../utils/stubs.js').stubFalse;
+
+QUnit.module('lodash.iteratee');
 
   (function() {
     QUnit.test('should provide arguments to `func`', function(assert) {

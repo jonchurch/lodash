@@ -3,7 +3,12 @@
  * Module: lodash.now
  * Original lines: 16305-16338
  */
-  QUnit.module('lodash.now');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var stubA = require('../utils/stubs.js').stubA;
+
+QUnit.module('lodash.now');
 
   (function() {
     QUnit.test('should return the number of milliseconds that have elapsed since the Unix epoch', function(assert) {

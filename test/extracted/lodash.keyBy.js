@@ -3,7 +3,16 @@
  * Module: lodash.keyBy
  * Original lines: 12876-12970
  */
-  QUnit.module('lodash.keyBy');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var square = require('../utils/stubs.js').square;
+var isEven = require('../utils/stubs.js').isEven;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.keyBy');
 
   (function() {
     var array = [

@@ -3,7 +3,14 @@
  * Module: lodash.intersectionWith
  * Original lines: 8585-8615
  */
-  QUnit.module('lodash.intersectionWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var stubZero = require('../utils/stubs.js').stubZero;
+
+QUnit.module('lodash.intersectionWith');
 
   (function() {
     QUnit.test('should work with a `comparator`', function(assert) {

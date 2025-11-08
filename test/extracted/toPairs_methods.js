@@ -3,7 +3,13 @@
  * Module: toPairs methods
  * Original lines: 23830-23907
  */
-  QUnit.module('toPairs methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('toPairs methods');
 
   lodashStable.each(['toPairs', 'toPairsIn'], function(methodName) {
     var func = _[methodName],

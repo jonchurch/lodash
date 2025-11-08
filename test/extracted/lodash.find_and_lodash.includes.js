@@ -3,7 +3,15 @@
  * Module: lodash.find and lodash.includes
  * Original lines: 6074-6187
  */
-  QUnit.module('lodash.find and lodash.includes');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var identity = require('../utils/stubs.js').identity;
+var args = require('../utils/helpers.js').args;
+var falsey = require('../utils/fixtures.js').falsey;
+
+QUnit.module('lodash.find and lodash.includes');
 
   lodashStable.each(['includes', 'find'], function(methodName) {
     var func = _[methodName],

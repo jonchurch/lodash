@@ -3,7 +3,12 @@
  * Module: lodash(...).value
  * Original lines: 26469-26528
  */
-  QUnit.module('lodash(...).value');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash(...).value');
 
   (function() {
     QUnit.test('should execute the chained sequence and extract the unwrapped value', function(assert) {

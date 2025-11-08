@@ -3,7 +3,14 @@
  * Module: lodash.dropWhile
  * Original lines: 5321-5411
  */
-  QUnit.module('lodash.dropWhile');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.dropWhile');
 
   (function() {
     var array = [1, 2, 3, 4];

@@ -3,7 +3,17 @@
  * Module: lodash.merge
  * Original lines: 14879-15275
  */
-  QUnit.module('lodash.merge');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var typedArrays = require('../utils/fixtures.js').typedArrays;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var args = require('../utils/helpers.js').args;
+var defineProperty = require('../utils/helpers.js').defineProperty;
+
+QUnit.module('lodash.merge');
 
   (function() {
     QUnit.test('should merge `source` into `object`', function(assert) {

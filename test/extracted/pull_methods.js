@@ -3,7 +3,12 @@
  * Module: pull methods
  * Original lines: 18317-18372
  */
-  QUnit.module('pull methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('pull methods');
 
   lodashStable.each(['pull', 'pullAll', 'pullAllWith'], function(methodName) {
     var func = _[methodName],

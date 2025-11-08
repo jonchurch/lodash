@@ -3,7 +3,15 @@
  * Module: lodash.sampleSize
  * Original lines: 20010-20103
  */
-  QUnit.module('lodash.sampleSize');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var empties = require('../utils/fixtures.js').empties;
+var stubArray = require('../utils/stubs.js').stubArray;
+
+QUnit.module('lodash.sampleSize');
 
   (function() {
     var array = [1, 2, 3];

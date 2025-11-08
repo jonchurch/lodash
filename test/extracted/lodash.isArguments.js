@@ -3,7 +3,19 @@
  * Module: lodash.isArguments
  * Original lines: 8949-8996
  */
-  QUnit.module('lodash.isArguments');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var strictArgs = require('../utils/helpers.js').strictArgs;
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var noop = require('../utils/stubs.js').noop;
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.isArguments');
 
   (function() {
     QUnit.test('should return `true` for `arguments` objects', function(assert) {

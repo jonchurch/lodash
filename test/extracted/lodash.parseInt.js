@@ -3,7 +3,15 @@
  * Module: lodash.parseInt
  * Original lines: 17258-17355
  */
-  QUnit.module('lodash.parseInt');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var whitespace = require('../utils/unicode.js').whitespace;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var stubZero = require('../utils/stubs.js').stubZero;
+
+QUnit.module('lodash.parseInt');
 
   (function() {
     QUnit.test('should accept a `radix`', function(assert) {

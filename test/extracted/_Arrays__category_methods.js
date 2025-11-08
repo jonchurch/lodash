@@ -3,7 +3,13 @@
  * Module: "Arrays" category methods
  * Original lines: 26742-26817
  */
-  QUnit.module('"Arrays" category methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var toArgs = require('../utils/helpers.js').toArgs;
+var identity = require('../utils/stubs.js').identity;
+
+QUnit.module('"Arrays" category methods');
 
   (function() {
     var args = toArgs([1, null, [3], null, 5]),

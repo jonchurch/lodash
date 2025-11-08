@@ -3,7 +3,12 @@
  * Module: lodash.shuffle
  * Original lines: 20328-20365
  */
-  QUnit.module('lodash.shuffle');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.shuffle');
 
   (function() {
     var array = [1, 2, 3],

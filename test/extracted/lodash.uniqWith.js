@@ -3,7 +3,14 @@
  * Module: lodash.uniqWith
  * Original lines: 25040-25071
  */
-  QUnit.module('lodash.uniqWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+
+QUnit.module('lodash.uniqWith');
 
   (function() {
     QUnit.test('should work with a `comparator`', function(assert) {

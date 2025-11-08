@@ -3,7 +3,19 @@
  * Module: `__proto__` property bugs
  * Original lines: 7507-7600
  */
-  QUnit.module('`__proto__` property bugs');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var create = Object.create;
+var funcProto = Function.prototype;
+var objectProto = Object.prototype;
+
+QUnit.module('`__proto__` property bugs');
 
   (function() {
     QUnit.test('should work with the "__proto__" key in internal data objects', function(assert) {

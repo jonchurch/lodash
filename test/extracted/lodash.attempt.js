@@ -3,7 +3,16 @@
  * Module: lodash.attempt
  * Original lines: 1657-1740
  */
-  QUnit.module('lodash.attempt');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var errors = require('../utils/fixtures.js').errors;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var CustomError = require('../utils/helpers.js').CustomError;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.attempt');
 
   (function() {
     QUnit.test('should return the result of `func`', function(assert) {

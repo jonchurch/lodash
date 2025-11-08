@@ -3,7 +3,18 @@
  * Module: intersection methods
  * Original lines: 8438-8556
  */
-  QUnit.module('intersection methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var stubNaN = require('../utils/stubs.js').stubNaN;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+var isNpm = (typeof module != 'undefined' && module.exports);
+
+QUnit.module('intersection methods');
 
   lodashStable.each(['intersection', 'intersectionBy', 'intersectionWith'], function(methodName) {
     var func = _[methodName];

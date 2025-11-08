@@ -3,7 +3,19 @@
  * Module: flow methods
  * Original lines: 6674-6792
  */
-  QUnit.module('flow methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var add = require('../utils/stubs.js').add;
+var square = require('../utils/stubs.js').square;
+var noop = require('../utils/stubs.js').noop;
+var identity = require('../utils/stubs.js').identity;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('flow methods');
 
   lodashStable.each(['flow', 'flowRight'], function(methodName) {
     var func = _[methodName],

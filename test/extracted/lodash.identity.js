@@ -3,7 +3,11 @@
  * Module: lodash.identity
  * Original lines: 8158-8170
  */
-  QUnit.module('lodash.identity');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.identity');
 
   (function() {
     QUnit.test('should return the first argument given', function(assert) {

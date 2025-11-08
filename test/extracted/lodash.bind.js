@@ -3,9 +3,17 @@
  * Module: lodash.bind
  * Original lines: 1779-2051
  */
-  QUnit.module('lodash.bind');
 
-  (function() {
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+QUnit.module('lodash.bind');
+
+(function() {
     function fn() {
       var result = [this];
       push.apply(result, arguments);

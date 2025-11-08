@@ -3,7 +3,15 @@
  * Module: lodash.template
  * Original lines: 22129-22680
  */
-  QUnit.module('lodash.template');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubString = require('../utils/stubs.js').stubString;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+
+QUnit.module('lodash.template');
 
   (function() {
     QUnit.test('should escape values in "escape" delimiters', function(assert) {

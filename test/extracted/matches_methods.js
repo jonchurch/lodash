@@ -3,9 +3,19 @@
  * Module: matches methods
  * Original lines: 13801-14138
  */
-  QUnit.module('matches methods');
 
-  lodashStable.each(['matches', 'isMatch'], function(methodName) {
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var noop = require('../utils/stubs.js').noop;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('matches methods');
+
+lodashStable.each(['matches', 'isMatch'], function(methodName) {
     var isMatches = methodName == 'matches';
 
     function matches(source) {

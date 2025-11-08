@@ -3,30 +3,35 @@
  * Module: lodash.flattenDepth
  * Original lines: 6518-6545
  */
-  QUnit.module('lodash.flattenDepth');
 
-  (function() {
-    var array = [1, [2, [3, [4]], 5]];
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
 
-    QUnit.test('should use a default `depth` of `1`', function(assert) {
-      assert.expect(1);
+QUnit.module('lodash.flattenDepth');
 
-      assert.deepEqual(_.flattenDepth(array), [1, 2, [3, [4]], 5]);
+(function() {
+  var array = [1, [2, [3, [4]], 5]];
+
+  QUnit.test('should use a default `depth` of `1`', function(assert) {
+    assert.expect(1);
+
+    assert.deepEqual(_.flattenDepth(array), [1, 2, [3, [4]], 5]);
+  });
+
+  QUnit.test('should treat a `depth` of < `1` as a shallow clone', function(assert) {
+    assert.expect(2);
+
+    lodashStable.each([-1, 0], function(depth) {
+      assert.deepEqual(_.flattenDepth(array, depth), [1, [2, [3, [4]], 5]]);
     });
+  });
 
-    QUnit.test('should treat a `depth` of < `1` as a shallow clone', function(assert) {
-      assert.expect(2);
+  QUnit.test('should coerce `depth` to an integer', function(assert) {
+    assert.expect(1);
 
-      lodashStable.each([-1, 0], function(depth) {
-        assert.deepEqual(_.flattenDepth(array, depth), [1, [2, [3, [4]], 5]]);
-      });
-    });
-
-    QUnit.test('should coerce `depth` to an integer', function(assert) {
-      assert.expect(1);
-
-      assert.deepEqual(_.flattenDepth(array, 2.2), [1, 2, 3, [4], 5]);
-    });
-  }());
+    assert.deepEqual(_.flattenDepth(array, 2.2), [1, 2, 3, [4], 5]);
+  });
+}());
 
   /*--------------------------------------------------------------------------*/

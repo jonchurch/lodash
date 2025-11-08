@@ -3,7 +3,18 @@
  * Module: lodash.isFunction
  * Original lines: 10635-10725
  */
-  QUnit.module('lodash.isFunction');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var arrayViews = require('../utils/fixtures.js').arrayViews;
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var args = require('../utils/helpers.js').args;
+var symbol = require('../utils/es6.js').symbol;
+
+QUnit.module('lodash.isFunction');
 
   (function() {
     QUnit.test('should return `true` for functions', function(assert) {

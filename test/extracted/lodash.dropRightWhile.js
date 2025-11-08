@@ -3,7 +3,12 @@
  * Module: lodash.dropRightWhile
  * Original lines: 5251-5320
  */
-  QUnit.module('lodash.dropRightWhile');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.dropRightWhile');
 
   (function() {
     var array = [1, 2, 3, 4];

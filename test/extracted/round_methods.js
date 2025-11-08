@@ -3,7 +3,14 @@
  * Module: round methods
  * Original lines: 19767-19928
  */
-  QUnit.module('round methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+
+QUnit.module('round methods');
 
   lodashStable.each(['ceil', 'floor', 'round'], function(methodName) {
     var func = _[methodName],

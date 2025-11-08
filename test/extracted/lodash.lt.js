@@ -3,7 +3,11 @@
  * Module: lodash.lt
  * Original lines: 13283-13304
  */
-  QUnit.module('lodash.lt');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.lt');
 
   (function() {
     QUnit.test('should return `true` if `value` is less than `other`', function(assert) {

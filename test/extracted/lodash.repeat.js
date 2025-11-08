@@ -3,7 +3,14 @@
  * Module: lodash.repeat
  * Original lines: 19281-19338
  */
-  QUnit.module('lodash.repeat');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubThree = require('../utils/stubs.js').stubThree;
+
+QUnit.module('lodash.repeat');
 
   (function() {
     var string = 'abc';

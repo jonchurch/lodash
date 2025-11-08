@@ -3,7 +3,12 @@
  * Module: lodash.xorWith
  * Original lines: 25775-25790
  */
-  QUnit.module('lodash.xorWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.xorWith');
 
   (function() {
     QUnit.test('should work with a `comparator`', function(assert) {

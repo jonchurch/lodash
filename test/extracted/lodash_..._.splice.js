@@ -3,7 +3,15 @@
  * Module: lodash(...).splice
  * Original lines: 26381-26426
  */
-  QUnit.module('lodash(...).splice');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash(...).splice');
 
   (function() {
     QUnit.test('should support removing and inserting elements', function(assert) {

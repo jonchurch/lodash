@@ -3,7 +3,13 @@
  * Module: lodash.result
  * Original lines: 19353-19393
  */
-  QUnit.module('lodash.result');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubB = require('../utils/stubs.js').stubB;
+
+QUnit.module('lodash.result');
 
   (function() {
     var object = { 'a': 1, 'b': stubB };

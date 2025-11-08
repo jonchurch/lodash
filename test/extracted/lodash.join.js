@@ -3,7 +3,12 @@
  * Module: lodash.join
  * Original lines: 12838-12875
  */
-  QUnit.module('lodash.join');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.join');
 
   (function() {
     var array = ['a', 'b', 'c'];

@@ -3,7 +3,15 @@
  * Module: lodash.includes
  * Original lines: 8171-8295
  */
-  QUnit.module('lodash.includes');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.includes');
 
   (function() {
     lodashStable.each({

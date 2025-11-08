@@ -3,7 +3,19 @@
  * Module: lodash.isObjectLike
  * Original lines: 11414-11462
  */
-  QUnit.module('lodash.isObjectLike');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var args = require('../utils/helpers.js').args;
+var falsey = require('../utils/fixtures.js').falsey;
+var lodashStable = require('lodash');
+var symbol = require('../utils/es6.js').symbol;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var realm = require('../utils/helpers.js').realm;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var slice = require('../utils/helpers.js').slice;
+
+QUnit.module('lodash.isObjectLike');
 
   (function() {
     QUnit.test('should return `true` for objects', function(assert) {

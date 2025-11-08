@@ -3,7 +3,12 @@
  * Module: sortBy methods
  * Original lines: 20819-20914
  */
-  QUnit.module('sortBy methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('sortBy methods');
 
   lodashStable.each(['orderBy', 'sortBy'], function(methodName) {
     var func = _[methodName];

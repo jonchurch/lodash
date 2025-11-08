@@ -3,7 +3,18 @@
  * Module: lodash.isNil
  * Original lines: 11183-11241
  */
-  QUnit.module('lodash.isNil');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var args = require('../utils/helpers.js').args;
+var slice = require('../utils/helpers.js').slice;
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var realm = require('../utils/realm.js');
+
+QUnit.module('lodash.isNil');
 
   (function() {
     QUnit.test('should return `true` for nullish values', function(assert) {

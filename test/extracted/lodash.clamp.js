@@ -3,7 +3,11 @@
  * Module: lodash.clamp
  * Original lines: 2597-2678
  */
-  QUnit.module('lodash.clamp');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.clamp');
 
   (function() {
     QUnit.test('should work with a `max`', function(assert) {

@@ -3,7 +3,13 @@
  * Module: "Strings" category methods
  * Original lines: 26818-26863
  */
-  QUnit.module('"Strings" category methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubString = require('../utils/stubs.js').stubString;
+
+QUnit.module('"Strings" category methods');
 
   (function() {
     var stringMethods = [

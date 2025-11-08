@@ -3,7 +3,17 @@
  * Module: lodash.isEqualWith
  * Original lines: 10366-10507
  */
-  QUnit.module('lodash.isEqualWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var noop = require('../utils/stubs.js').noop;
+var stubC = require('../utils/stubs.js').stubC;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.isEqualWith');
 
   (function() {
     QUnit.test('should provide correct `customizer` arguments', function(assert) {

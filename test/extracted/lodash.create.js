@@ -3,7 +3,16 @@
  * Module: lodash.create
  * Original lines: 3713-3813
  */
-  QUnit.module('lodash.create');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var primitives = require('../utils/fixtures.js').primitives;
+var stubObject = require('../utils/stubs.js').stubObject;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+QUnit.module('lodash.create');
 
   (function() {
     function Shape() {

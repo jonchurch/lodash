@@ -3,7 +3,15 @@
  * Module: xor methods
  * Original lines: 25650-25746
  */
-  QUnit.module('xor methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+
+QUnit.module('xor methods');
 
   lodashStable.each(['xor', 'xorBy', 'xorWith'], function(methodName) {
     var func = _[methodName];

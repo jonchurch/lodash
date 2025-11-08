@@ -3,7 +3,13 @@
  * Module: lodash.pick
  * Original lines: 17779-17846
  */
-  QUnit.module('lodash.pick');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var toArgs = require('../utils/helpers.js').toArgs;
+
+QUnit.module('lodash.pick');
 
   (function() {
     var args = toArgs(['a', 'c']),

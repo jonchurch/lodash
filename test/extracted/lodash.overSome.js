@@ -3,7 +3,20 @@
  * Module: lodash.overSome
  * Original lines: 16957-17077
  */
-  QUnit.module('lodash.overSome');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var stubOne = require('../utils/stubs.js').stubOne;
+var stubString = require('../utils/stubs.js').stubString;
+var stubNull = require('../utils/stubs.js').stubNull;
+var stubA = require('../utils/stubs.js').stubA;
+var stubZero = require('../utils/stubs.js').stubZero;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+var slice = Array.prototype.slice;
+
+QUnit.module('lodash.overSome');
 
   (function() {
     QUnit.test('should create a function that returns `true` if any predicates return truthy', function(assert) {

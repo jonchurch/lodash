@@ -3,7 +3,13 @@
  * Module: exit early
  * Original lines: 7461-7506
  */
-  QUnit.module('exit early');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('exit early');
 
   lodashStable.each(['_baseEach', 'forEach', 'forEachRight', 'forIn', 'forInRight', 'forOwn', 'forOwnRight', 'transform'], function(methodName) {
     var func = _[methodName];

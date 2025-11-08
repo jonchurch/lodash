@@ -3,7 +3,13 @@
  * Module: lodash.toLength
  * Original lines: 23503-23531
  */
-  QUnit.module('lodash.toLength');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var MAX_INTEGER = require('../utils/constants.js').MAX_INTEGER;
+var MAX_ARRAY_LENGTH = require('../utils/constants.js').MAX_ARRAY_LENGTH;
+
+QUnit.module('lodash.toLength');
 
   (function() {
     QUnit.test('should return a valid length', function(assert) {

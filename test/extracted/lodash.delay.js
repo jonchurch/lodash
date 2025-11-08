@@ -3,7 +3,13 @@
  * Module: lodash.delay
  * Original lines: 4803-4893
  */
-  QUnit.module('lodash.delay');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var setProperty = require('../utils/helpers.js').setProperty;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.delay');
 
   (function() {
     QUnit.test('should delay `func` execution', function(assert) {

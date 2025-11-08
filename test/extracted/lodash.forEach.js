@@ -3,7 +3,11 @@
  * Module: lodash.forEach
  * Original lines: 6793-6804
  */
-  QUnit.module('lodash.forEach');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.forEach');
 
   (function() {
     QUnit.test('should be aliased', function(assert) {

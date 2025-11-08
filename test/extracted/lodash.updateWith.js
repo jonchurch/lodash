@@ -3,7 +3,15 @@
  * Module: lodash.updateWith
  * Original lines: 25290-25312
  */
-  QUnit.module('lodash.updateWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubThree = require('../utils/stubs.js').stubThree;
+var stubFour = require('../utils/stubs.js').stubFour;
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.updateWith');
 
   (function() {
     QUnit.test('should work with a `customizer` callback', function(assert) {

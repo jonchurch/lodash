@@ -3,7 +3,13 @@
  * Module: lodash(...) methods that return new wrapped values
  * Original lines: 26560-26613
  */
-  QUnit.module('lodash(...) methods that return new wrapped values');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash(...) methods that return new wrapped values');
 
   (function() {
     var funcs = [

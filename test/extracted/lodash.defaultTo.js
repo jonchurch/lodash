@@ -3,7 +3,13 @@
  * Module: lodash.defaultTo
  * Original lines: 4730-4749
  */
-  QUnit.module('lodash.defaultTo');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+
+QUnit.module('lodash.defaultTo');
 
   (function() {
     QUnit.test('should return a default value if `value` is `NaN` or nullish', function(assert) {

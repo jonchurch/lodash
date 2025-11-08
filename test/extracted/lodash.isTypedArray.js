@@ -3,7 +3,18 @@
  * Module: lodash.isTypedArray
  * Original lines: 11820-11887
  */
-  QUnit.module('lodash.isTypedArray');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var typedArrays = require('../utils/fixtures.js').typedArrays;
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var args = require('../utils/helpers.js').args;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var symbol = require('../utils/es6.js').symbol;
+
+QUnit.module('lodash.isTypedArray');
 
   (function() {
     QUnit.test('should return `true` for typed arrays', function(assert) {

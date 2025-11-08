@@ -3,7 +3,14 @@
  * Module: lodash(...) methods that return unwrapped values
  * Original lines: 26614-26741
  */
-  QUnit.module('lodash(...) methods that return unwrapped values');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var isNpm = require('../utils/constants.js').isNpm;
+
+QUnit.module('lodash(...) methods that return unwrapped values');
 
   (function() {
     var funcs = [

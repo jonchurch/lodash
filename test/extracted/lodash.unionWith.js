@@ -3,7 +3,12 @@
  * Module: lodash.unionWith
  * Original lines: 24765-24793
  */
-  QUnit.module('lodash.unionWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.unionWith');
 
   (function() {
     QUnit.test('should work with a `comparator`', function(assert) {

@@ -3,7 +3,11 @@
  * Module: lodash.replace
  * Original lines: 19339-19352
  */
-  QUnit.module('lodash.replace');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.replace');
 
   (function() {
     QUnit.test('should replace the matched pattern', function(assert) {

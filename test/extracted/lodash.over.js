@@ -3,7 +3,11 @@
  * Module: lodash.over
  * Original lines: 16773-16848
  */
-  QUnit.module('lodash.over');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.over');
 
   (function() {
     QUnit.test('should create a function that invokes `iteratees`', function(assert) {

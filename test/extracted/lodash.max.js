@@ -3,7 +3,14 @@
  * Module: lodash.max
  * Original lines: 14565-14597
  */
-  QUnit.module('lodash.max');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.max');
 
   (function() {
     QUnit.test('should return the largest value from a collection', function(assert) {

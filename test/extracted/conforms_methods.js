@@ -3,7 +3,15 @@
  * Module: conforms methods
  * Original lines: 3407-3575
  */
-  QUnit.module('conforms methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var empties = require('../utils/fixtures.js').empties;
+
+QUnit.module('conforms methods');
 
   lodashStable.each(['conforms', 'conformsTo'], function(methodName) {
     var isConforms = methodName == 'conforms';

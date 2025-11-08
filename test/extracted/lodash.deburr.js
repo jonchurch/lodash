@@ -3,7 +3,15 @@
  * Module: lodash.deburr
  * Original lines: 4486-4519
  */
-  QUnit.module('lodash.deburr');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var burredLetters = require('../utils/unicode.js').burredLetters;
+var deburredLetters = require('../utils/unicode.js').deburredLetters;
+var comboMarks = require('../utils/unicode.js').comboMarks;
+
+QUnit.module('lodash.deburr');
 
   (function() {
     QUnit.test('should convert Latin Unicode letters to basic Latin', function(assert) {

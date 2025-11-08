@@ -3,7 +3,13 @@
  * Module: lodash.escapeRegExp
  * Original lines: 5538-5571
  */
-  QUnit.module('lodash.escapeRegExp');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubString = require('../utils/stubs.js').stubString;
+
+QUnit.module('lodash.escapeRegExp');
 
   (function() {
     var escaped = '\\^\\$\\.\\*\\+\\?\\(\\)\\[\\]\\{\\}\\|\\\\',

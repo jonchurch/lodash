@@ -3,55 +3,59 @@
  * Module: lodash.defer
  * Original lines: 4750-4802
  */
-  QUnit.module('lodash.defer');
 
-  (function() {
-    QUnit.test('should defer `func` execution', function(assert) {
-      assert.expect(1);
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
 
-      var done = assert.async();
+QUnit.module('lodash.defer');
 
-      var pass = false;
-      _.defer(function() { pass = true; });
+(function() {
+  QUnit.test('should defer `func` execution', function(assert) {
+    assert.expect(1);
 
-      setTimeout(function() {
-        assert.ok(pass);
-        done();
-      }, 32);
-    });
+    var done = assert.async();
 
-    QUnit.test('should provide additional arguments to `func`', function(assert) {
-      assert.expect(1);
+    var pass = false;
+    _.defer(function() { pass = true; });
 
-      var done = assert.async();
+    setTimeout(function() {
+      assert.ok(pass);
+      done();
+    }, 32);
+  });
 
-      var args;
+  QUnit.test('should provide additional arguments to `func`', function(assert) {
+    assert.expect(1);
 
-      _.defer(function() {
-        args = slice.call(arguments);
-      }, 1, 2);
+    var done = assert.async();
 
-      setTimeout(function() {
-        assert.deepEqual(args, [1, 2]);
-        done();
-      }, 32);
-    });
+    var args;
 
-    QUnit.test('should be cancelable', function(assert) {
-      assert.expect(1);
+    _.defer(function() {
+      args = slice.call(arguments);
+    }, 1, 2);
 
-      var done = assert.async();
+    setTimeout(function() {
+      assert.deepEqual(args, [1, 2]);
+      done();
+    }, 32);
+  });
 
-      var pass = true,
-          timerId = _.defer(function() { pass = false; });
+  QUnit.test('should be cancelable', function(assert) {
+    assert.expect(1);
 
-      clearTimeout(timerId);
+    var done = assert.async();
 
-      setTimeout(function() {
-        assert.ok(pass);
-        done();
-      }, 32);
-    });
-  }());
+    var pass = true,
+        timerId = _.defer(function() { pass = false; });
+
+    clearTimeout(timerId);
+
+    setTimeout(function() {
+      assert.ok(pass);
+      done();
+    }, 32);
+  });
+}());
 
   /*--------------------------------------------------------------------------*/

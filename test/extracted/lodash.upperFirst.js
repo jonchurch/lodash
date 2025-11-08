@@ -3,7 +3,11 @@
  * Module: lodash.upperFirst
  * Original lines: 25353-25366
  */
-  QUnit.module('lodash.upperFirst');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.upperFirst');
 
   (function() {
     QUnit.test('should uppercase only the first character', function(assert) {

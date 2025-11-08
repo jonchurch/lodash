@@ -3,7 +3,14 @@
  * Module: toInteger methods
  * Original lines: 23475-23502
  */
-  QUnit.module('toInteger methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+var MAX_INTEGER = require('../utils/constants.js').MAX_INTEGER;
+
+QUnit.module('toInteger methods');
 
   lodashStable.each(['toInteger', 'toSafeInteger'], function(methodName) {
     var func = _[methodName],

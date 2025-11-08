@@ -3,7 +3,14 @@
  * Module: lodash.debounce and lodash.throttle
  * Original lines: 23038-23237
  */
-  QUnit.module('lodash.debounce and lodash.throttle');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.debounce and lodash.throttle');
 
   lodashStable.each(['debounce', 'throttle'], function(methodName) {
     var func = _[methodName],

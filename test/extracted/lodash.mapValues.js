@@ -3,7 +3,12 @@
  * Module: lodash.mapValues
  * Original lines: 13677-13721
  */
-  QUnit.module('lodash.mapValues');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.mapValues');
 
   (function() {
     var array = [1, 2],

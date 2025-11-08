@@ -3,7 +3,12 @@
  * Module: lodash.partialRight
  * Original lines: 17493-17512
  */
-  QUnit.module('lodash.partialRight');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.partialRight');
 
   (function() {
     QUnit.test('should work as a deep `_.defaults`', function(assert) {

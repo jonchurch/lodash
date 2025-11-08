@@ -3,7 +3,12 @@
  * Module: lodash.camelCase
  * Original lines: 2357-2389
  */
-  QUnit.module('lodash.camelCase');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.camelCase');
 
   (function() {
     QUnit.test('should work with numbers', function(assert) {

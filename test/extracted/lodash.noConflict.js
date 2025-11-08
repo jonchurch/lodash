@@ -3,7 +3,12 @@
  * Module: lodash.noConflict
  * Original lines: 16252-16304
  */
-  QUnit.module('lodash.noConflict');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.noConflict');
 
   (function() {
     QUnit.test('should return the `lodash` function', function(assert) {

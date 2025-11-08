@@ -3,7 +3,14 @@
  * Module: lodash.differenceWith
  * Original lines: 5024-5053
  */
-  QUnit.module('lodash.differenceWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var stubOne = require('../utils/stubs.js').stubOne;
+
+QUnit.module('lodash.differenceWith');
 
   (function() {
     QUnit.test('should work with a `comparator`', function(assert) {

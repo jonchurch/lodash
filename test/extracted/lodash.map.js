@@ -3,7 +3,22 @@
  * Module: lodash.map
  * Original lines: 13478-13632
  */
-  QUnit.module('lodash.map');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubArray = require('../utils/stubs.js').stubArray;
+var identity = require('../utils/stubs.js').identity;
+var noop = require('../utils/stubs.js').noop;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var square = require('../utils/stubs.js').square;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+
+var slice = Array.prototype.slice;
+var isNpm = typeof module != 'undefined' && module.exports;
+
+QUnit.module('lodash.map');
 
   (function() {
     var array = [1, 2];

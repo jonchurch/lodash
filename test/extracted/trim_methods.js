@@ -3,7 +3,14 @@
  * Module: trim methods
  * Original lines: 24316-24441
  */
-  QUnit.module('trim methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var whitespace = require('../utils/unicode.js').whitespace;
+
+QUnit.module('trim methods');
 
   lodashStable.each(['trim', 'trimStart', 'trimEnd'], function(methodName, index) {
     var func = _[methodName],

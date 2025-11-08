@@ -3,7 +3,11 @@
  * Module: lodash.once
  * Original lines: 16729-16772
  */
-  QUnit.module('lodash.once');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.once');
 
   (function() {
     QUnit.test('should invoke `func` once', function(assert) {

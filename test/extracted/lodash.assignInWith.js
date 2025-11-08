@@ -3,7 +3,11 @@
  * Module: lodash.assignInWith
  * Original lines: 1455-1466
  */
-  QUnit.module('lodash.assignInWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.assignInWith');
 
   (function() {
     QUnit.test('should be aliased', function(assert) {

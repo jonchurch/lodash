@@ -3,7 +3,11 @@
  * Module: lodash.omitBy
  * Original lines: 16580-16597
  */
-  QUnit.module('lodash.omitBy');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.omitBy');
 
   (function() {
     QUnit.test('should work with a predicate argument', function(assert) {

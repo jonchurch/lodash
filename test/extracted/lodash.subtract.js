@@ -3,7 +3,11 @@
  * Module: lodash.subtract
  * Original lines: 21379-21399
  */
-  QUnit.module('lodash.subtract');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.subtract');
 
   (function() {
     QUnit.test('should subtract two numbers', function(assert) {

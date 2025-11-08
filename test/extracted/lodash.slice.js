@@ -3,7 +3,15 @@
  * Module: lodash.slice
  * Original lines: 20467-20634
  */
-  QUnit.module('lodash.slice');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.slice');
 
   (function() {
     var array = [1, 2, 3];

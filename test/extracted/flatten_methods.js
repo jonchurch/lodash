@@ -3,7 +3,14 @@
  * Module: flatten methods
  * Original lines: 6546-6673
  */
-  QUnit.module('flatten methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('flatten methods');
 
   (function() {
     var array = [1, [2, [3, [4]], 5]],

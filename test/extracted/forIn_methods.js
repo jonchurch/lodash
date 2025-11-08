@@ -3,7 +3,12 @@
  * Module: forIn methods
  * Original lines: 6817-6837
  */
-  QUnit.module('forIn methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('forIn methods');
 
   lodashStable.each(['forIn', 'forInRight'], function(methodName) {
     var func = _[methodName];

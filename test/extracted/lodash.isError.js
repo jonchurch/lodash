@@ -3,7 +3,20 @@
  * Module: lodash.isError
  * Original lines: 10508-10578
  */
-  QUnit.module('lodash.isError');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var errors = require('../utils/fixtures.js').errors;
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var CustomError = require('../utils/helpers.js').CustomError;
+var args = require('../utils/helpers.js').args;
+var symbol = require('../utils/es6.js').symbol;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.isError');
 
   (function() {
     QUnit.test('should return `true` for error objects', function(assert) {

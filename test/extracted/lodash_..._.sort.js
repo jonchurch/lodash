@@ -3,7 +3,15 @@
  * Module: lodash(...).sort
  * Original lines: 26339-26380
  */
-  QUnit.module('lodash(...).sort');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash(...).sort');
 
   (function() {
     QUnit.test('should return the wrapped sorted `array`', function(assert) {

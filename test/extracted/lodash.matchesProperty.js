@@ -3,7 +3,17 @@
  * Module: lodash.matchesProperty
  * Original lines: 14139-14564
  */
-  QUnit.module('lodash.matchesProperty');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var noop = require('../utils/helpers.js').noop;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var numberProto = require('../utils/helpers.js').numberProto;
+
+QUnit.module('lodash.matchesProperty');
 
   (function() {
     QUnit.test('should create a function that performs a deep comparison between a property value and `srcValue`', function(assert) {

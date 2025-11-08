@@ -3,7 +3,15 @@
  * Module: lodash.reverse
  * Original lines: 19638-19766
  */
-  QUnit.module('lodash.reverse');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var identity = require('../utils/stubs.js').identity;
+
+QUnit.module('lodash.reverse');
 
   (function() {
     var largeArray = lodashStable.range(LARGE_ARRAY_SIZE).concat(null),

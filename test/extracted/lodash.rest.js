@@ -3,7 +3,12 @@
  * Module: lodash.rest
  * Original lines: 19576-19637
  */
-  QUnit.module('lodash.rest');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.rest');
 
   (function() {
     function fn(a, b, c) {

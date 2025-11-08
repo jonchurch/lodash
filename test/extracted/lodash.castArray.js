@@ -3,7 +3,13 @@
  * Module: lodash.castArray
  * Original lines: 2404-2432
  */
-  QUnit.module('lodash.castArray');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+
+QUnit.module('lodash.castArray');
 
   (function() {
     QUnit.test('should wrap non-array items in an array', function(assert) {

@@ -3,7 +3,18 @@
  * Module: lodash.mixin
  * Original lines: 15774-16007
  */
-  QUnit.module('lodash.mixin');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var stubB = require('../utils/stubs.js').stubB;
+var noop = require('../utils/stubs.js').noop;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var square = require('../utils/stubs.js').square;
+var isEven = require('../utils/stubs.js').isEven;
+
+QUnit.module('lodash.mixin');
 
   (function() {
     function reset(wrapper) {

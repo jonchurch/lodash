@@ -3,7 +3,17 @@
  * Module: lodash.method
  * Original lines: 15354-15507
  */
-  QUnit.module('lodash.method');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var stubOne = require('../utils/stubs.js').stubOne;
+var stubTwo = require('../utils/stubs.js').stubTwo;
+var stubThree = require('../utils/stubs.js').stubThree;
+var stubFour = require('../utils/stubs.js').stubFour;
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.method');
 
   (function() {
     QUnit.test('should create a function that calls a method of a given object', function(assert) {

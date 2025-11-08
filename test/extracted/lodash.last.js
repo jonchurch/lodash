@@ -3,7 +3,16 @@
  * Module: lodash.last
  * Original lines: 13170-13254
  */
-  QUnit.module('lodash.last');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+var isNpm = require('../utils/helpers.js').isNpm;
+
+QUnit.module('lodash.last');
 
   (function() {
     var array = [1, 2, 3, 4];

@@ -3,7 +3,13 @@
  * Module: uniqBy methods
  * Original lines: 24958-25039
  */
-  QUnit.module('uniqBy methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+
+QUnit.module('uniqBy methods');
 
   lodashStable.each(['uniqBy', 'sortedUniqBy'], function(methodName) {
     var func = _[methodName],

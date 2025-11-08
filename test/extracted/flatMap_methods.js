@@ -3,7 +3,15 @@
  * Module: flatMap methods
  * Original lines: 6433-6517
  */
-  QUnit.module('flatMap methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var identity = require('../utils/stubs.js').identity;
+var stubArray = require('../utils/stubs.js').stubArray;
+
+QUnit.module('flatMap methods');
 
   lodashStable.each(['flatMap', 'flatMapDeep', 'flatMapDepth'], function(methodName) {
     var func = _[methodName],

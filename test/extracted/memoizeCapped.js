@@ -3,7 +3,15 @@
  * Module: memoizeCapped
  * Original lines: 14853-14878
  */
-  QUnit.module('memoizeCapped');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var identity = require('../utils/stubs.js').identity;
+var MAX_MEMOIZE_SIZE = require('../utils/constants.js').MAX_MEMOIZE_SIZE;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('memoizeCapped');
 
   (function() {
     var func = _._memoizeCapped;

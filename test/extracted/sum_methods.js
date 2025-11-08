@@ -3,7 +3,14 @@
  * Module: sum methods
  * Original lines: 21521-21565
  */
-  QUnit.module('sum methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var stubZero = require('../utils/stubs.js').stubZero;
+
+QUnit.module('sum methods');
 
   lodashStable.each(['sum', 'sumBy'], function(methodName) {
     var array = [6, 4, 2],

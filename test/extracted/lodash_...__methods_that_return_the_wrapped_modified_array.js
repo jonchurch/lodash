@@ -3,7 +3,13 @@
  * Module: lodash(...) methods that return the wrapped modified array
  * Original lines: 26529-26559
  */
-  QUnit.module('lodash(...) methods that return the wrapped modified array');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash(...) methods that return the wrapped modified array');
 
   (function() {
     var funcs = [

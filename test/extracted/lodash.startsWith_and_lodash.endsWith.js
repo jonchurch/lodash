@@ -3,7 +3,13 @@
  * Module: lodash.startsWith and lodash.endsWith
  * Original lines: 21301-21345
  */
-  QUnit.module('lodash.startsWith and lodash.endsWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+
+QUnit.module('lodash.startsWith and lodash.endsWith');
 
   lodashStable.each(['startsWith', 'endsWith'], function(methodName) {
     var func = _[methodName],

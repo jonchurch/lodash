@@ -3,7 +3,13 @@
  * Module: lodash.propertyOf
  * Original lines: 18113-18254
  */
-  QUnit.module('lodash.propertyOf');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.propertyOf');
 
   (function() {
     QUnit.test('should create a function that plucks a property value of a given key', function(assert) {

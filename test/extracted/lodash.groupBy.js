@@ -3,7 +3,15 @@
  * Module: lodash.groupBy
  * Original lines: 7689-7775
  */
-  QUnit.module('lodash.groupBy');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var isEven = require('../utils/stubs.js').isEven;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.groupBy');
 
   (function() {
     var array = [6.1, 4.2, 6.3];

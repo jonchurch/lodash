@@ -3,7 +3,16 @@
  * Module: reduce methods
  * Original lines: 18950-19043
  */
-  QUnit.module('reduce methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var noop = require('../utils/stubs.js').noop;
+var add = require('../utils/stubs.js').add;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('reduce methods');
 
   lodashStable.each(['reduce', 'reduceRight'], function(methodName) {
     var func = _[methodName],

@@ -3,7 +3,11 @@
  * Module: lodash.toPairsIn
  * Original lines: 23818-23829
  */
-  QUnit.module('lodash.toPairsIn');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.toPairsIn');
 
   (function() {
     QUnit.test('should be aliased', function(assert) {

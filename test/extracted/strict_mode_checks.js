@@ -3,7 +3,12 @@
  * Module: strict mode checks
  * Original lines: 5662-5684
  */
-  QUnit.module('strict mode checks');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('strict mode checks');
 
   lodashStable.each(['assign', 'assignIn', 'bindAll', 'defaults', 'defaultsDeep', 'merge'], function(methodName) {
     var func = _[methodName],

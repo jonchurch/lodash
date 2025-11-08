@@ -3,7 +3,13 @@
  * Module: lodash.ary
  * Original lines: 1228-1339
  */
-  QUnit.module('lodash.ary');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.ary');
 
   (function() {
     function fn(a, b, c) {

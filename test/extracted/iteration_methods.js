@@ -3,7 +3,15 @@
  * Module: iteration methods
  * Original lines: 6856-7255
  */
-  QUnit.module('iteration methods');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+QUnit.module('iteration methods');
 
   (function() {
     var methods = [

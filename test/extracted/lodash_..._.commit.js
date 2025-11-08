@@ -3,7 +3,12 @@
  * Module: lodash(...).commit
  * Original lines: 26011-26048
  */
-  QUnit.module('lodash(...).commit');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash(...).commit');
 
   (function() {
     QUnit.test('should execute the chained sequence and returns the wrapped result', function(assert) {

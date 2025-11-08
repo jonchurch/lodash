@@ -3,7 +3,16 @@
  * Module: lodash.spread
  * Original lines: 21157-21225
  */
-  QUnit.module('lodash.spread');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+
+var slice = Array.prototype.slice;
+
+QUnit.module('lodash.spread');
 
   (function() {
     function fn(a, b, c) {

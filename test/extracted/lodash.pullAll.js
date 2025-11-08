@@ -3,7 +3,11 @@
  * Module: lodash.pullAll
  * Original lines: 18255-18269
  */
-  QUnit.module('lodash.pullAll');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.pullAll');
 
   (function() {
     QUnit.test('should work with the same value for `array` and `values`', function(assert) {

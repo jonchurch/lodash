@@ -3,7 +3,15 @@
  * Module: lodash.isLength
  * Original lines: 10786-10811
  */
-  QUnit.module('lodash.isLength');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+
+QUnit.module('lodash.isLength');
 
   (function() {
     QUnit.test('should return `true` for lengths', function(assert) {

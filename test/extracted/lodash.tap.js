@@ -3,7 +3,12 @@
  * Module: lodash.tap
  * Original lines: 22082-22128
  */
-  QUnit.module('lodash.tap');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.tap');
 
   (function() {
     QUnit.test('should intercept and return the given value', function(assert) {

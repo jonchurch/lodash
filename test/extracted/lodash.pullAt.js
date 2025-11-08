@@ -3,7 +3,16 @@
  * Module: lodash.pullAt
  * Original lines: 18373-18514
  */
-  QUnit.module('lodash.pullAt');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var empties = require('../utils/fixtures.js').empties;
+var falsey = require('../utils/fixtures.js').falsey;
+var stubOne = require('../utils/stubs.js').stubOne;
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.pullAt');
 
   (function() {
     QUnit.test('should modify the array and return removed elements', function(assert) {

@@ -3,7 +3,11 @@
  * Module: lodash.capitalize
  * Original lines: 2390-2403
  */
-  QUnit.module('lodash.capitalize');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.capitalize');
 
   (function() {
     QUnit.test('should capitalize the first character of a string', function(assert) {

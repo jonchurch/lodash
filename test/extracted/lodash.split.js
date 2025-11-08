@@ -3,7 +3,13 @@
  * Module: lodash.split
  * Original lines: 21108-21156
  */
-  QUnit.module('lodash.split');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.split');
 
   (function() {
     QUnit.test('should split a string by `separator`', function(assert) {

@@ -3,7 +3,13 @@
  * Module: isIterateeCall
  * Original lines: 974-1041
  */
-  QUnit.module('isIterateeCall');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+
+QUnit.module('isIterateeCall');
 
   (function() {
     var array = [1],

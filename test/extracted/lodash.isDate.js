@@ -3,7 +3,19 @@
  * Module: lodash.isDate
  * Original lines: 9259-9305
  */
-  QUnit.module('lodash.isDate');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubFalse = require('../utils/stubs.js').stubFalse;
+var args = require('../utils/helpers.js').args;
+var slice = require('../utils/helpers.js').slice;
+var symbol = require('../utils/es6.js').symbol;
+var realm = require('../utils/realm.js');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('lodash.isDate');
 
   (function() {
     QUnit.test('should return `true` for dates', function(assert) {

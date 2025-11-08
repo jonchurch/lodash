@@ -3,7 +3,18 @@
  * Module: lodash.isUndefined
  * Original lines: 11888-11944
  */
-  QUnit.module('lodash.isUndefined');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var args = require('../utils/helpers.js').args;
+var falsey = require('../utils/fixtures.js').falsey;
+var realm = require('../utils/helpers.js').realm;
+var skipAssert = require('../utils/helpers.js').skipAssert;
+var slice = require('../utils/helpers.js').slice;
+var symbol = require('../utils/es6.js').symbol;
+
+QUnit.module('lodash.isUndefined');
 
   (function() {
     QUnit.test('should return `true` for `undefined` values', function(assert) {

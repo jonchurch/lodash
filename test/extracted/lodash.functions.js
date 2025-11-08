@@ -3,7 +3,13 @@
  * Module: lodash.functions
  * Original lines: 7662-7688
  */
-  QUnit.module('lodash.functions');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var identity = require('../utils/stubs.js').identity;
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.functions');
 
   (function() {
     QUnit.test('should return the function names of an object', function(assert) {

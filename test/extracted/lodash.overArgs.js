@@ -3,7 +3,15 @@
  * Module: lodash.overArgs
  * Original lines: 16099-16205
  */
-  QUnit.module('lodash.overArgs');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var doubled = require('../utils/stubs.js').doubled;
+var square = require('../utils/stubs.js').square;
+var identity = require('../utils/stubs.js').identity;
+var noop = require('../utils/stubs.js').noop;
+
+QUnit.module('lodash.overArgs');
 
   (function() {
     function fn() {

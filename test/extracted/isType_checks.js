@@ -3,7 +3,13 @@
  * Module: isType checks
  * Original lines: 12066-12115
  */
-  QUnit.module('isType checks');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var skipAssert = require('../utils/helpers.js').skipAssert;
+
+QUnit.module('isType checks');
 
   (function() {
     QUnit.test('should return `false` for subclassed values', function(assert) {

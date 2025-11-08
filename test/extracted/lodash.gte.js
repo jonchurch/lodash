@@ -3,7 +3,11 @@
  * Module: lodash.gte
  * Original lines: 7798-7819
  */
-  QUnit.module('lodash.gte');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+
+QUnit.module('lodash.gte');
 
   (function() {
     QUnit.test('should return `true` if `value` >= `other`', function(assert) {

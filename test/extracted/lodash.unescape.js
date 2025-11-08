@@ -3,7 +3,12 @@
  * Module: lodash.unescape
  * Original lines: 24648-24691
  */
-  QUnit.module('lodash.unescape');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+
+QUnit.module('lodash.unescape');
 
   (function() {
     var escaped = '&amp;&lt;&gt;&quot;&#39;/',

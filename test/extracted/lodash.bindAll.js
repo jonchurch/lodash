@@ -3,7 +3,15 @@
  * Module: lodash.bindAll
  * Original lines: 2052-2135
  */
-  QUnit.module('lodash.bindAll');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var toArgs = require('../utils/helpers.js').toArgs;
+
+var arrayProto = Array.prototype;
+
+QUnit.module('lodash.bindAll');
 
   (function() {
     var args = toArgs(['a']);

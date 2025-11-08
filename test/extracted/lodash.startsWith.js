@@ -3,7 +3,15 @@
  * Module: lodash.startsWith
  * Original lines: 21240-21300
  */
-  QUnit.module('lodash.startsWith');
+
+var QUnit = require('qunitjs');
+var _ = require('../../lodash.js');
+var lodashStable = require('lodash');
+var falsey = require('../utils/fixtures.js').falsey;
+var stubTrue = require('../utils/stubs.js').stubTrue;
+var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
+
+QUnit.module('lodash.startsWith');
 
   (function() {
     var string = 'abc';

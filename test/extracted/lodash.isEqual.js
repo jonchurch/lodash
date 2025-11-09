@@ -404,7 +404,7 @@ QUnit.module('lodash.isEqual');
       }
       Foo.prototype.constructor = null;
 
-      var object1 = create(null);
+      var object1 = Object.create(null);
       object1.a = 1;
 
       var object2 = { 'a': 1 };

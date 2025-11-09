@@ -28,7 +28,7 @@ QUnit.module('lodash.isNative');
     QUnit.test('should return `true` for native methods', function(assert) {
       assert.expect(1);
 
-      var values = [Array, body && body.cloneNode, create, root.encodeURI, Promise, Array.prototype.slice, Uint8Array],
+      var values = [Array, body && body.cloneNode, Object.create, root.encodeURI, Promise, Array.prototype.slice, Uint8Array],
           expected = lodashStable.map(values, Boolean),
           actual = lodashStable.map(values, _.isNative);
 

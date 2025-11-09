@@ -142,7 +142,7 @@ QUnit.module('object assignments');
         var object = {},
             pass = true;
 
-        defineProperty(object, 'a', {
+        Object.defineProperty(object, 'a', {
           'configurable': true,
           'enumerable': true,
           'get': lodashStable.constant(value),

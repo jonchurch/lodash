@@ -15,7 +15,6 @@ var typedArrays = require('../utils/fixtures.js').typedArrays;
 var stubTrue = require('../utils/stubs.js').stubTrue;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var args = require('../utils/helpers.js').args;
-var defineProperty = require('../utils/helpers.js').defineProperty;
 
 QUnit.module('lodash.merge');
 
@@ -362,7 +361,7 @@ QUnit.module('lodash.merge');
       var object = {},
           pass = true;
 
-      defineProperty(object, 'a', {
+      Object.defineProperty(object, 'a', {
         'configurable': true,
         'enumerable': true,
         'get': function() { pass = false; },

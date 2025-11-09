@@ -144,7 +144,7 @@ QUnit.module('lodash.unset');
       var object = {};
 
       if (!isStrict) {
-        defineProperty(object, 'a', {
+        Object.defineProperty(object, 'a', {
           'configurable': false,
           'enumerable': true,
           'writable': true,

@@ -197,7 +197,7 @@ lodashStable.each(['update', 'updateWith', 'set', 'setWith'], function(methodNam
           pass = true,
           updater = isUpdate ? lodashStable.constant(value) : value;
 
-      defineProperty(object, 'a', {
+      Object.defineProperty(object, 'a', {
         'configurable': true,
         'enumerable': true,
         'get': lodashStable.constant(value),

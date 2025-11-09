@@ -256,13 +256,13 @@ QUnit.module('clone methods');
         assert.expect(2);
 
         var object = {
-          'constructor': objectProto.constructor,
-          'hasOwnProperty': objectProto.hasOwnProperty,
-          'isPrototypeOf': objectProto.isPrototypeOf,
-          'propertyIsEnumerable': objectProto.propertyIsEnumerable,
-          'toLocaleString': objectProto.toLocaleString,
-          'toString': objectProto.toString,
-          'valueOf': objectProto.valueOf
+          'constructor': Object.prototype.constructor,
+          'hasOwnProperty': Object.prototype.hasOwnProperty,
+          'isPrototypeOf': Object.prototype.isPrototypeOf,
+          'propertyIsEnumerable': Object.prototype.propertyIsEnumerable,
+          'toLocaleString': Object.prototype.toLocaleString,
+          'toString': Object.prototype.toString,
+          'valueOf': Object.prototype.valueOf
         };
 
         var actual = func(object);
@@ -283,7 +283,7 @@ QUnit.module('clone methods');
           Foo.prototype[symbol2] = 2;
 
           var symbol3 = Symbol('c');
-          defineProperty(Foo.prototype, symbol3, {
+          Object.defineProperty(Foo.prototype, symbol3, {
             'configurable': true,
             'enumerable': false,
             'writable': true,

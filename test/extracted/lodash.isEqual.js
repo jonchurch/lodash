@@ -698,7 +698,7 @@ QUnit.module('lodash.isEqual');
         object1[symbol1] = { 'a': { 'b': 2 } };
         object2[symbol1] = { 'a': { 'b': 2 } };
 
-        defineProperty(object2, symbol2, {
+        Object.defineProperty(object2, symbol2, {
           'configurable': true,
           'enumerable': false,
           'writable': true,

@@ -10,7 +10,6 @@ var lodashStable = require('lodash');
 var stubOne = require('../utils/stubs.js').stubOne;
 var noop = require('../utils/stubs.js').noop;
 var stubNaN = require('../utils/stubs.js').stubNaN;
-var defineProperty = require('../utils/helpers.js').setProperty;
 
 QUnit.module('lodash.assign and lodash.assignIn');
 
@@ -65,19 +64,19 @@ QUnit.module('lodash.assign and lodash.assignIn');
         'toString': lodashStable.constant('source')
       };
 
-      defineProperty(object, 'a', lodashStable.assign({}, descriptor, {
+      Object.Object.defineProperty(object, 'a', lodashStable.assign({}, descriptor, {
         'get': stubOne
       }));
 
-      defineProperty(object, 'b', lodashStable.assign({}, descriptor, {
+      Object.Object.defineProperty(object, 'b', lodashStable.assign({}, descriptor, {
         'get': noop
       }));
 
-      defineProperty(object, 'c', lodashStable.assign({}, descriptor, {
+      Object.Object.defineProperty(object, 'c', lodashStable.assign({}, descriptor, {
         'get': stubNaN
       }));
 
-      defineProperty(object, 'constructor', lodashStable.assign({}, descriptor, {
+      Object.Object.defineProperty(object, 'constructor', lodashStable.assign({}, descriptor, {
         'get': lodashStable.constant(Object)
       }));
 

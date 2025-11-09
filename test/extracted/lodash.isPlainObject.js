@@ -14,8 +14,6 @@ var stubFalse = require('../utils/stubs.js').stubFalse;
 var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var create = require('../utils/helpers.js').create;
-var objectProto = require('../utils/helpers.js').objectProto;
-var defineProperty = require('../utils/helpers.js').defineProperty;
 var realm = require('../utils/environment.js').realm;
 
 QUnit.module('lodash.isPlainObject');
@@ -43,7 +41,7 @@ QUnit.module('lodash.isPlainObject');
       var object = create(null);
       assert.strictEqual(_.isPlainObject(object), true);
 
-      object.constructor = objectProto.constructor;
+      object.constructor = Object.prototype.constructor;
       assert.strictEqual(_.isPlainObject(object), true);
     });
 
@@ -113,7 +111,7 @@ QUnit.module('lodash.isPlainObject');
 
       if (Symbol && Symbol.toStringTag) {
         var object = {};
-        defineProperty(object, Symbol.toStringTag, {
+        Object.defineProperty(object, Symbol.toStringTag, {
           'configurable': true,
           'enumerable': false,
           'writable': false,

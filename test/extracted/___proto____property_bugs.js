@@ -13,7 +13,6 @@ var stubFalse = require('../utils/stubs.js').stubFalse;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var create = Object.create;
 var funcProto = Function.prototype;
-var objectProto = Object.prototype;
 
 QUnit.module('`__proto__` property bugs');
 
@@ -68,8 +67,8 @@ QUnit.module('`__proto__` property bugs');
       if (JSON) {
         _.merge({}, JSON.parse('{"__proto__":{"a":1}}'));
 
-        var actual = 'a' in objectProto;
-        delete objectProto.a;
+        var actual = 'a' in Object.prototype;
+        delete Object.prototype.a;
 
         assert.notOk(actual);
       } else {
@@ -89,8 +88,8 @@ QUnit.module('`__proto__` property bugs');
 
       _.merge({}, { 'constructor': { 'prototype': { 'a': 1 } } });
 
-      actual = 'a' in objectProto;
-      delete objectProto.a;
+      actual = 'a' in Object.prototype;
+      delete Object.prototype.a;
 
       assert.notOk(actual);
     });

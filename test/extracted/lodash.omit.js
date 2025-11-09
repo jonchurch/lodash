@@ -8,7 +8,6 @@ var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
 var toArgs = require('../utils/helpers.js').toArgs;
-var objectProto = require('../utils/helpers.js').objectProto;
 var stringProto = require('../utils/helpers.js').stringProto;
 
 QUnit.module('lodash.omit');
@@ -60,9 +59,9 @@ QUnit.module('lodash.omit');
       assert.expect(2);
 
       lodashStable.each([null, undefined], function(value) {
-        objectProto.a = 1;
+        Object.prototype.a = 1;
         var actual = _.omit(value, 'valueOf');
-        delete objectProto.a;
+        delete Object.prototype.a;
         assert.deepEqual(actual, {});
       });
     });

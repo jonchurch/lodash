@@ -7,7 +7,6 @@
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
-var objectProto = Object.prototype;
 
 QUnit.module('lodash.defaults');
 
@@ -58,13 +57,13 @@ QUnit.module('lodash.defaults');
       assert.expect(2);
 
       var object = {
-        'constructor': objectProto.constructor,
-        'hasOwnProperty': objectProto.hasOwnProperty,
-        'isPrototypeOf': objectProto.isPrototypeOf,
-        'propertyIsEnumerable': objectProto.propertyIsEnumerable,
-        'toLocaleString': objectProto.toLocaleString,
-        'toString': objectProto.toString,
-        'valueOf': objectProto.valueOf
+        'constructor': Object.prototype.constructor,
+        'hasOwnProperty': Object.prototype.hasOwnProperty,
+        'isPrototypeOf': Object.prototype.isPrototypeOf,
+        'propertyIsEnumerable': Object.prototype.propertyIsEnumerable,
+        'toLocaleString': Object.prototype.toLocaleString,
+        'toString': Object.prototype.toString,
+        'valueOf': Object.prototype.valueOf
       };
 
       var source = {

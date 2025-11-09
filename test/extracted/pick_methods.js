@@ -8,7 +8,6 @@ var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
 var symbol = require('../utils/es6.js').symbol;
-var defineProperty = require('../utils/helpers.js').defineProperty;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 
 QUnit.module('pick methods');
@@ -74,7 +73,7 @@ QUnit.module('pick methods');
         Foo.prototype[symbol2] = 2;
 
         var symbol3 = Symbol('c');
-        defineProperty(Foo.prototype, symbol3, {
+        Object.defineProperty(Foo.prototype, symbol3, {
           'configurable': true,
           'enumerable': false,
           'writable': true,

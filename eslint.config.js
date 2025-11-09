@@ -1,6 +1,7 @@
 // ESLint flat config (v9+)
 const js = require('@eslint/js');
 const prettier = require('eslint-plugin-prettier/recommended');
+const importPlugin = require('eslint-plugin-import');
 
 module.exports = [
   // Apply to all JS files
@@ -31,6 +32,36 @@ module.exports = [
 
   // Prettier integration (disables conflicting rules)
   prettier,
+
+  // Import plugin
+  {
+    plugins: {
+      import: importPlugin,
+    },
+    rules: {
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin', // node:test, node:assert
+            'external', // lodash, qunitjs
+            'internal', // ../../lodash.js (configured below)
+            'parent', // ../utils/...
+            'sibling', // ./foo
+            'index',
+          ],
+          'newlines-between': 'always',
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+        },
+      ],
+    },
+    settings: {
+      'import/internal-regex': '^../../lodash\\.js$',
+    },
+  },
 
   // Lodash-specific rules
   {

@@ -155,7 +155,7 @@ QUnit.module('lodash.iteratee');
 
       var fn = function() {
         var result = [this.a];
-        push.apply(result, arguments);
+        Array.prototype.push.apply(result, arguments);
         return result;
       };
 

@@ -20,7 +20,7 @@ QUnit.module('lodash.bind');
 (function() {
     function fn() {
       var result = [this];
-      push.apply(result, arguments);
+      Array.prototype.push.apply(result, arguments);
       return result;
     }
 

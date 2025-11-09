@@ -288,7 +288,7 @@ QUnit.module('lodash.debounce');
 
       var debounced = _.debounce(function(value) {
         actual = [this];
-        push.apply(actual, arguments);
+        Array.prototype.push.apply(actual, arguments);
         return ++callCount != 2;
       }, 32, { 'leading': true, 'maxWait': 64 });
 

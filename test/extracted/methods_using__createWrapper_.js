@@ -38,7 +38,7 @@ QUnit.module('methods using `createWrapper`');
 
       var fn = function() {
         var result = [this.a];
-        push.apply(result, arguments);
+        Array.prototype.push.apply(result, arguments);
         return result;
       };
 
@@ -148,7 +148,7 @@ QUnit.module('methods using `createWrapper`');
       lodashStable.times(2, function(index) {
         var fn = function() {
           var result = [this];
-          push.apply(result, arguments);
+          Array.prototype.push.apply(result, arguments);
           return result;
         };
 

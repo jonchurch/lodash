@@ -4,6 +4,8 @@
  * Original lines: 2679-3164
  */
 
+var root = require('../utils/environment.js').root;
+
 var realm = require('../utils/environment.js').realm;
 
 var noop = require('../utils/stubs.js').noop;

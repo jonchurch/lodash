@@ -4,6 +4,8 @@
  * Original lines: 11084-11182
  */
 
+var root = require('../utils/environment.js').root;
+
 var realm = require('../utils/environment.js').realm;
 
 var isModularize = require('../utils/environment.js').isModularize;

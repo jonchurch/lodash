@@ -4,6 +4,8 @@
  * Original lines: 24103-24315
  */
 
+var root = require('../utils/environment.js').root;
+
 var realm = require('../utils/environment.js').realm;
 
 var QUnit = require('qunitjs');

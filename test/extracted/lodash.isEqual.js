@@ -4,6 +4,8 @@
  * Original lines: 9532-10365
  */
 
+var root = require('../utils/environment.js').root;
+
 var realm = require('../utils/environment.js').realm;
 
 var isNpm = require('../utils/environment.js').isNpm;

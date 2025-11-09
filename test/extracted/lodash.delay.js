@@ -4,6 +4,8 @@
  * Original lines: 4803-4893
  */
 
+var root = require('../utils/environment.js').root;
+
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var setProperty = require('../utils/helpers.js').setProperty;

@@ -4,6 +4,8 @@
  * Original lines: 25791-25876
  */
 
+var root = require('../utils/environment.js').root;
+
 var isNpm = require('../utils/environment.js').isNpm;
 
 var QUnit = require('qunitjs');

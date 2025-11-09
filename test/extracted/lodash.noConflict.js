@@ -11,6 +11,7 @@ var root = require('../utils/environment.js').root;
 var realm = require('../utils/environment.js').realm;
 
 var isModularize = require('../utils/environment.js').isModularize;
+var coverage = require('../utils/environment.js').coverage;
 
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');

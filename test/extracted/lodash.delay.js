@@ -10,6 +10,7 @@ var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var setProperty = require('../utils/helpers.js').setProperty;
 var skipAssert = require('../utils/helpers.js').skipAssert;
+var isPhantom = require('../utils/environment.js').isPhantom
 
 QUnit.module('lodash.delay');
 

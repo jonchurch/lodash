@@ -9,6 +9,7 @@ var root = require('../utils/environment.js').root;
 var realm = require('../utils/environment.js').realm;
 
 var isModularize = require('../utils/environment.js').isModularize;
+var amd = require('../utils/environment.js').amd;
 
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');

@@ -7,6 +7,7 @@
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var identity = require('../utils/stubs.js').identity;
+var isPhantom = require('../utils/environment.js').isPhantom
 
 QUnit.module('lodash.debounce');
 

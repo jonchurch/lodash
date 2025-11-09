@@ -20,6 +20,7 @@ var skipAssert = require('../utils/helpers.js').skipAssert;
 var args = require('../utils/helpers.js').args;
 var symbol = require('../utils/es6.js').symbol;
 var asyncFunc = require('../utils/environment.js').asyncFunc
+var genFunc = require('../utils/environment.js').genFunc
 var funcTag = require('../utils/tags.js').funcTag
 
 QUnit.module('lodash.isFunction');

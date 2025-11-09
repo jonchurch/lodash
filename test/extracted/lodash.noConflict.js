@@ -16,6 +16,10 @@ var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var skipAssert = require('../utils/helpers.js').skipAssert;
 
+// TODO: figure this tf out
+// tbh I still don't know how isModularize works and if oldLodash should even be set
+var oldDash = global._
+
 QUnit.module('lodash.noConflict');
 
   (function() {

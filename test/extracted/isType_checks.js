@@ -10,6 +10,7 @@ var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
 var skipAssert = require('../utils/helpers.js').skipAssert;
+var objectTag = require('../utils/tags.js').objectTag
 
 QUnit.module('isType checks');
 
@@ -27,7 +28,7 @@ QUnit.module('isType checks');
         Foo.prototype = root[methodName.slice(2)].prototype;
 
         var object = new Foo;
-        if (objToString.call(object) == objectTag) {
+        if (Object.prototype.toString.call(object) == objectTag) {
           assert.strictEqual(_[methodName](object), false, '`_.' + methodName + '` returns `false`');
         }
         else {

@@ -12,6 +12,7 @@ var lodashStable = require('lodash');
 var empties = require('../utils/fixtures.js').empties;
 var stubTrue = require('../utils/stubs.js').stubTrue;
 var skipAssert = require('../utils/helpers.js').skipAssert;
+var lodashBizarro = require('../utils/environment.js').lodashBizarro;
 
 QUnit.module('lodash constructor');
 

@@ -13,7 +13,7 @@ var skipAssert = require('../utils/helpers.js').skipAssert;
 var args = require('../utils/helpers.js').args;
 var symbol = require('../utils/es6.js').symbol;
 var isStrict = require('../utils/helpers.js').isStrict;
-var lodashBizarro = require('../utils/helpers.js').lodashBizarro;
+var lodashBizarro = require('../utils/environment.js').lodashBizarro;
 
 QUnit.module('lodash.isBuffer');
 

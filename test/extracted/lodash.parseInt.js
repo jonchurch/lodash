@@ -10,6 +10,7 @@ var lodashStable = require('lodash');
 var whitespace = require('../utils/unicode.js').whitespace;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var stubZero = require('../utils/stubs.js').stubZero;
+var lodashBizarro = require('../utils/environment.js').lodashBizarro;
 
 QUnit.module('lodash.parseInt');
 

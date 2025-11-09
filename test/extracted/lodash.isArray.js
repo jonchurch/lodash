@@ -10,7 +10,6 @@ var lodashStable = require('lodash');
 var falsey = require('../utils/fixtures.js').falsey;
 var stubFalse = require('../utils/stubs.js').stubFalse;
 var args = require('../utils/helpers.js').args;
-var slice = require('../utils/helpers.js').slice;
 var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var realm = require('../utils/realm.js');

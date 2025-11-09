@@ -11,7 +11,6 @@ var falsey = require('../utils/fixtures.js').falsey;
 var stubFalse = require('../utils/stubs.js').stubFalse;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var args = require('../utils/helpers.js').args;
-var slice = require('../utils/helpers.js').slice;
 var symbol = require('../utils/es6.js').symbol;
 var isStrict = require('../utils/helpers.js').isStrict;
 var lodashBizarro = require('../utils/helpers.js').lodashBizarro;

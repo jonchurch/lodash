@@ -11,7 +11,6 @@ var args = require('../utils/helpers.js').args;
 var falsey = require('../utils/fixtures.js').falsey;
 var realm = require('../utils/helpers.js').realm;
 var skipAssert = require('../utils/helpers.js').skipAssert;
-var slice = require('../utils/helpers.js').slice;
 var symbol = require('../utils/es6.js').symbol;
 
 QUnit.module('lodash.isUndefined');

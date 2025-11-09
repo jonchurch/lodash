@@ -10,7 +10,6 @@ var stubTrue = require('../utils/stubs.js').stubTrue;
 var stubOne = require('../utils/stubs.js').stubOne;
 var stubA = require('../utils/stubs.js').stubA;
 var stubFalse = require('../utils/stubs.js').stubFalse;
-var slice = require('../utils/helpers.js').slice;
 
 QUnit.module('lodash.overEvery');
 

@@ -7,7 +7,6 @@
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var isEven = require('../utils/stubs.js').isEven;
-var slice = require('../utils/helpers.js').slice;
 
 QUnit.module('lodash.remove');
 

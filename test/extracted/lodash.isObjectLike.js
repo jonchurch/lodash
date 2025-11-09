@@ -13,7 +13,6 @@ var symbol = require('../utils/es6.js').symbol;
 var stubFalse = require('../utils/stubs.js').stubFalse;
 var realm = require('../utils/helpers.js').realm;
 var skipAssert = require('../utils/helpers.js').skipAssert;
-var slice = require('../utils/helpers.js').slice;
 
 QUnit.module('lodash.isObjectLike');
 

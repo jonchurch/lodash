@@ -16,7 +16,6 @@ var arrayProto = require('../utils/helpers.js').arrayProto;
 var realm = require('../utils/helpers.js').realm;
 var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
 var isNpm = require('../utils/helpers.js').isNpm;
-var slice = require('../utils/helpers.js').slice;
 
 QUnit.module('lodash.isEmpty');
 

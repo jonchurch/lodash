@@ -14,7 +14,6 @@ var skipAssert = require('../utils/helpers.js').skipAssert;
 var weakMap = require('../utils/es6.js').weakMap;
 var symbol = require('../utils/es6.js').symbol;
 var map = require('../utils/es6.js').map;
-var slice = require('../utils/stubs.js').slice;
 
 QUnit.module('lodash.isWeakMap');
 

@@ -17,6 +17,8 @@ var stubTrue = require('../utils/stubs.js').stubTrue;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var FUNC_ERROR_TEXT = require('../utils/constants.js').FUNC_ERROR_TEXT;
 
+var oldDash = global._
+
 QUnit.module('lodash methods');
 
   (function() {
@@ -219,15 +221,3 @@ QUnit.module('lodash methods');
       }));
     });
   }());
-
-  /*--------------------------------------------------------------------------*/
-
-  QUnit.config.asyncRetries = 10;
-  QUnit.config.hidepassed = true;
-
-  if (!document) {
-    QUnit.config.noglobals = true;
-    QUnit.load();
-    QUnit.start();
-  }
-}.call(this));

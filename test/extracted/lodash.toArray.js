@@ -26,7 +26,7 @@ QUnit.module('lodash.toArray');
 
       if (Symbol && Symbol.iterator) {
         var object = { '0': 'a', 'length': 1 };
-        object[Symbol.iterator] = arrayProto[Symbol.iterator];
+        object[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
         assert.deepEqual(_.toArray(object), ['a']);
       }

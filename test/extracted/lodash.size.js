@@ -58,7 +58,7 @@ QUnit.module('lodash.size');
       function Foo(elements) {
         Array.prototype.push.apply(this, elements);
       }
-      Foo.prototype = { 'length': 0, 'splice': arrayProto.splice };
+      Foo.prototype = { 'length': 0, 'splice': Array.prototype.splice };
 
       assert.strictEqual(_.size(new Foo(array)), 3);
     });

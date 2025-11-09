@@ -65,14 +65,14 @@ QUnit.module('keys methods');
     QUnit.test('`_.' + methodName + '` should ' + (isKeys ? 'not ' : '') + 'include inherited string keyed properties of arrays', function(assert) {
       assert.expect(1);
 
-      arrayProto.a = 1;
+      Array.prototype.a = 1;
 
       var expected = isKeys ? ['0'] : ['0', 'a'],
           actual = func([1]).sort();
 
       assert.deepEqual(actual, expected);
 
-      delete arrayProto.a;
+      delete Array.prototype.a;
     });
 
     QUnit.test('`_.' + methodName + '` should work with `arguments` objects', function(assert) {

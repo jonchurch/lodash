@@ -2,6 +2,9 @@
  * Helper functions for testing, extracted from test/test.js
  */
 
+import lodashStable from 'lodash'
+import _ from '../../lodash.js'
+
 /**
  * Converts `array` to an `arguments` object.
  *
@@ -96,4 +99,19 @@ export function getUnwrappedValue(wrapper) {
   }
   return result;
 }
+
+  /** Used to test pseudo private map caches. */
+  export const mapCaches = (function() {
+    var MapCache = (_.memoize || lodashStable.memoize).Cache;
+    var result = {
+      'Hash': new MapCache().__data__.hash.constructor,
+      'MapCache': MapCache
+    };
+    (_.isMatchWith || lodashStable.isMatchWith)({ 'a': 1 }, { 'a': 1 }, function() {
+      var stack = lodashStable.last(arguments);
+      result.ListCache = stack.__data__.constructor;
+      result.Stack = stack.constructor;
+    });
+    return result;
+  }());
 

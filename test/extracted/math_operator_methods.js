@@ -4,6 +4,8 @@
  * Original lines: 21400-21481
  */
 
+var isNpm = require('../utils/environment.js').isNpm;
+
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');

@@ -4,6 +4,8 @@
  * Original lines: 26469-26528
  */
 
+var isNpm = require('../utils/environment.js').isNpm;
+
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var skipAssert = require('../utils/helpers.js').skipAssert;

@@ -25,6 +25,7 @@
     "style:test": "jscs test/*.js test/**/*.js",
     "test": "npm run test:main && npm run test:fp",
     "test:doc": "markdown-doctest doc/*.md",
+    "test:errors": "grep 'ReferenceError:' testLog.txt | sed 's/.*ReferenceError: //' | sed 's/ is not defined//' | sort | uniq -c | sort -rn > testErrors.txt && cat testErrors.txt",
     "test:fp": "node test/test-fp",
     "test:main": "node test/test",
     "validate": "npm run style && npm run test"

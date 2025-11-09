@@ -4,6 +4,8 @@
  * Original lines: 12302-12837
  */
 
+var isModularize = require('../utils/environment.js').isModularize;
+
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var skipAssert = require('../utils/helpers.js').skipAssert;

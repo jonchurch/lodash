@@ -4,6 +4,8 @@
  * Original lines: 23038-23237
  */
 
+var isModularize = require('../utils/environment.js').isModularize;
+
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');

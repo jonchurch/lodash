@@ -4,6 +4,8 @@
  * Original lines: 1779-2051
  */
 
+var isModularize = require('../utils/environment.js').isModularize;
+
 var isNpm = require('../utils/environment.js').isNpm;
 
 var QUnit = require('qunitjs');

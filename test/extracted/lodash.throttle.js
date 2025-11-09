@@ -114,7 +114,7 @@ QUnit.module('lodash.throttle');
         var done = assert.async();
 
         var callCount = 0,
-            limit = (argv || isPhantom) ? 1000 : 320,
+            limit = (process && process.argv || isPhantom) ? 1000 : 320,
             options = index ? { 'leading': false } : {},
             throttled = _.throttle(function() { callCount++; }, 32, options);
 

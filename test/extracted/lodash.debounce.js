@@ -206,7 +206,7 @@ QUnit.module('lodash.debounce');
 
       var done = assert.async();
 
-      var limit = (argv || isPhantom) ? 1000 : 320,
+      var limit = (process && process.argv || isPhantom) ? 1000 : 320,
           withCount = 0,
           withoutCount = 0;
 

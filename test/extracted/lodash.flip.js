@@ -12,7 +12,7 @@ QUnit.module('lodash.flip');
 
   (function() {
     function fn() {
-      return slice.call(arguments);
+      return Array.prototype.slice.call(arguments);
     }
 
     QUnit.test('should flip arguments provided to `func`', function(assert) {

@@ -14,7 +14,7 @@ QUnit.module('lodash.curry');
 
   (function() {
     function fn(a, b, c, d) {
-      return slice.call(arguments);
+      return Array.prototype.slice.call(arguments);
     }
 
     QUnit.test('should curry based on the number of arguments given', function(assert) {

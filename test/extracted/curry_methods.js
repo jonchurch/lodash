@@ -12,7 +12,7 @@ QUnit.module('curry methods');
 
   lodashStable.each(['curry', 'curryRight'], function(methodName) {
     var func = _[methodName],
-        fn = function(a, b) { return slice.call(arguments); },
+        fn = function(a, b) { return Array.prototype.slice.call(arguments); },
         isCurry = methodName == 'curry';
 
     QUnit.test('`_.' + methodName + '` should not error on functions with the same name as lodash methods', function(assert) {

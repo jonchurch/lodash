@@ -25,14 +25,14 @@ QUnit.module('lodash.reduce');
       var args;
 
       _.reduce(array, function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       }, 0);
 
       assert.deepEqual(args, [0, 1, 0, array]);
 
       args = undefined;
       _.reduce(array, function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, [1, 2, 1, array]);
@@ -50,7 +50,7 @@ QUnit.module('lodash.reduce');
         : [0, 2, 'b', object];
 
       _.reduce(object, function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       }, 0);
 
       assert.deepEqual(args, expected);
@@ -61,7 +61,7 @@ QUnit.module('lodash.reduce');
         : [2, 1, 'a', object];
 
       _.reduce(object, function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, expected);

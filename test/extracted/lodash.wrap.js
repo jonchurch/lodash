@@ -29,7 +29,7 @@ QUnit.module('lodash.wrap');
       var args;
 
       var wrapped = _.wrap(noop, function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       wrapped(1, 2, 3);

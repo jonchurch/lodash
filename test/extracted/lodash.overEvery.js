@@ -98,7 +98,7 @@ QUnit.module('lodash.overEvery');
       var args;
 
       var over = _.overEvery(function() {
-        args = slice.call(arguments);
+        args = Array.prototype.slice.call(arguments);
       });
 
       over('a', 'b', 'c');

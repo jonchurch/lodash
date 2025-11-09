@@ -30,7 +30,7 @@ QUnit.module('lodash.unzipWith');
       var args;
 
       _.unzipWith([[1, 3, 5], [2, 4, 6]], function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, [1, 2]);

@@ -463,7 +463,7 @@ QUnit.module('clone methods');
 
         func(object, function() {
           var length = arguments.length,
-              args = slice.call(arguments, 0, length - (length > 1 ? 1 : 0));
+              args = Array.prototype.slice.call(arguments, 0, length - (length > 1 ? 1 : 0));
 
           argsList.push(args);
         });

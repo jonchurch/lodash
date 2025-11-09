@@ -26,7 +26,7 @@ QUnit.module('lodash.attempt');
     QUnit.test('should provide additional arguments to `func`', function(assert) {
       assert.expect(1);
 
-      var actual = _.attempt(function() { return slice.call(arguments); }, 1, 2);
+      var actual = _.attempt(function() { return Array.prototype.slice.call(arguments); }, 1, 2);
       assert.deepEqual(actual, [1, 2]);
     });
 

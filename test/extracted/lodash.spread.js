@@ -16,7 +16,7 @@ QUnit.module('lodash.spread');
 
   (function() {
     function fn(a, b, c) {
-      return slice.call(arguments);
+      return Array.prototype.slice.call(arguments);
     }
 
     QUnit.test('should spread arguments to `func`', function(assert) {

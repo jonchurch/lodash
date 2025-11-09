@@ -40,7 +40,7 @@ QUnit.module('lodash.takeRightWhile');
       var args;
 
       _.takeRightWhile(array, function() {
-        args = slice.call(arguments);
+        args = Array.prototype.slice.call(arguments);
       });
 
       assert.deepEqual(args, [4, 3, array]);
@@ -96,31 +96,31 @@ QUnit.module('lodash.takeRightWhile');
         ];
 
         _(array).slice(1).takeRightWhile(function(value, index, array) {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, [LARGE_ARRAY_SIZE, LARGE_ARRAY_SIZE - 1, array.slice(1)]);
 
         _(array).slice(1).map(square).takeRightWhile(function(value, index, array) {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, expected);
 
         _(array).slice(1).map(square).takeRightWhile(function(value, index) {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, expected);
 
         _(array).slice(1).map(square).takeRightWhile(function(index) {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, [square(LARGE_ARRAY_SIZE)]);
 
         _(array).slice(1).map(square).takeRightWhile(function() {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, expected);

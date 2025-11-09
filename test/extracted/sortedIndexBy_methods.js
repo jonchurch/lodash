@@ -24,7 +24,7 @@ QUnit.module('sortedIndexBy methods');
       var args;
 
       func([30, 50], 40, function(assert) {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, [40]);

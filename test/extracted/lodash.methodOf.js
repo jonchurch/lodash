@@ -141,7 +141,7 @@ QUnit.module('lodash.methodOf');
 
       var object = {
         'fn': function() {
-          return slice.call(arguments);
+          return Array.prototype.slice.call(arguments);
         }
       };
 

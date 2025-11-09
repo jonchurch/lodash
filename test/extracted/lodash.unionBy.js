@@ -26,7 +26,7 @@ QUnit.module('lodash.unionBy');
     var args;
 
     _.unionBy([2.1], [1.2, 2.3], function() {
-      args || (args = slice.call(arguments));
+      args || (args = Array.prototype.slice.call(arguments));
     });
 
     assert.deepEqual(args, [2.1]);

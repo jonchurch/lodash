@@ -65,7 +65,7 @@ QUnit.module('lodash.over');
       assert.expect(1);
 
       var over = _.over(function() {
-        return slice.call(arguments);
+        return Array.prototype.slice.call(arguments);
       });
 
       assert.deepEqual(over('a', 'b', 'c'), [['a', 'b', 'c']]);

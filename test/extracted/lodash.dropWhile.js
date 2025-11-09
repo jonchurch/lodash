@@ -39,7 +39,7 @@ QUnit.module('lodash.dropWhile');
       var args;
 
       _.dropWhile(array, function() {
-        args = slice.call(arguments);
+        args = Array.prototype.slice.call(arguments);
       });
 
       assert.deepEqual(args, [1, 0, array]);

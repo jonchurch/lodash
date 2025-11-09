@@ -12,7 +12,7 @@ QUnit.module('lodash.unary');
 
   (function() {
     function fn() {
-      return slice.call(arguments);
+      return Array.prototype.slice.call(arguments);
     }
 
     QUnit.test('should cap the number of arguments provided to `func`', function(assert) {

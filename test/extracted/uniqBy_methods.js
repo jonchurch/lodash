@@ -49,7 +49,7 @@ QUnit.module('uniqBy methods');
       var args;
 
       func(objects, function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, [objects[0]]);

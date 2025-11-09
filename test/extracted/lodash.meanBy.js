@@ -29,7 +29,7 @@ QUnit.module('lodash.meanBy');
     var args;
 
     _.meanBy(objects, function() {
-      args || (args = slice.call(arguments));
+      args || (args = Array.prototype.slice.call(arguments));
     });
 
     assert.deepEqual(args, [{ 'a': 2 }]);

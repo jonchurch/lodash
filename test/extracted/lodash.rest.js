@@ -12,7 +12,7 @@ QUnit.module('lodash.rest');
 
   (function() {
     function fn(a, b, c) {
-      return slice.call(arguments);
+      return Array.prototype.slice.call(arguments);
     }
 
     QUnit.test('should apply a rest parameter to `func`', function(assert) {
@@ -61,7 +61,7 @@ QUnit.module('lodash.rest');
       assert.expect(1);
 
       var rest = _.rest(function(a, b, c, d) {
-        return slice.call(arguments);
+        return Array.prototype.slice.call(arguments);
       });
 
       assert.deepEqual(rest(1, 2, 3, 4, 5), [1, 2, 3, [4, 5]]);

@@ -43,7 +43,7 @@ QUnit.module('lodash.takeWhile');
       var args;
 
       _.takeWhile(array, function() {
-        args = slice.call(arguments);
+        args = Array.prototype.slice.call(arguments);
       });
 
       assert.deepEqual(args, [1, 0, array]);
@@ -112,31 +112,31 @@ QUnit.module('lodash.takeWhile');
             expected = [1, 0, lodashStable.map(array.slice(1), square)];
 
         _(array).slice(1).takeWhile(function(value, index, array) {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, [1, 0, array.slice(1)]);
 
         _(array).slice(1).map(square).takeWhile(function(value, index, array) {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, expected);
 
         _(array).slice(1).map(square).takeWhile(function(value, index) {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, expected);
 
         _(array).slice(1).map(square).takeWhile(function(value) {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, [1]);
 
         _(array).slice(1).map(square).takeWhile(function() {
-          args = slice.call(arguments);
+          args = Array.prototype.slice.call(arguments);
         }).value();
 
         assert.deepEqual(args, expected);

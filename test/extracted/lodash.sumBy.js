@@ -29,7 +29,7 @@ QUnit.module('lodash.sumBy');
       var args;
 
       _.sumBy(array, function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, [6]);

@@ -38,7 +38,7 @@ QUnit.module('lodash.times');
       var args;
 
       _.times(1, function(assert) {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, [0]);

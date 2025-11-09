@@ -134,35 +134,35 @@ QUnit.module('lodash.map');
             expected = [1, 0, _.map(array.slice(1), square)];
 
         _(array).slice(1).map(function(value, index, array) {
-          args || (args = slice.call(arguments));
+          args || (args = Array.prototype.slice.call(arguments));
         }).value();
 
         assert.deepEqual(args, [1, 0, array.slice(1)]);
 
         args = undefined;
         _(array).slice(1).map(square).map(function(value, index, array) {
-          args || (args = slice.call(arguments));
+          args || (args = Array.prototype.slice.call(arguments));
         }).value();
 
         assert.deepEqual(args, expected);
 
         args = undefined;
         _(array).slice(1).map(square).map(function(value, index) {
-          args || (args = slice.call(arguments));
+          args || (args = Array.prototype.slice.call(arguments));
         }).value();
 
         assert.deepEqual(args, expected);
 
         args = undefined;
         _(array).slice(1).map(square).map(function(value) {
-          args || (args = slice.call(arguments));
+          args || (args = Array.prototype.slice.call(arguments));
         }).value();
 
         assert.deepEqual(args, [1]);
 
         args = undefined;
         _(array).slice(1).map(square).map(function() {
-          args || (args = slice.call(arguments));
+          args || (args = Array.prototype.slice.call(arguments));
         }).value();
 
         assert.deepEqual(args, expected);

@@ -53,7 +53,7 @@ QUnit.module('partial methods');
     QUnit.test('`_.' + methodName + '` should support placeholders', function(assert) {
       assert.expect(4);
 
-      var fn = function() { return slice.call(arguments); },
+      var fn = function() { return Array.prototype.slice.call(arguments); },
           par = func(fn, ph, 'b', ph);
 
       assert.deepEqual(par('a', 'c'), ['a', 'b', 'c']);
@@ -73,7 +73,7 @@ QUnit.module('partial methods');
 
       if (!isModularize) {
         var _ph = _.placeholder = {},
-            fn = function() { return slice.call(arguments); },
+            fn = function() { return Array.prototype.slice.call(arguments); },
             par = func(fn, _ph, 'b', ph),
             expected = isPartial ? ['a', 'b', ph, 'c'] : ['a', 'c', 'b', ph];
 
@@ -137,7 +137,7 @@ QUnit.module('partial methods');
     QUnit.test('should work with placeholders and curried functions', function(assert) {
       assert.expect(1);
 
-      var fn = function() { return slice.call(arguments); },
+      var fn = function() { return Array.prototype.slice.call(arguments); },
           curried = _.curry(fn),
           par = func(curried, ph, 'b', ph, 'd');
 

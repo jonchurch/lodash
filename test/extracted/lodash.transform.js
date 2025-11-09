@@ -186,7 +186,7 @@ QUnit.module('lodash.transform');
         var args;
 
         _.transform(object, function() {
-          args || (args = slice.call(arguments));
+          args || (args = Array.prototype.slice.call(arguments));
         });
 
         var first = args[0];

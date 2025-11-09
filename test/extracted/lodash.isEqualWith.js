@@ -36,7 +36,7 @@ QUnit.module('lodash.isEqualWith');
 
       _.isEqualWith(object1, object2, function(assert) {
         var length = arguments.length,
-            args = slice.call(arguments, 0, length - (length > 2 ? 1 : 0));
+            args = Array.prototype.slice.call(arguments, 0, length - (length > 2 ? 1 : 0));
 
         argsList.push(args);
       });
@@ -139,7 +139,7 @@ QUnit.module('lodash.isEqualWith');
           }
           _.isEqualWith(pair[0], pair[1], function() {
             var length = arguments.length,
-                args = slice.call(arguments, 0, length - (length > 2 ? 1 : 0));
+                args = Array.prototype.slice.call(arguments, 0, length - (length > 2 ? 1 : 0));
 
             argsList.push(args);
           });

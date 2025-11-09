@@ -26,7 +26,7 @@ QUnit.module('lodash.xorBy');
     var args;
 
     _.xorBy([2.1, 1.2], [2.3, 3.4], function() {
-      args || (args = slice.call(arguments));
+      args || (args = Array.prototype.slice.call(arguments));
     });
 
     assert.deepEqual(args, [2.3]);

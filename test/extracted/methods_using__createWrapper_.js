@@ -15,7 +15,7 @@ QUnit.module('methods using `createWrapper`');
 
   (function() {
     function fn() {
-      return slice.call(arguments);
+      return Array.prototype.slice.call(arguments);
     }
 
     var ph1 = _.bind.placeholder,
@@ -194,7 +194,7 @@ QUnit.module('methods using `createWrapper`');
 
       lodashStable.each(['partial', 'partialRight'], function(methodName, index) {
         var func = _[methodName],
-            fn = function() { return slice.call(arguments); },
+            fn = function() { return Array.prototype.slice.call(arguments); },
             par1 = func(fn, 1),
             expected = index ? [3, 2, 1] : [1, 2, 3];
 

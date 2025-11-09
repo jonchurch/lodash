@@ -37,7 +37,7 @@ QUnit.module('lodash.zipWith');
       var args;
 
       _.zipWith([1, 2], [3, 4], [5, 6], function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, [1, 3, 5]);

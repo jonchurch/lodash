@@ -15,7 +15,7 @@ QUnit.module('lodash.overArgs');
 
   (function() {
     function fn() {
-      return slice.call(arguments);
+      return Array.prototype.slice.call(arguments);
     }
 
     QUnit.test('should transform each argument', function(assert) {

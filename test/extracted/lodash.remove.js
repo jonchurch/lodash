@@ -30,7 +30,7 @@ QUnit.module('lodash.remove');
           clone = array.slice();
 
       _.remove(array, function(n, index) {
-        var args = slice.call(arguments);
+        var args = Array.prototype.slice.call(arguments);
         args[2] = args[2].slice();
         argsList.push(args);
         return isEven(index);

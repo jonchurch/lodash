@@ -167,7 +167,7 @@ QUnit.module('lodash.filter');
           array = ['a'];
 
       func(array, function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, ['a', 0, array]);
@@ -201,7 +201,7 @@ QUnit.module('lodash.filter');
           object = { 'a': 1 };
 
       func(object, function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, [1, 'a', object]);

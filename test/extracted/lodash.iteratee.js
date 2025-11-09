@@ -17,7 +17,7 @@ QUnit.module('lodash.iteratee');
     QUnit.test('should provide arguments to `func`', function(assert) {
       assert.expect(1);
 
-      var fn = function() { return slice.call(arguments); },
+      var fn = function() { return Array.prototype.slice.call(arguments); },
           iteratee = _.iteratee(fn),
           actual = iteratee('a', 'b', 'c', 'd', 'e', 'f');
 

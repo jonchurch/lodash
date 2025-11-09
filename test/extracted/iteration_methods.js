@@ -151,7 +151,7 @@ QUnit.module('iteration methods');
               expected = [1, 0, array];
 
           func(array, function() {
-            args || (args = slice.call(arguments));
+            args || (args = Array.prototype.slice.call(arguments));
           });
 
           if (lodashStable.includes(rightMethods, methodName)) {

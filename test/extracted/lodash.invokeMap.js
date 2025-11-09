@@ -28,7 +28,7 @@ QUnit.module('lodash.invokeMap');
     QUnit.test('should support invoking with arguments', function(assert) {
       assert.expect(1);
 
-      var array = [function() { return slice.call(arguments); }],
+      var array = [function() { return Array.prototype.slice.call(arguments); }],
           actual = _.invokeMap(array, 'call', null, 'a', 'b', 'c');
 
       assert.deepEqual(actual, [['a', 'b', 'c']]);

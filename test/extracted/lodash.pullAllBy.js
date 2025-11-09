@@ -29,7 +29,7 @@ QUnit.module('lodash.pullAllBy');
           array = [{ 'x': 1 }, { 'x': 2 }, { 'x': 3 }, { 'x': 1 }];
 
       _.pullAllBy(array, [{ 'x': 1 }, { 'x': 3 }], function() {
-        args || (args = slice.call(arguments));
+        args || (args = Array.prototype.slice.call(arguments));
       });
 
       assert.deepEqual(args, [{ 'x': 1 }]);

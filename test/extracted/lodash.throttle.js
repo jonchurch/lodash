@@ -9,7 +9,7 @@ var isModularize = require('../utils/environment.js').isModularize;
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
-var identity = require('../utils/helpers.js').identity;
+var identity = require('../utils/stubs.js').identity
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var isPhantom = require('../utils/environment.js').isPhantom
 

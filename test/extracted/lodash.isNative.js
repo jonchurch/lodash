@@ -20,6 +20,7 @@ var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var noop = require('../utils/stubs.js').noop;
 var emptyObject = require('../utils/helpers.js').emptyObject;
+var body = require('../utils/environment.js').body
 
 QUnit.module('lodash.isNative');
 

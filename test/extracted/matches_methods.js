@@ -267,8 +267,8 @@ lodashStable.each(['matches', 'isMatch'], function(methodName) {
     QUnit.test('`_.' + methodName + '` should match `undefined` values on primitives', function(assert) {
       assert.expect(3);
 
-      numberProto.a = 1;
-      numberProto.b = undefined;
+      Number.prototype.a = 1;
+      Number.prototype.b = undefined;
 
       try {
         var par = matches({ 'b': undefined });
@@ -282,15 +282,15 @@ lodashStable.each(['matches', 'isMatch'], function(methodName) {
       } catch (e) {
         assert.ok(false, e.message);
       }
-      numberProto.a = { 'b': 1, 'c': undefined };
+      Number.prototype.a = { 'b': 1, 'c': undefined };
       try {
         par = matches({ 'a': { 'c': undefined } });
         assert.strictEqual(par(1), true);
       } catch (e) {
         assert.ok(false, e.message);
       }
-      delete numberProto.a;
-      delete numberProto.b;
+      delete Number.prototype.a;
+      delete Number.prototype.b;
     });
 
     QUnit.test('`_.' + methodName + '` should return `false` when `object` is nullish', function(assert) {

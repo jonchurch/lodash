@@ -111,9 +111,9 @@ QUnit.module('keys methods');
           expected = lodashStable.map(values, lodashStable.constant(isKeys ? ['0', '1', '2'] : ['0', '1', '2', 'a']));
 
       var actual = lodashStable.map(values, function(value) {
-        objectProto.a = 1;
+        Object.prototype.a = 1;
         var result = func(value).sort();
-        delete objectProto.a;
+        delete Object.prototype.a;
         return result;
       });
 
@@ -172,9 +172,9 @@ QUnit.module('keys methods');
       assert.deepEqual(actual, expected);
 
       // IE 9 doesn't box numbers in for-in loops.
-      numberProto.a = 1;
+      Number.prototype.a = 1;
       assert.deepEqual(func(0), isKeys ? [] : ['a']);
-      delete numberProto.a;
+      delete Number.prototype.a;
     });
 
     QUnit.test('`_.' + methodName + '` skips the `constructor` property on prototype objects', function(assert) {
@@ -199,9 +199,9 @@ QUnit.module('keys methods');
           expected = lodashStable.map(values, stubArray);
 
       var actual = lodashStable.map(values, function(value, index) {
-        objectProto.a = 1;
+        Object.prototype.a = 1;
         var result = index ? func(value) : func();
-        delete objectProto.a;
+        delete Object.prototype.a;
         return result;
       });
 

@@ -12,54 +12,54 @@ var stubA = require('../utils/stubs.js').stubA;
 
 QUnit.module('lodash.wrap');
 
-  (function() {
-    QUnit.test('should create a wrapped function', function(assert) {
-      assert.expect(1);
+(function () {
+  QUnit.test('should create a wrapped function', function (assert) {
+    assert.expect(1);
 
-      var p = _.wrap(lodashStable.escape, function(func, text) {
-        return '<p>' + func(text) + '</p>';
-      });
-
-      assert.strictEqual(p('fred, barney, & pebbles'), '<p>fred, barney, &amp; pebbles</p>');
+    var p = _.wrap(lodashStable.escape, function (func, text) {
+      return '<p>' + func(text) + '</p>';
     });
 
-    QUnit.test('should provide correct `wrapper` arguments', function(assert) {
-      assert.expect(1);
+    assert.strictEqual(p('fred, barney, & pebbles'), '<p>fred, barney, &amp; pebbles</p>');
+  });
 
-      var args;
+  QUnit.test('should provide correct `wrapper` arguments', function (assert) {
+    assert.expect(1);
 
-      var wrapped = _.wrap(noop, function() {
-        args || (args = Array.prototype.slice.call(arguments));
-      });
+    var args;
 
-      wrapped(1, 2, 3);
-      assert.deepEqual(args, [noop, 1, 2, 3]);
+    var wrapped = _.wrap(noop, function () {
+      args || (args = Array.prototype.slice.call(arguments));
     });
 
-    QUnit.test('should use `_.identity` when `wrapper` is nullish', function(assert) {
-      assert.expect(1);
+    wrapped(1, 2, 3);
+    assert.deepEqual(args, [noop, 1, 2, 3]);
+  });
 
-      var values = [, null, undefined],
-          expected = lodashStable.map(values, stubA);
+  QUnit.test('should use `_.identity` when `wrapper` is nullish', function (assert) {
+    assert.expect(1);
 
-      var actual = lodashStable.map(values, function(value, index) {
-        var wrapped = index ? _.wrap('a', value) : _.wrap('a');
-        return wrapped('b', 'c');
-      });
+    var values = [, null, undefined],
+      expected = lodashStable.map(values, stubA);
 
-      assert.deepEqual(actual, expected);
+    var actual = lodashStable.map(values, function (value, index) {
+      var wrapped = index ? _.wrap('a', value) : _.wrap('a');
+      return wrapped('b', 'c');
     });
 
-    QUnit.test('should use `this` binding of function', function(assert) {
-      assert.expect(1);
+    assert.deepEqual(actual, expected);
+  });
 
-      var p = _.wrap(lodashStable.escape, function(func) {
-        return '<p>' + func(this.text) + '</p>';
-      });
+  QUnit.test('should use `this` binding of function', function (assert) {
+    assert.expect(1);
 
-      var object = { 'p': p, 'text': 'fred, barney, & pebbles' };
-      assert.strictEqual(object.p(), '<p>fred, barney, &amp; pebbles</p>');
+    var p = _.wrap(lodashStable.escape, function (func) {
+      return '<p>' + func(this.text) + '</p>';
     });
-  }());
 
-  /*--------------------------------------------------------------------------*/
+    var object = { p: p, text: 'fred, barney, & pebbles' };
+    assert.strictEqual(object.p(), '<p>fred, barney, &amp; pebbles</p>');
+  });
+})();
+
+/*--------------------------------------------------------------------------*/

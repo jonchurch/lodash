@@ -27,10 +27,10 @@ export const stubString = () => '';
 
 /** Math helpers. */
 export const add = (x, y) => x + y;
-export const doubled = (n) => n * 2;
-export const isEven = (n) => n % 2 == 0;
-export const square = (n) => n * n;
+export const doubled = n => n * 2;
+export const isEven = n => n % 2 == 0;
+export const square = n => n * n;
 
 /** Utility functions. */
-export const identity = (value) => value;
+export const identity = value => value;
 export const noop = () => {};

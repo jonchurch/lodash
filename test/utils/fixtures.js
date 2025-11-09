@@ -13,13 +13,13 @@ export const primitives = [null, undefined, false, true, 1, NaN, 'a'];
 
 /** Used to test error objects. */
 export const errors = [
-  new Error,
-  new EvalError,
-  new RangeError,
-  new ReferenceError,
-  new SyntaxError,
-  new TypeError,
-  new URIError
+  new Error(),
+  new EvalError(),
+  new RangeError(),
+  new ReferenceError(),
+  new SyntaxError(),
+  new TypeError(),
+  new URIError(),
 ];
 
 /** Used to check whether methods support typed arrays. */
@@ -32,7 +32,7 @@ export const typedArrays = [
   'Uint8Array',
   'Uint8ClampedArray',
   'Uint16Array',
-  'Uint32Array'
+  'Uint32Array',
 ];
 
 /** Used to check whether methods support array views. */

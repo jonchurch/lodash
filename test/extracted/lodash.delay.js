@@ -10,95 +10,109 @@ var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var setProperty = require('../utils/helpers.js').setProperty;
 var skipAssert = require('../utils/helpers.js').skipAssert;
-var isPhantom = require('../utils/environment.js').isPhantom
+var isPhantom = require('../utils/environment.js').isPhantom;
 
 QUnit.module('lodash.delay');
 
-  (function() {
-    QUnit.test('should delay `func` execution', function(assert) {
-      assert.expect(2);
+(function () {
+  QUnit.test('should delay `func` execution', function (assert) {
+    assert.expect(2);
 
-      var done = assert.async();
+    var done = assert.async();
 
-      var pass = false;
-      _.delay(function() { pass = true; }, 32);
+    var pass = false;
+    _.delay(function () {
+      pass = true;
+    }, 32);
 
-      setTimeout(function() {
-        assert.notOk(pass);
-      }, 1);
-
-      setTimeout(function() {
-        assert.ok(pass);
-        done();
-      }, 64);
-    });
-
-    QUnit.test('should provide additional arguments to `func`', function(assert) {
-      assert.expect(1);
-
-      var done = assert.async();
-
-      var args;
-
-      _.delay(function() {
-        args = Array.prototype.slice.call(arguments);
-      }, 32, 1, 2);
-
-      setTimeout(function() {
-        assert.deepEqual(args, [1, 2]);
-        done();
-      }, 64);
-    });
-
-    QUnit.test('should use a default `wait` of `0`', function(assert) {
-      assert.expect(2);
-
-      var done = assert.async();
-
-      var pass = false;
-      _.delay(function() { pass = true; });
-
+    setTimeout(function () {
       assert.notOk(pass);
+    }, 1);
 
-      setTimeout(function() {
-        assert.ok(pass);
-        done();
-      }, 0);
+    setTimeout(function () {
+      assert.ok(pass);
+      done();
+    }, 64);
+  });
+
+  QUnit.test('should provide additional arguments to `func`', function (assert) {
+    assert.expect(1);
+
+    var done = assert.async();
+
+    var args;
+
+    _.delay(
+      function () {
+        args = Array.prototype.slice.call(arguments);
+      },
+      32,
+      1,
+      2
+    );
+
+    setTimeout(function () {
+      assert.deepEqual(args, [1, 2]);
+      done();
+    }, 64);
+  });
+
+  QUnit.test('should use a default `wait` of `0`', function (assert) {
+    assert.expect(2);
+
+    var done = assert.async();
+
+    var pass = false;
+    _.delay(function () {
+      pass = true;
     });
 
-    QUnit.test('should be cancelable', function(assert) {
-      assert.expect(1);
+    assert.notOk(pass);
 
-      var done = assert.async();
+    setTimeout(function () {
+      assert.ok(pass);
+      done();
+    }, 0);
+  });
 
-      var pass = true,
-          timerId = _.delay(function() { pass = false; }, 32);
+  QUnit.test('should be cancelable', function (assert) {
+    assert.expect(1);
 
-      clearTimeout(timerId);
+    var done = assert.async();
 
-      setTimeout(function() {
-        assert.ok(pass);
-        done();
-      }, 64);
-    });
+    var pass = true,
+      timerId = _.delay(function () {
+        pass = false;
+      }, 32);
 
-    QUnit.test('should work with mocked `setTimeout`', function(assert) {
-      assert.expect(1);
+    clearTimeout(timerId);
 
-      if (!isPhantom) {
-        var pass = false,
-            setTimeout = root.setTimeout;
+    setTimeout(function () {
+      assert.ok(pass);
+      done();
+    }, 64);
+  });
 
-        setProperty(root, 'setTimeout', function(func) { func(); });
-        _.delay(function() { pass = true; }, 32);
-        setProperty(root, 'setTimeout', setTimeout);
+  QUnit.test('should work with mocked `setTimeout`', function (assert) {
+    assert.expect(1);
 
-        assert.ok(pass);
-      }
-      else {
-        skipAssert(assert);
-      }
-    });
-  }());
+    if (!isPhantom) {
+      var pass = false,
+        setTimeout = root.setTimeout;
 
-  /*--------------------------------------------------------------------------*/
+      setProperty(root, 'setTimeout', function (func) {
+        func();
+      });
+      _.delay(function () {
+        pass = true;
+      }, 32);
+      setProperty(root, 'setTimeout', setTimeout);
+
+      assert.ok(pass);
+    } else {
+      skipAssert(assert);
+    }
+  });
+})();
+
+/*--------------------------------------------------------------------------*/

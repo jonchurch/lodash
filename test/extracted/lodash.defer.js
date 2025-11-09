@@ -9,53 +9,61 @@ var _ = require('../../lodash.js');
 
 QUnit.module('lodash.defer');
 
-(function() {
-  QUnit.test('should defer `func` execution', function(assert) {
+(function () {
+  QUnit.test('should defer `func` execution', function (assert) {
     assert.expect(1);
 
     var done = assert.async();
 
     var pass = false;
-    _.defer(function() { pass = true; });
+    _.defer(function () {
+      pass = true;
+    });
 
-    setTimeout(function() {
+    setTimeout(function () {
       assert.ok(pass);
       done();
     }, 32);
   });
 
-  QUnit.test('should provide additional arguments to `func`', function(assert) {
+  QUnit.test('should provide additional arguments to `func`', function (assert) {
     assert.expect(1);
 
     var done = assert.async();
 
     var args;
 
-    _.defer(function() {
-      args = Array.prototype.slice.call(arguments);
-    }, 1, 2);
+    _.defer(
+      function () {
+        args = Array.prototype.slice.call(arguments);
+      },
+      1,
+      2
+    );
 
-    setTimeout(function() {
+    setTimeout(function () {
       assert.deepEqual(args, [1, 2]);
       done();
     }, 32);
   });
 
-  QUnit.test('should be cancelable', function(assert) {
+  QUnit.test('should be cancelable', function (assert) {
     assert.expect(1);
 
     var done = assert.async();
 
     var pass = true,
-        timerId = _.defer(function() { pass = false; });
+      timerId = _.defer(function () {
+        pass = false;
+      });
 
     clearTimeout(timerId);
 
-    setTimeout(function() {
+    setTimeout(function () {
       assert.ok(pass);
       done();
     }, 32);
   });
-}());
+})();
 
-  /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/

@@ -9,44 +9,46 @@ var _ = require('../../lodash.js');
 
 QUnit.module('lodash.once');
 
-  (function() {
-    QUnit.test('should invoke `func` once', function(assert) {
-      assert.expect(2);
+(function () {
+  QUnit.test('should invoke `func` once', function (assert) {
+    assert.expect(2);
 
-      var count = 0,
-          once = _.once(function() { return ++count; });
-
-      once();
-      assert.strictEqual(once(), 1);
-      assert.strictEqual(count, 1);
-    });
-
-    QUnit.test('should ignore recursive calls', function(assert) {
-      assert.expect(2);
-
-      var count = 0;
-
-      var once = _.once(function() {
-        once();
+    var count = 0,
+      once = _.once(function () {
         return ++count;
       });
 
-      assert.strictEqual(once(), 1);
-      assert.strictEqual(count, 1);
-    });
+    once();
+    assert.strictEqual(once(), 1);
+    assert.strictEqual(count, 1);
+  });
 
-    QUnit.test('should not throw more than once', function(assert) {
-      assert.expect(2);
+  QUnit.test('should ignore recursive calls', function (assert) {
+    assert.expect(2);
 
-      var once = _.once(function() {
-        throw new Error;
-      });
+    var count = 0;
 
-      assert.raises(once);
-
+    var once = _.once(function () {
       once();
-      assert.ok(true);
+      return ++count;
     });
-  }());
 
-  /*--------------------------------------------------------------------------*/
+    assert.strictEqual(once(), 1);
+    assert.strictEqual(count, 1);
+  });
+
+  QUnit.test('should not throw more than once', function (assert) {
+    assert.expect(2);
+
+    var once = _.once(function () {
+      throw new Error();
+    });
+
+    assert.raises(once);
+
+    once();
+    assert.ok(true);
+  });
+})();
+
+/*--------------------------------------------------------------------------*/

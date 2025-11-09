@@ -9,12 +9,12 @@ var _ = require('../../lodash.js');
 
 QUnit.module('lodash.forEachRight');
 
-  (function() {
-    QUnit.test('should be aliased', function(assert) {
-      assert.expect(1);
+(function () {
+  QUnit.test('should be aliased', function (assert) {
+    assert.expect(1);
 
-      assert.strictEqual(_.eachRight, _.forEachRight);
-    });
-  }());
+    assert.strictEqual(_.eachRight, _.forEachRight);
+  });
+})();
 
-  /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/

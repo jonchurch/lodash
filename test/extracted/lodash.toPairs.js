@@ -9,12 +9,12 @@ var _ = require('../../lodash.js');
 
 QUnit.module('lodash.toPairs');
 
-  (function() {
-    QUnit.test('should be aliased', function(assert) {
-      assert.expect(1);
+(function () {
+  QUnit.test('should be aliased', function (assert) {
+    assert.expect(1);
 
-      assert.strictEqual(_.entries, _.toPairs);
-    });
-  }());
+    assert.strictEqual(_.entries, _.toPairs);
+  });
+})();
 
-  /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/

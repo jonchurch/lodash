@@ -16,7 +16,7 @@ export const MAX_MEMOIZE_SIZE = 500;
 
 /** Used as references for various `Number` constants. */
 export const MAX_SAFE_INTEGER = 9007199254740991;
-export const MAX_INTEGER = 1.7976931348623157e+308;
+export const MAX_INTEGER = 1.7976931348623157e308;
 
 /** Used as references for the maximum length and index of an array. */
 export const MAX_ARRAY_LENGTH = 4294967295;

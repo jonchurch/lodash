@@ -46,12 +46,11 @@ exports.argv = process ? process.argv : undefined;
 exports.lodashBizarro = exports.root.lodashBizarro;
 
 /** Async/generator function references (if available) */
-exports.asyncFunc = (async function() {});
-exports.genFunc = (function*() {});
+exports.asyncFunc = async function () {};
+exports.genFunc = function* () {};
 
 /** Coverage reference (for test runners) */
 exports.coverage = undefined;
 
 /** XML reference (browser-specific) */
 exports.xml = undefined;
-

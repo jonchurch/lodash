@@ -2,8 +2,8 @@
  * Helper functions for testing, extracted from test/test.js
  */
 
-import lodashStable from 'lodash'
-import _ from '../../lodash.js'
+import lodashStable from 'lodash';
+import _ from '../../lodash.js';
 
 /**
  * Converts `array` to an `arguments` object.
@@ -12,14 +12,19 @@ import _ from '../../lodash.js'
  * @returns {Object} Returns the converted `arguments` object.
  */
 export function toArgs(array) {
-  return (function() { return arguments; }.apply(undefined, array));
+  return function () {
+    return arguments;
+  }.apply(undefined, array);
 }
 
 /** Standard arguments object. */
 export const args = toArgs([1, 2, 3]);
 
 /** Strict mode arguments object. */
-export const strictArgs = (function() { 'use strict'; return arguments; }(1, 2, 3));
+export const strictArgs = (function () {
+  'use strict';
+  return arguments;
+})(1, 2, 3);
 
 /**
  * Custom error class for testing.
@@ -56,7 +61,7 @@ export function setProperty(object, key, value) {
       configurable: true,
       enumerable: false,
       writable: true,
-      value: value
+      value: value,
     });
   } catch (e) {
     object[key] = value;
@@ -100,18 +105,17 @@ export function getUnwrappedValue(wrapper) {
   return result;
 }
 
-  /** Used to test pseudo private map caches. */
-  export const mapCaches = (function() {
-    var MapCache = (_.memoize || lodashStable.memoize).Cache;
-    var result = {
-      'Hash': new MapCache().__data__.hash.constructor,
-      'MapCache': MapCache
-    };
-    (_.isMatchWith || lodashStable.isMatchWith)({ 'a': 1 }, { 'a': 1 }, function() {
-      var stack = lodashStable.last(arguments);
-      result.ListCache = stack.__data__.constructor;
-      result.Stack = stack.constructor;
-    });
-    return result;
-  }());
-
+/** Used to test pseudo private map caches. */
+export const mapCaches = (function () {
+  var MapCache = (_.memoize || lodashStable.memoize).Cache;
+  var result = {
+    Hash: new MapCache().__data__.hash.constructor,
+    MapCache: MapCache,
+  };
+  (_.isMatchWith || lodashStable.isMatchWith)({ a: 1 }, { a: 1 }, function () {
+    var stack = lodashStable.last(arguments);
+    result.ListCache = stack.__data__.constructor;
+    result.Stack = stack.constructor;
+  });
+  return result;
+})();

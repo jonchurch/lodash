@@ -9,151 +9,154 @@ var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
 var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
-var isStrict = require('../utils/environment.js').isStrict
+var isStrict = require('../utils/environment.js').isStrict;
 
 var numberProto = Number.prototype;
 
 QUnit.module('lodash.unset');
 
-  (function() {
-    QUnit.test('should unset property values', function(assert) {
-      assert.expect(4);
+(function () {
+  QUnit.test('should unset property values', function (assert) {
+    assert.expect(4);
 
-      lodashStable.each(['a', ['a']], function(path) {
-        var object = { 'a': 1, 'c': 2 };
-        assert.strictEqual(_.unset(object, path), true);
-        assert.deepEqual(object, { 'c': 2 });
-      });
+    lodashStable.each(['a', ['a']], function (path) {
+      var object = { a: 1, c: 2 };
+      assert.strictEqual(_.unset(object, path), true);
+      assert.deepEqual(object, { c: 2 });
+    });
+  });
+
+  QUnit.test('should preserve the sign of `0`', function (assert) {
+    assert.expect(1);
+
+    var props = [-0, Object(-0), 0, Object(0)],
+      expected = lodashStable.map(props, lodashStable.constant([true, false]));
+
+    var actual = lodashStable.map(props, function (key) {
+      var object = { '-0': 'a', 0: 'b' };
+      return [_.unset(object, key), lodashStable.toString(key) in object];
     });
 
-    QUnit.test('should preserve the sign of `0`', function(assert) {
-      assert.expect(1);
+    assert.deepEqual(actual, expected);
+  });
 
-      var props = [-0, Object(-0), 0, Object(0)],
-          expected = lodashStable.map(props, lodashStable.constant([true, false]));
+  QUnit.test('should unset symbol keyed property values', function (assert) {
+    assert.expect(2);
 
-      var actual = lodashStable.map(props, function(key) {
-        var object = { '-0': 'a', '0': 'b' };
-        return [_.unset(object, key), lodashStable.toString(key) in object];
-      });
+    if (Symbol) {
+      var object = {};
+      object[symbol] = 1;
 
-      assert.deepEqual(actual, expected);
+      assert.strictEqual(_.unset(object, symbol), true);
+      assert.notOk(symbol in object);
+    } else {
+      skipAssert(assert, 2);
+    }
+  });
+
+  QUnit.test('should unset deep property values', function (assert) {
+    assert.expect(4);
+
+    lodashStable.each(['a.b', ['a', 'b']], function (path) {
+      var object = { a: { b: null } };
+      assert.strictEqual(_.unset(object, path), true);
+      assert.deepEqual(object, { a: {} });
+    });
+  });
+
+  QUnit.test('should handle complex paths', function (assert) {
+    assert.expect(4);
+
+    var paths = [
+      'a[-1.23]["[\\"b\\"]"].c[\'[\\\'d\\\']\'][\ne\n][f].g',
+      ['a', '-1.23', '["b"]', 'c', "['d']", '\ne\n', 'f', 'g'],
+    ];
+
+    lodashStable.each(paths, function (path) {
+      var object = {
+        a: { '-1.23': { '["b"]': { c: { "['d']": { '\ne\n': { f: { g: 8 } } } } } } },
+      };
+      assert.strictEqual(_.unset(object, path), true);
+      assert.notOk('g' in object.a[-1.23]['["b"]'].c["['d']"]['\ne\n'].f);
+    });
+  });
+
+  QUnit.test('should return `true` for nonexistent paths', function (assert) {
+    assert.expect(5);
+
+    var object = { a: { b: { c: null } } };
+
+    lodashStable.each(['z', 'a.z', 'a.b.z', 'a.b.c.z'], function (path) {
+      assert.strictEqual(_.unset(object, path), true);
     });
 
-    QUnit.test('should unset symbol keyed property values', function(assert) {
-      assert.expect(2);
+    assert.deepEqual(object, { a: { b: { c: null } } });
+  });
 
-      if (Symbol) {
-        var object = {};
-        object[symbol] = 1;
+  QUnit.test('should not error when `object` is nullish', function (assert) {
+    assert.expect(1);
 
-        assert.strictEqual(_.unset(object, symbol), true);
-        assert.notOk(symbol in object);
-      }
-      else {
-        skipAssert(assert, 2);
-      }
-    });
-
-    QUnit.test('should unset deep property values', function(assert) {
-      assert.expect(4);
-
-      lodashStable.each(['a.b', ['a', 'b']], function(path) {
-        var object = { 'a': { 'b': null } };
-        assert.strictEqual(_.unset(object, path), true);
-        assert.deepEqual(object, { 'a': {} });
-      });
-    });
-
-    QUnit.test('should handle complex paths', function(assert) {
-      assert.expect(4);
-
-      var paths = [
-        'a[-1.23]["[\\"b\\"]"].c[\'[\\\'d\\\']\'][\ne\n][f].g',
-        ['a', '-1.23', '["b"]', 'c', "['d']", '\ne\n', 'f', 'g']
+    var values = [null, undefined],
+      expected = [
+        [true, true],
+        [true, true],
       ];
 
-      lodashStable.each(paths, function(path) {
-        var object = { 'a': { '-1.23': { '["b"]': { 'c': { "['d']": { '\ne\n': { 'f': { 'g': 8 } } } } } } } };
-        assert.strictEqual(_.unset(object, path), true);
-        assert.notOk('g' in object.a[-1.23]['["b"]'].c["['d']"]['\ne\n'].f);
-      });
-    });
-
-    QUnit.test('should return `true` for nonexistent paths', function(assert) {
-      assert.expect(5);
-
-      var object = { 'a': { 'b': { 'c': null } } };
-
-      lodashStable.each(['z', 'a.z', 'a.b.z', 'a.b.c.z'], function(path) {
-        assert.strictEqual(_.unset(object, path), true);
-      });
-
-      assert.deepEqual(object, { 'a': { 'b': { 'c': null } } });
-    });
-
-    QUnit.test('should not error when `object` is nullish', function(assert) {
-      assert.expect(1);
-
-      var values = [null, undefined],
-          expected = [[true, true], [true, true]];
-
-      var actual = lodashStable.map(values, function(value) {
-        try {
-          return [_.unset(value, 'a.b'), _.unset(value, ['a', 'b'])];
-        } catch (e) {
-          return e.message;
-        }
-      });
-
-      assert.deepEqual(actual, expected);
-    });
-
-    QUnit.test('should follow `path` over non-plain objects', function(assert) {
-      assert.expect(8);
-
-      var object = { 'a': '' },
-          paths = ['constructor.prototype.a', ['constructor', 'prototype', 'a']];
-
-      lodashStable.each(paths, function(path) {
-        numberProto.a = 1;
-
-        var actual = _.unset(0, path);
-        assert.strictEqual(actual, true);
-        assert.notOk('a' in numberProto);
-
-        delete numberProto.a;
-      });
-
-      lodashStable.each(['a.replace.b', ['a', 'replace', 'b']], function(path) {
-        String.prototype.replace.b = 1;
-
-        var actual = _.unset(object, path);
-        assert.strictEqual(actual, true);
-        assert.notOk('a' in String.prototype.replace);
-
-        delete String.prototype.replace.b;
-      });
-    });
-
-    QUnit.test('should return `false` for non-configurable properties', function(assert) {
-      assert.expect(1);
-
-      var object = {};
-
-      if (!isStrict) {
-        Object.defineProperty(object, 'a', {
-          'configurable': false,
-          'enumerable': true,
-          'writable': true,
-          'value': 1,
-        });
-        assert.strictEqual(_.unset(object, 'a'), false);
-      }
-      else {
-        skipAssert(assert);
+    var actual = lodashStable.map(values, function (value) {
+      try {
+        return [_.unset(value, 'a.b'), _.unset(value, ['a', 'b'])];
+      } catch (e) {
+        return e.message;
       }
     });
-  }());
 
-  /*--------------------------------------------------------------------------*/
+    assert.deepEqual(actual, expected);
+  });
+
+  QUnit.test('should follow `path` over non-plain objects', function (assert) {
+    assert.expect(8);
+
+    var object = { a: '' },
+      paths = ['constructor.prototype.a', ['constructor', 'prototype', 'a']];
+
+    lodashStable.each(paths, function (path) {
+      numberProto.a = 1;
+
+      var actual = _.unset(0, path);
+      assert.strictEqual(actual, true);
+      assert.notOk('a' in numberProto);
+
+      delete numberProto.a;
+    });
+
+    lodashStable.each(['a.replace.b', ['a', 'replace', 'b']], function (path) {
+      String.prototype.replace.b = 1;
+
+      var actual = _.unset(object, path);
+      assert.strictEqual(actual, true);
+      assert.notOk('a' in String.prototype.replace);
+
+      delete String.prototype.replace.b;
+    });
+  });
+
+  QUnit.test('should return `false` for non-configurable properties', function (assert) {
+    assert.expect(1);
+
+    var object = {};
+
+    if (!isStrict) {
+      Object.defineProperty(object, 'a', {
+        configurable: false,
+        enumerable: true,
+        writable: true,
+        value: 1,
+      });
+      assert.strictEqual(_.unset(object, 'a'), false);
+    } else {
+      skipAssert(assert);
+    }
+  });
+})();
+
+/*--------------------------------------------------------------------------*/

@@ -9,39 +9,39 @@ var _ = require('../../lodash.js');
 
 QUnit.module('lodash.sumBy');
 
-  (function() {
-    var array = [6, 4, 2],
-        objects = [{ 'a': 2 }, { 'a': 3 }, { 'a': 1 }];
+(function () {
+  var array = [6, 4, 2],
+    objects = [{ a: 2 }, { a: 3 }, { a: 1 }];
 
-    QUnit.test('should work with an `iteratee`', function(assert) {
-      assert.expect(1);
+  QUnit.test('should work with an `iteratee`', function (assert) {
+    assert.expect(1);
 
-      var actual = _.sumBy(objects, function(object) {
-        return object.a;
-      });
-
-      assert.deepEqual(actual, 6);
+    var actual = _.sumBy(objects, function (object) {
+      return object.a;
     });
 
-    QUnit.test('should provide correct `iteratee` arguments', function(assert) {
-      assert.expect(1);
+    assert.deepEqual(actual, 6);
+  });
 
-      var args;
+  QUnit.test('should provide correct `iteratee` arguments', function (assert) {
+    assert.expect(1);
 
-      _.sumBy(array, function() {
-        args || (args = Array.prototype.slice.call(arguments));
-      });
+    var args;
 
-      assert.deepEqual(args, [6]);
+    _.sumBy(array, function () {
+      args || (args = Array.prototype.slice.call(arguments));
     });
 
-    QUnit.test('should work with `_.property` shorthands', function(assert) {
-      assert.expect(2);
+    assert.deepEqual(args, [6]);
+  });
 
-      var arrays = [[2], [3], [1]];
-      assert.strictEqual(_.sumBy(arrays, 0), 6);
-      assert.strictEqual(_.sumBy(objects, 'a'), 6);
-    });
-  }());
+  QUnit.test('should work with `_.property` shorthands', function (assert) {
+    assert.expect(2);
 
-  /*--------------------------------------------------------------------------*/
+    var arrays = [[2], [3], [1]];
+    assert.strictEqual(_.sumBy(arrays, 0), 6);
+    assert.strictEqual(_.sumBy(objects, 'a'), 6);
+  });
+})();
+
+/*--------------------------------------------------------------------------*/

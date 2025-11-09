@@ -19,48 +19,47 @@ var skipAssert = require('../utils/helpers.js').skipAssert;
 
 QUnit.module('lodash.isArguments');
 
-  (function() {
-    QUnit.test('should return `true` for `arguments` objects', function(assert) {
-      assert.expect(2);
+(function () {
+  QUnit.test('should return `true` for `arguments` objects', function (assert) {
+    assert.expect(2);
 
-      assert.strictEqual(_.isArguments(args), true);
-      assert.strictEqual(_.isArguments(strictArgs), true);
+    assert.strictEqual(_.isArguments(args), true);
+    assert.strictEqual(_.isArguments(strictArgs), true);
+  });
+
+  QUnit.test('should return `false` for non `arguments` objects', function (assert) {
+    assert.expect(12);
+
+    var expected = lodashStable.map(falsey, stubFalse);
+
+    var actual = lodashStable.map(falsey, function (value, index) {
+      return index ? _.isArguments(value) : _.isArguments();
     });
 
-    QUnit.test('should return `false` for non `arguments` objects', function(assert) {
-      assert.expect(12);
+    assert.deepEqual(actual, expected);
 
-      var expected = lodashStable.map(falsey, stubFalse);
+    assert.strictEqual(_.isArguments([1, 2, 3]), false);
+    assert.strictEqual(_.isArguments(true), false);
+    assert.strictEqual(_.isArguments(new Date()), false);
+    assert.strictEqual(_.isArguments(new Error()), false);
+    assert.strictEqual(_.isArguments(_), false);
+    assert.strictEqual(_.isArguments(Array.prototype.slice), false);
+    assert.strictEqual(_.isArguments({ 0: 1, callee: noop, length: 1 }), false);
+    assert.strictEqual(_.isArguments(1), false);
+    assert.strictEqual(_.isArguments(/x/), false);
+    assert.strictEqual(_.isArguments('a'), false);
+    assert.strictEqual(_.isArguments(symbol), false);
+  });
 
-      var actual = lodashStable.map(falsey, function(value, index) {
-        return index ? _.isArguments(value) : _.isArguments();
-      });
+  QUnit.test('should work with an `arguments` object from another realm', function (assert) {
+    assert.expect(1);
 
-      assert.deepEqual(actual, expected);
+    if (realm.arguments) {
+      assert.strictEqual(_.isArguments(realm.arguments), true);
+    } else {
+      skipAssert(assert);
+    }
+  });
+})();
 
-      assert.strictEqual(_.isArguments([1, 2, 3]), false);
-      assert.strictEqual(_.isArguments(true), false);
-      assert.strictEqual(_.isArguments(new Date), false);
-      assert.strictEqual(_.isArguments(new Error), false);
-      assert.strictEqual(_.isArguments(_), false);
-      assert.strictEqual(_.isArguments(Array.prototype.slice), false);
-      assert.strictEqual(_.isArguments({ '0': 1, 'callee': noop, 'length': 1 }), false);
-      assert.strictEqual(_.isArguments(1), false);
-      assert.strictEqual(_.isArguments(/x/), false);
-      assert.strictEqual(_.isArguments('a'), false);
-      assert.strictEqual(_.isArguments(symbol), false);
-    });
-
-    QUnit.test('should work with an `arguments` object from another realm', function(assert) {
-      assert.expect(1);
-
-      if (realm.arguments) {
-        assert.strictEqual(_.isArguments(realm.arguments), true);
-      }
-      else {
-        skipAssert(assert);
-      }
-    });
-  }());
-
-  /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/

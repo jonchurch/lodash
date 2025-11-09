@@ -7,27 +7,33 @@
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
-var isStrict = require('../utils/environment.js').isStrict
+var isStrict = require('../utils/environment.js').isStrict;
 
 QUnit.module('strict mode checks');
 
-  lodashStable.each(['assign', 'assignIn', 'bindAll', 'defaults', 'defaultsDeep', 'merge'], function(methodName) {
+lodashStable.each(
+  ['assign', 'assignIn', 'bindAll', 'defaults', 'defaultsDeep', 'merge'],
+  function (methodName) {
     var func = _[methodName],
-        isBindAll = methodName == 'bindAll';
+      isBindAll = methodName == 'bindAll';
 
-    QUnit.test('`_.' + methodName + '` should ' + (isStrict ? '' : 'not ') + 'throw strict mode errors', function(assert) {
-      assert.expect(1);
+    QUnit.test(
+      '`_.' + methodName + '` should ' + (isStrict ? '' : 'not ') + 'throw strict mode errors',
+      function (assert) {
+        assert.expect(1);
 
-      var object = Object.freeze({ 'a': undefined, 'b': function() {} }),
+        var object = Object.freeze({ a: undefined, b: function () {} }),
           pass = !isStrict;
 
-      try {
-        func(object, isBindAll ? 'b' : { 'a': 1 });
-      } catch (e) {
-        pass = !pass;
+        try {
+          func(object, isBindAll ? 'b' : { a: 1 });
+        } catch (e) {
+          pass = !pass;
+        }
+        assert.ok(pass);
       }
-      assert.ok(pass);
-    });
-  });
+    );
+  }
+);
 
-  /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/

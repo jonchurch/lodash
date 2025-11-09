@@ -14,75 +14,75 @@ var noop = require('../utils/stubs.js').noop;
 
 QUnit.module('lodash.nthArg');
 
-  (function() {
-    var args = ['a', 'b', 'c', 'd'];
+(function () {
+  var args = ['a', 'b', 'c', 'd'];
 
-    QUnit.test('should create a function that returns its nth argument', function(assert) {
-      assert.expect(1);
+  QUnit.test('should create a function that returns its nth argument', function (assert) {
+    assert.expect(1);
 
-      var actual = lodashStable.map(args, function(value, index) {
-        var func = _.nthArg(index);
-        return func.apply(undefined, args);
-      });
-
-      assert.deepEqual(actual, args);
+    var actual = lodashStable.map(args, function (value, index) {
+      var func = _.nthArg(index);
+      return func.apply(undefined, args);
     });
 
-    QUnit.test('should work with a negative `n`', function(assert) {
-      assert.expect(1);
+    assert.deepEqual(actual, args);
+  });
 
-      var actual = lodashStable.map(lodashStable.range(1, args.length + 1), function(n) {
-        var func = _.nthArg(-n);
-        return func.apply(undefined, args);
-      });
+  QUnit.test('should work with a negative `n`', function (assert) {
+    assert.expect(1);
 
-      assert.deepEqual(actual, ['d', 'c', 'b', 'a']);
+    var actual = lodashStable.map(lodashStable.range(1, args.length + 1), function (n) {
+      var func = _.nthArg(-n);
+      return func.apply(undefined, args);
     });
 
-    QUnit.test('should coerce `n` to an integer', function(assert) {
-      assert.expect(2);
+    assert.deepEqual(actual, ['d', 'c', 'b', 'a']);
+  });
 
-      var values = falsey,
-          expected = lodashStable.map(values, stubA);
+  QUnit.test('should coerce `n` to an integer', function (assert) {
+    assert.expect(2);
 
-      var actual = lodashStable.map(values, function(n) {
-        var func = n ? _.nthArg(n) : _.nthArg();
-        return func.apply(undefined, args);
-      });
+    var values = falsey,
+      expected = lodashStable.map(values, stubA);
 
-      assert.deepEqual(actual, expected);
-
-      values = ['1', 1.6];
-      expected = lodashStable.map(values, stubB);
-
-      actual = lodashStable.map(values, function(n) {
-        var func = _.nthArg(n);
-        return func.apply(undefined, args);
-      });
-
-      assert.deepEqual(actual, expected);
+    var actual = lodashStable.map(values, function (n) {
+      var func = n ? _.nthArg(n) : _.nthArg();
+      return func.apply(undefined, args);
     });
 
-    QUnit.test('should return `undefined` for empty arrays', function(assert) {
-      assert.expect(1);
+    assert.deepEqual(actual, expected);
 
-      var func = _.nthArg(1);
-      assert.strictEqual(func(), undefined);
+    values = ['1', 1.6];
+    expected = lodashStable.map(values, stubB);
+
+    actual = lodashStable.map(values, function (n) {
+      var func = _.nthArg(n);
+      return func.apply(undefined, args);
     });
 
-    QUnit.test('should return `undefined` for non-indexes', function(assert) {
-      assert.expect(1);
+    assert.deepEqual(actual, expected);
+  });
 
-      var values = [Infinity, args.length],
-          expected = lodashStable.map(values, noop);
+  QUnit.test('should return `undefined` for empty arrays', function (assert) {
+    assert.expect(1);
 
-      var actual = lodashStable.map(values, function(n) {
-        var func = _.nthArg(n);
-        return func.apply(undefined, args);
-      });
+    var func = _.nthArg(1);
+    assert.strictEqual(func(), undefined);
+  });
 
-      assert.deepEqual(actual, expected);
+  QUnit.test('should return `undefined` for non-indexes', function (assert) {
+    assert.expect(1);
+
+    var values = [Infinity, args.length],
+      expected = lodashStable.map(values, noop);
+
+    var actual = lodashStable.map(values, function (n) {
+      var func = _.nthArg(n);
+      return func.apply(undefined, args);
     });
-  }());
 
-  /*--------------------------------------------------------------------------*/
+    assert.deepEqual(actual, expected);
+  });
+})();
+
+/*--------------------------------------------------------------------------*/

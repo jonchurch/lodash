@@ -5,6 +5,7 @@
  */
 
 var root = require('../utils/environment.js').root;
+var xml = require('../utils/environment.js').xml;
 
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');

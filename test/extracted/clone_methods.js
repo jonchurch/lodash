@@ -4,6 +4,8 @@
  * Original lines: 2679-3164
  */
 
+var realm = require('../utils/environment.js').realm;
+
 var noop = require('../utils/stubs.js').noop;
 
 var isNpm = require('../utils/environment.js').isNpm;

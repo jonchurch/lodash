@@ -4,6 +4,8 @@
  * Original lines: 16252-16304
  */
 
+var realm = require('../utils/environment.js').realm;
+
 var isModularize = require('../utils/environment.js').isModularize;
 
 var QUnit = require('qunitjs');

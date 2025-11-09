@@ -12,7 +12,7 @@ var stubFalse = require('../utils/stubs.js').stubFalse;
 var args = require('../utils/helpers.js').args;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var symbol = require('../utils/es6.js').symbol;
-var realm = require('../utils/realm.js');
+var realm = require('../utils/environment.js').realm;
 
 QUnit.module('lodash.isSymbol');
 

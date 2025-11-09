@@ -11,7 +11,7 @@ var falsey = require('../utils/fixtures.js').falsey;
 var lodashStable = require('lodash');
 var symbol = require('../utils/es6.js').symbol;
 var stubFalse = require('../utils/stubs.js').stubFalse;
-var realm = require('../utils/helpers.js').realm;
+var realm = require('../utils/environment.js').realm;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 
 QUnit.module('lodash.isObjectLike');

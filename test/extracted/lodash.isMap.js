@@ -14,7 +14,7 @@ var stubFalse = require('../utils/stubs.js').stubFalse;
 var map = require('../utils/es6.js').map;
 var symbol = require('../utils/es6.js').symbol;
 var weakMap = require('../utils/es6.js').weakMap;
-var realm = require('../utils/realm.js');
+var realm = require('../utils/environment.js').realm;
 var slice = Array.prototype.slice;
 
 QUnit.module('lodash.isMap');

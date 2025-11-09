@@ -13,7 +13,7 @@ var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var args = require('../utils/helpers.js').args;
 var arrayProto = require('../utils/helpers.js').arrayProto;
-var realm = require('../utils/helpers.js').realm;
+var realm = require('../utils/environment.js').realm;
 var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
 var isNpm = require('../utils/helpers.js').isNpm;
 

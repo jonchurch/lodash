@@ -4,6 +4,8 @@
  * Original lines: 24103-24315
  */
 
+var realm = require('../utils/environment.js').realm;
+
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');

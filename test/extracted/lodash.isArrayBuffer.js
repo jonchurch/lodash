@@ -13,7 +13,7 @@ var args = require('../utils/helpers.js').args;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var symbol = require('../utils/es6.js').symbol;
 var arrayBuffer = require('../utils/es6.js').arrayBuffer;
-var realm = require('../utils/helpers.js').realm;
+var realm = require('../utils/environment.js').realm;
 
 QUnit.module('lodash.isArrayBuffer');
 

@@ -14,7 +14,7 @@ var skipAssert = require('../utils/helpers.js').skipAssert;
 var create = require('../utils/helpers.js').create;
 var objectProto = require('../utils/helpers.js').objectProto;
 var defineProperty = require('../utils/helpers.js').defineProperty;
-var realm = require('../utils/helpers.js').realm;
+var realm = require('../utils/environment.js').realm;
 
 QUnit.module('lodash.isPlainObject');
 

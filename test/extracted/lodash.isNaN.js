@@ -11,7 +11,7 @@ var falsey = require('../utils/fixtures.js').falsey;
 var args = require('../utils/helpers.js').args;
 var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
-var realm = require('../utils/helpers.js').realm;
+var realm = require('../utils/environment.js').realm;
 
 QUnit.module('lodash.isNaN');
 

@@ -11,7 +11,7 @@ var falsey = require('../utils/fixtures.js').falsey;
 var stubFalse = require('../utils/stubs.js').stubFalse;
 var args = require('../utils/helpers.js').args;
 var symbol = require('../utils/es6.js').symbol;
-var realm = require('../utils/realm.js');
+var realm = require('../utils/environment.js').realm;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 
 QUnit.module('lodash.isDate');

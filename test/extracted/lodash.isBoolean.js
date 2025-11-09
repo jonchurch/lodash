@@ -10,7 +10,7 @@ var lodashStable = require('lodash');
 var falsey = require('../utils/fixtures.js').falsey;
 var args = require('../utils/helpers.js').args;
 var symbol = require('../utils/es6.js').symbol;
-var realm = require('../utils/helpers.js').realm;
+var realm = require('../utils/environment.js').realm;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 
 QUnit.module('lodash.isBoolean');

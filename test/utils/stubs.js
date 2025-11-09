@@ -22,7 +22,7 @@ export const stubFour = () => 4;
 
 /** Object stubs. */
 export const stubArray = () => [];
-export const stubObject = () => {};
+export const stubObject = () => ({});
 export const stubString = () => '';
 
 /** Math helpers. */

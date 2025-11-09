@@ -64,19 +64,19 @@ QUnit.module('lodash.assign and lodash.assignIn');
         'toString': lodashStable.constant('source')
       };
 
-      Object.Object.defineProperty(object, 'a', lodashStable.assign({}, descriptor, {
+      Object.defineProperty(object, 'a', lodashStable.assign({}, descriptor, {
         'get': stubOne
       }));
 
-      Object.Object.defineProperty(object, 'b', lodashStable.assign({}, descriptor, {
+      Object.defineProperty(object, 'b', lodashStable.assign({}, descriptor, {
         'get': noop
       }));
 
-      Object.Object.defineProperty(object, 'c', lodashStable.assign({}, descriptor, {
+      Object.defineProperty(object, 'c', lodashStable.assign({}, descriptor, {
         'get': stubNaN
       }));
 
-      Object.Object.defineProperty(object, 'constructor', lodashStable.assign({}, descriptor, {
+      Object.defineProperty(object, 'constructor', lodashStable.assign({}, descriptor, {
         'get': lodashStable.constant(Object)
       }));
 

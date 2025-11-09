@@ -12,7 +12,6 @@ var stubTrue = require('../utils/stubs.js').stubTrue;
 var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var args = require('../utils/helpers.js').args;
-var arrayProto = require('../utils/helpers.js').arrayProto;
 var realm = require('../utils/environment.js').realm;
 var MAX_SAFE_INTEGER = require('../utils/constants.js').MAX_SAFE_INTEGER;
 var isNpm = require('../utils/helpers.js').isNpm;
@@ -83,7 +82,7 @@ QUnit.module('lodash.isEmpty');
       function Foo(elements) {
         Array.prototype.push.apply(this, elements);
       }
-      Foo.prototype = { 'length': 0, 'splice': arrayProto.splice };
+      Foo.prototype = { 'length': 0, 'splice': Array.prototype.splice };
 
       assert.strictEqual(_.isEmpty(new Foo([])), true);
     });

@@ -34,7 +34,7 @@ QUnit.module('lodash.isObjectLike');
     QUnit.test('should return `false` for non-objects', function(assert) {
       assert.expect(1);
 
-      var values = falsey.concat(true, _, slice, 1, 'a', symbol),
+      var values = falsey.concat(true, _, Array.prototype.slice, 1, 'a', symbol),
           expected = lodashStable.map(values, stubFalse);
 
       var actual = lodashStable.map(values, function(value, index) {

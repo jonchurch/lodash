@@ -21,7 +21,7 @@ QUnit.module('lodash.isNative');
     QUnit.test('should return `true` for native methods', function(assert) {
       assert.expect(1);
 
-      var values = [Array, body && body.cloneNode, create, root.encodeURI, Promise, slice, Uint8Array],
+      var values = [Array, body && body.cloneNode, create, root.encodeURI, Promise, Array.prototype.slice, Uint8Array],
           expected = lodashStable.map(values, Boolean),
           actual = lodashStable.map(values, _.isNative);
 
@@ -98,10 +98,10 @@ QUnit.module('lodash.isNative');
         emptyObject(require.cache);
 
         var baseIsNative = interopRequire(path.join(basePath, '_baseIsNative'));
-        assert.strictEqual(baseIsNative(slice), true);
+        assert.strictEqual(baseIsNative(Array.prototype.slice), true);
 
         slice[fakeSrcKey] = slice + '';
-        assert.strictEqual(baseIsNative(slice), false);
+        assert.strictEqual(baseIsNative(Array.prototype.slice), false);
 
         delete slice[fakeSrcKey];
         delete root[coreKey];

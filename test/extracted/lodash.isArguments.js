@@ -41,7 +41,7 @@ QUnit.module('lodash.isArguments');
       assert.strictEqual(_.isArguments(new Date), false);
       assert.strictEqual(_.isArguments(new Error), false);
       assert.strictEqual(_.isArguments(_), false);
-      assert.strictEqual(_.isArguments(slice), false);
+      assert.strictEqual(_.isArguments(Array.prototype.slice), false);
       assert.strictEqual(_.isArguments({ '0': 1, 'callee': noop, 'length': 1 }), false);
       assert.strictEqual(_.isArguments(1), false);
       assert.strictEqual(_.isArguments(/x/), false);

@@ -43,7 +43,7 @@ QUnit.module('lodash.isNumber');
       assert.strictEqual(_.isNumber(new Date), false);
       assert.strictEqual(_.isNumber(new Error), false);
       assert.strictEqual(_.isNumber(_), false);
-      assert.strictEqual(_.isNumber(slice), false);
+      assert.strictEqual(_.isNumber(Array.prototype.slice), false);
       assert.strictEqual(_.isNumber({ 'a': 1 }), false);
       assert.strictEqual(_.isNumber(/x/), false);
       assert.strictEqual(_.isNumber('a'), false);

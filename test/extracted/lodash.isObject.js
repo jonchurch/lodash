@@ -27,7 +27,7 @@ QUnit.module('lodash.isObject');
       assert.strictEqual(_.isObject(new Date), true);
       assert.strictEqual(_.isObject(new Error), true);
       assert.strictEqual(_.isObject(_), true);
-      assert.strictEqual(_.isObject(slice), true);
+      assert.strictEqual(_.isObject(Array.prototype.slice), true);
       assert.strictEqual(_.isObject({ 'a': 1 }), true);
       assert.strictEqual(_.isObject(Object(0)), true);
       assert.strictEqual(_.isObject(/x/), true);

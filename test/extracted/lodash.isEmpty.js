@@ -29,7 +29,7 @@ QUnit.module('lodash.isEmpty');
       assert.deepEqual(actual, expected);
 
       assert.strictEqual(_.isEmpty(true), true);
-      assert.strictEqual(_.isEmpty(slice), true);
+      assert.strictEqual(_.isEmpty(Array.prototype.slice), true);
       assert.strictEqual(_.isEmpty(1), true);
       assert.strictEqual(_.isEmpty(NaN), true);
       assert.strictEqual(_.isEmpty(/x/), true);

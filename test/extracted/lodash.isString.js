@@ -42,7 +42,7 @@ QUnit.module('lodash.isString');
       assert.strictEqual(_.isString(new Date), false);
       assert.strictEqual(_.isString(new Error), false);
       assert.strictEqual(_.isString(_), false);
-      assert.strictEqual(_.isString(slice), false);
+      assert.strictEqual(_.isString(Array.prototype.slice), false);
       assert.strictEqual(_.isString({ '0': 1, 'length': 1 }), false);
       assert.strictEqual(_.isString(1), false);
       assert.strictEqual(_.isString(/x/), false);

@@ -168,7 +168,7 @@ QUnit.module('object assignments');
           expected = lodashStable.map([1, 2, 'a', object, source], lodashStable.cloneDeep);
 
       func(object, source, function() {
-        args || (args = lodashStable.map(slice.call(arguments, 0, 5), lodashStable.cloneDeep));
+        args || (args = lodashStable.map(Array.prototype.slice.call(arguments, 0, 5), lodashStable.cloneDeep));
       });
 
       assert.deepEqual(args, expected, 'primitive values');
@@ -185,7 +185,7 @@ QUnit.module('object assignments');
         expected.push(lodashStable.map([undefined, 2, 'b', objectValue, sourceValue], lodashStable.cloneDeep));
       }
       func(object, source, function() {
-        argsList.push(lodashStable.map(slice.call(arguments, 0, 5), lodashStable.cloneDeep));
+        argsList.push(lodashStable.map(Array.prototype.slice.call(arguments, 0, 5), lodashStable.cloneDeep));
       });
 
       assert.deepEqual(argsList, expected, 'object values');
@@ -196,7 +196,7 @@ QUnit.module('object assignments');
       expected = lodashStable.map([undefined, 2, 'b', object, source], lodashStable.cloneDeep);
 
       func(object, source, function() {
-        args || (args = lodashStable.map(slice.call(arguments, 0, 5), lodashStable.cloneDeep));
+        args || (args = lodashStable.map(Array.prototype.slice.call(arguments, 0, 5), lodashStable.cloneDeep));
       });
 
       assert.deepEqual(args, expected, 'undefined properties');

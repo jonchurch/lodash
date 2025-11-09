@@ -41,7 +41,7 @@ QUnit.module('lodash.isNull');
       assert.strictEqual(_.isNull(new Date), false);
       assert.strictEqual(_.isNull(new Error), false);
       assert.strictEqual(_.isNull(_), false);
-      assert.strictEqual(_.isNull(slice), false);
+      assert.strictEqual(_.isNull(Array.prototype.slice), false);
       assert.strictEqual(_.isNull({ 'a': 1 }), false);
       assert.strictEqual(_.isNull(1), false);
       assert.strictEqual(_.isNull(/x/), false);

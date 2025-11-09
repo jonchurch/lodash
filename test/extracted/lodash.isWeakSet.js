@@ -47,7 +47,7 @@ QUnit.module('lodash.isWeakSet');
       assert.strictEqual(_.isWeakSet(new Date), false);
       assert.strictEqual(_.isWeakSet(new Error), false);
       assert.strictEqual(_.isWeakSet(_), false);
-      assert.strictEqual(_.isWeakSet(slice), false);
+      assert.strictEqual(_.isWeakSet(Array.prototype.slice), false);
       assert.strictEqual(_.isWeakSet({ 'a': 1 }), false);
       assert.strictEqual(_.isWeakSet(1), false);
       assert.strictEqual(_.isWeakSet(/x/), false);

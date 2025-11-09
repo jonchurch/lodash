@@ -42,7 +42,7 @@ QUnit.module('lodash.isNaN');
       assert.strictEqual(_.isNaN(new Date), false);
       assert.strictEqual(_.isNaN(new Error), false);
       assert.strictEqual(_.isNaN(_), false);
-      assert.strictEqual(_.isNaN(slice), false);
+      assert.strictEqual(_.isNaN(Array.prototype.slice), false);
       assert.strictEqual(_.isNaN({ 'a': 1 }), false);
       assert.strictEqual(_.isNaN(1), false);
       assert.strictEqual(_.isNaN(Object(1)), false);

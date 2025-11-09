@@ -46,7 +46,7 @@ QUnit.module('lodash.isSymbol');
       assert.strictEqual(_.isSymbol(new Date), false);
       assert.strictEqual(_.isSymbol(new Error), false);
       assert.strictEqual(_.isSymbol(_), false);
-      assert.strictEqual(_.isSymbol(slice), false);
+      assert.strictEqual(_.isSymbol(Array.prototype.slice), false);
       assert.strictEqual(_.isSymbol({ '0': 1, 'length': 1 }), false);
       assert.strictEqual(_.isSymbol(1), false);
       assert.strictEqual(_.isSymbol(/x/), false);

@@ -40,7 +40,7 @@ var symbol = require('../utils/es6.js').symbol;
       assert.strictEqual(_.isRegExp(new Date), false);
       assert.strictEqual(_.isRegExp(new Error), false);
       assert.strictEqual(_.isRegExp(_), false);
-      assert.strictEqual(_.isRegExp(slice), false);
+      assert.strictEqual(_.isRegExp(Array.prototype.slice), false);
       assert.strictEqual(_.isRegExp({ 'a': 1 }), false);
       assert.strictEqual(_.isRegExp(1), false);
       assert.strictEqual(_.isRegExp('a'), false);

@@ -46,7 +46,7 @@ QUnit.module('lodash.isBuffer');
       assert.strictEqual(_.isBuffer(new Date), false);
       assert.strictEqual(_.isBuffer(new Error), false);
       assert.strictEqual(_.isBuffer(_), false);
-      assert.strictEqual(_.isBuffer(slice), false);
+      assert.strictEqual(_.isBuffer(Array.prototype.slice), false);
       assert.strictEqual(_.isBuffer({ 'a': 1 }), false);
       assert.strictEqual(_.isBuffer(1), false);
       assert.strictEqual(_.isBuffer(/x/), false);

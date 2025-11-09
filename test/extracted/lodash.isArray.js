@@ -39,7 +39,7 @@ QUnit.module('lodash.isArray');
       assert.strictEqual(_.isArray(new Date), false);
       assert.strictEqual(_.isArray(new Error), false);
       assert.strictEqual(_.isArray(_), false);
-      assert.strictEqual(_.isArray(slice), false);
+      assert.strictEqual(_.isArray(Array.prototype.slice), false);
       assert.strictEqual(_.isArray({ '0': 1, 'length': 1 }), false);
       assert.strictEqual(_.isArray(1), false);
       assert.strictEqual(_.isArray(/x/), false);

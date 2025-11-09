@@ -21,7 +21,7 @@ QUnit.module('lodash.isFunction');
       assert.expect(2);
 
       assert.strictEqual(_.isFunction(_), true);
-      assert.strictEqual(_.isFunction(slice), true);
+      assert.strictEqual(_.isFunction(Array.prototype.slice), true);
     });
 
     QUnit.test('should return `true` for async functions', function(assert) {

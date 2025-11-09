@@ -40,7 +40,7 @@ QUnit.module('lodash.isMatchWith');
     ];
 
     _.isMatchWith(object1, object2, function(assert) {
-      argsList.push(slice.call(arguments, 0, -1));
+      argsList.push(Array.prototype.slice.call(arguments, 0, -1));
     });
 
     assert.deepEqual(argsList, expected);
@@ -154,7 +154,7 @@ QUnit.module('lodash.isMatchWith');
           expected.length = 2;
         }
         _.isMatchWith({ 'a': pair[0] }, { 'a': pair[1] }, function() {
-          argsList.push(slice.call(arguments, 0, -1));
+          argsList.push(Array.prototype.slice.call(arguments, 0, -1));
         });
 
         assert.deepEqual(argsList, expected, index ? 'Set' : 'Map');

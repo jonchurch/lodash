@@ -95,7 +95,7 @@ QUnit.module('lodash.overArgs');
       assert.expect(1);
 
       var argsList = [],
-          transform = function() { argsList.push(slice.call(arguments)); },
+          transform = function() { argsList.push(Array.prototype.slice.call(arguments)); },
           over = _.overArgs(noop, transform, transform, transform);
 
       over('a', 'b');

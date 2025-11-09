@@ -46,7 +46,7 @@ QUnit.module('lodash.isWeakMap');
       assert.strictEqual(_.isWeakMap(new Date), false);
       assert.strictEqual(_.isWeakMap(new Error), false);
       assert.strictEqual(_.isWeakMap(_), false);
-      assert.strictEqual(_.isWeakMap(slice), false);
+      assert.strictEqual(_.isWeakMap(Array.prototype.slice), false);
       assert.strictEqual(_.isWeakMap({ 'a': 1 }), false);
       assert.strictEqual(_.isWeakMap(map), false);
       assert.strictEqual(_.isWeakMap(1), false);

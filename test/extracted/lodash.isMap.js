@@ -48,7 +48,7 @@ QUnit.module('lodash.isMap');
     assert.strictEqual(_.isMap(new Date), false);
     assert.strictEqual(_.isMap(new Error), false);
     assert.strictEqual(_.isMap(_), false);
-    assert.strictEqual(_.isMap(slice), false);
+    assert.strictEqual(_.isMap(Array.prototype.slice), false);
     assert.strictEqual(_.isMap({ 'a': 1 }), false);
     assert.strictEqual(_.isMap(1), false);
     assert.strictEqual(_.isMap(/x/), false);

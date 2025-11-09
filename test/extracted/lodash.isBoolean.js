@@ -43,7 +43,7 @@ QUnit.module('lodash.isBoolean');
       assert.strictEqual(_.isBoolean(new Date), false);
       assert.strictEqual(_.isBoolean(new Error), false);
       assert.strictEqual(_.isBoolean(_), false);
-      assert.strictEqual(_.isBoolean(slice), false);
+      assert.strictEqual(_.isBoolean(Array.prototype.slice), false);
       assert.strictEqual(_.isBoolean({ 'a': 1 }), false);
       assert.strictEqual(_.isBoolean(1), false);
       assert.strictEqual(_.isBoolean(/x/), false);

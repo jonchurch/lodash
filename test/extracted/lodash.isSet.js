@@ -47,7 +47,7 @@ QUnit.module('lodash.isSet');
       assert.strictEqual(_.isSet(new Date), false);
       assert.strictEqual(_.isSet(new Error), false);
       assert.strictEqual(_.isSet(_), false);
-      assert.strictEqual(_.isSet(slice), false);
+      assert.strictEqual(_.isSet(Array.prototype.slice), false);
       assert.strictEqual(_.isSet({ 'a': 1 }), false);
       assert.strictEqual(_.isSet(1), false);
       assert.strictEqual(_.isSet(/x/), false);

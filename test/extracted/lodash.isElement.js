@@ -54,7 +54,7 @@ QUnit.module('lodash.isElement');
       assert.strictEqual(_.isElement(new Date), false);
       assert.strictEqual(_.isElement(new Error), false);
       assert.strictEqual(_.isElement(_), false);
-      assert.strictEqual(_.isElement(slice), false);
+      assert.strictEqual(_.isElement(Array.prototype.slice), false);
       assert.strictEqual(_.isElement({ 'a': 1 }), false);
       assert.strictEqual(_.isElement(1), false);
       assert.strictEqual(_.isElement(/x/), false);

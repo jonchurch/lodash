@@ -48,7 +48,7 @@ QUnit.module('lodash.isArrayLike');
       assert.strictEqual(_.isArrayLike(_), false);
       assert.strictEqual(_.isArrayLike(asyncFunc), false);
       assert.strictEqual(_.isArrayLike(genFunc), false);
-      assert.strictEqual(_.isArrayLike(slice), false);
+      assert.strictEqual(_.isArrayLike(Array.prototype.slice), false);
       assert.strictEqual(_.isArrayLike({ 'a': 1 }), false);
       assert.strictEqual(_.isArrayLike(1), false);
       assert.strictEqual(_.isArrayLike(/x/), false);

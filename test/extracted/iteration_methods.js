@@ -198,7 +198,7 @@ QUnit.module('iteration methods');
           }
           var argsList = [];
           func(array, function() {
-            argsList.push(slice.call(arguments));
+            argsList.push(Array.prototype.slice.call(arguments));
             return !(isFind || isSome);
           });
 

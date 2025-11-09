@@ -39,7 +39,7 @@ QUnit.module('lodash.isDate');
       assert.strictEqual(_.isDate(true), false);
       assert.strictEqual(_.isDate(new Error), false);
       assert.strictEqual(_.isDate(_), false);
-      assert.strictEqual(_.isDate(slice), false);
+      assert.strictEqual(_.isDate(Array.prototype.slice), false);
       assert.strictEqual(_.isDate({ 'a': 1 }), false);
       assert.strictEqual(_.isDate(1), false);
       assert.strictEqual(_.isDate(/x/), false);

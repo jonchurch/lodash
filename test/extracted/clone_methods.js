@@ -23,7 +23,10 @@ var arrayViews = require('../utils/fixtures.js').arrayViews;
 var symbol = require('../utils/es6.js').symbol;
 var arrayBuffer = require('../utils/es6.js').arrayBuffer;
 var mapCaches = require('../utils/helpers.js').mapCaches;
+var stubTrue = require('../utils/stubs.js').stubTrue;
 var body = require('../utils/environment.js').body
+var asyncFunc = require('../utils/environment.js').asyncFunc
+var genFunc = require('../utils/environment.js').genFunc
 
 QUnit.module('clone methods');
 
@@ -304,7 +307,7 @@ QUnit.module('clone methods');
             assert.strictEqual(actual.a, object.a);
           }
           assert.deepEqual(actual[symbol], object[symbol]);
-          assert.deepEqual(getSymbols(actual.a.b), [symbol]);
+          assert.deepEqual(Object.getOwnPropertySymbols(actual.a.b), [symbol]);
           assert.deepEqual(actual.a.b[symbol], object.a.b[symbol]);
           assert.deepEqual(actual.a.b[symbol2], object.a.b[symbol2]);
           assert.deepEqual(actual.a.b[symbol3], object.a.b[symbol3]);

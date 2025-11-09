@@ -19,6 +19,7 @@ var stubFalse = require('../utils/stubs.js').stubFalse;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 var args = require('../utils/helpers.js').args;
 var symbol = require('../utils/es6.js').symbol;
+var asyncFunc = require('../utils/environment.js').asyncFunc
 
 QUnit.module('lodash.isFunction');
 

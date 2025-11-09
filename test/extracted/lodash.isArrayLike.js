@@ -15,6 +15,7 @@ var skipAssert = require('../utils/helpers.js').skipAssert;
 var falsey = require('../utils/fixtures.js').falsey;
 var stubTrue = require('../utils/stubs.js').stubTrue;
 var symbol = require('../utils/es6.js').symbol;
+var genFunc = require('../utils/environment.js').genFunc
 
 QUnit.module('lodash.isArrayLike');
 

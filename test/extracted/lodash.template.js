@@ -10,6 +10,7 @@ var lodashStable = require('lodash');
 var stubString = require('../utils/stubs.js').stubString;
 var stubTrue = require('../utils/stubs.js').stubTrue;
 var stubFalse = require('../utils/stubs.js').stubFalse;
+var numberTag = require('../utils/tags.js').numberTag
 
 QUnit.module('lodash.template');
 

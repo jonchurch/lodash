@@ -9,10 +9,9 @@ var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
 var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
+var isStrict = require('../utils/environment.js').isStrict
 
 var numberProto = Number.prototype;
-var defineProperty = Object.defineProperty;
-var isStrict = false;
 
 QUnit.module('lodash.unset');
 

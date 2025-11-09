@@ -27,6 +27,7 @@ var stubTrue = require('../utils/stubs.js').stubTrue;
 var body = require('../utils/environment.js').body
 var asyncFunc = require('../utils/environment.js').asyncFunc
 var genFunc = require('../utils/environment.js').genFunc
+var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
 
 QUnit.module('clone methods');
 

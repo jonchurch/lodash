@@ -7,6 +7,7 @@
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
+var isStrict = require('../utils/environment.js').isStrict
 
 QUnit.module('strict mode checks');
 
@@ -17,7 +18,7 @@ QUnit.module('strict mode checks');
     QUnit.test('`_.' + methodName + '` should ' + (isStrict ? '' : 'not ') + 'throw strict mode errors', function(assert) {
       assert.expect(1);
 
-      var object = freeze({ 'a': undefined, 'b': function() {} }),
+      var object = Object.freeze({ 'a': undefined, 'b': function() {} }),
           pass = !isStrict;
 
       try {

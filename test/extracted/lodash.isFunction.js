@@ -20,6 +20,7 @@ var skipAssert = require('../utils/helpers.js').skipAssert;
 var args = require('../utils/helpers.js').args;
 var symbol = require('../utils/es6.js').symbol;
 var asyncFunc = require('../utils/environment.js').asyncFunc
+var funcTag = require('../utils/tags.js').funcTag
 
 QUnit.module('lodash.isFunction');
 
@@ -58,7 +59,7 @@ QUnit.module('lodash.isFunction');
       assert.expect(1);
 
       var expected = lodashStable.map(arrayViews, function(type) {
-        return objToString.call(root[type]) == funcTag;
+        return Object.prototype.toString.call(root[type]) == funcTag;
       });
 
       var actual = lodashStable.map(arrayViews, function(type) {

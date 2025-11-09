@@ -73,3 +73,27 @@ export function skipAssert(assert, count = 1) {
     assert.ok(true, 'test skipped');
   }
 }
+
+/**
+ * Extracts the unwrapped value from its wrapper.
+ *
+ * @private
+ * @param {Object} wrapper The wrapper to unwrap.
+ * @returns {*} Returns the unwrapped value.
+ */
+export function getUnwrappedValue(wrapper) {
+  var index = -1,
+    actions = wrapper.__actions__,
+    length = actions.length,
+    result = wrapper.__wrapped__;
+
+  while (++index < length) {
+    var args = [result],
+      action = actions[index];
+
+    Array.prototype.push.apply(args, action.args);
+    result = action.func.apply(action.thisArg, args);
+  }
+  return result;
+}
+

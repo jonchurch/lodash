@@ -55,7 +55,3 @@ exports.coverage = undefined;
 /** XML reference (browser-specific) */
 exports.xml = undefined;
 
-/** Helper for unwrapping values (used in some tests) */
-exports.getUnwrappedValue = function(value) {
-  return value && value.value ? value.value() : value;
-};

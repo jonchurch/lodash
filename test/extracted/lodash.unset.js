@@ -11,7 +11,6 @@ var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
 
 var numberProto = Number.prototype;
-var stringProto = String.prototype;
 var defineProperty = Object.defineProperty;
 var isStrict = false;
 
@@ -128,13 +127,13 @@ QUnit.module('lodash.unset');
       });
 
       lodashStable.each(['a.replace.b', ['a', 'replace', 'b']], function(path) {
-        stringProto.replace.b = 1;
+        String.prototype.replace.b = 1;
 
         var actual = _.unset(object, path);
         assert.strictEqual(actual, true);
-        assert.notOk('a' in stringProto.replace);
+        assert.notOk('a' in String.prototype.replace);
 
-        delete stringProto.replace.b;
+        delete String.prototype.replace.b;
       });
     });
 

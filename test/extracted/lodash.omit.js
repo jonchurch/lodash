@@ -8,7 +8,6 @@ var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
 var toArgs = require('../utils/helpers.js').toArgs;
-var stringProto = require('../utils/helpers.js').stringProto;
 
 QUnit.module('lodash.omit');
 
@@ -69,13 +68,13 @@ QUnit.module('lodash.omit');
     QUnit.test('should work with a primitive `object`', function(assert) {
       assert.expect(1);
 
-      stringProto.a = 1;
-      stringProto.b = 2;
+      String.prototype.a = 1;
+      String.prototype.b = 2;
 
       assert.deepEqual(_.omit('', 'b'), { 'a': 1 });
 
-      delete stringProto.a;
-      delete stringProto.b;
+      delete String.prototype.a;
+      delete String.prototype.b;
     });
 
     QUnit.test('should work with `arguments` object `paths`', function(assert) {

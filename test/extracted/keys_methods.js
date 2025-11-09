@@ -142,14 +142,14 @@ QUnit.module('keys methods');
     QUnit.test('`_.' + methodName + '` should ' + (isKeys ? 'not ' : '') + 'include inherited string keyed properties of string objects', function(assert) {
       assert.expect(1);
 
-      stringProto.a = 1;
+      String.prototype.a = 1;
 
       var expected = isKeys ? ['0'] : ['0', 'a'],
           actual = func(Object('a')).sort();
 
       assert.deepEqual(actual, expected);
 
-      delete stringProto.a;
+      delete String.prototype.a;
     });
 
     QUnit.test('`_.' + methodName + '` should work with array-like objects', function(assert) {

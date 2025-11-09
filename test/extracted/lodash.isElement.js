@@ -4,6 +4,8 @@
  * Original lines: 9306-9379
  */
 
+var document = require('../utils/environment.js').document;
+
 var realm = require('../utils/environment.js').realm;
 
 var QUnit = require('qunitjs');

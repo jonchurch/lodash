@@ -4,6 +4,8 @@
  * Original lines: 2679-3164
  */
 
+var document = require('../utils/environment.js').document;
+
 var root = require('../utils/environment.js').root;
 
 var realm = require('../utils/environment.js').realm;

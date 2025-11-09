@@ -4,6 +4,8 @@
  * Original lines: 23422-23474
  */
 
+var document = require('../utils/environment.js').document;
+
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');

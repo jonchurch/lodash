@@ -4,6 +4,8 @@
  * Original lines: 21346-21378
  */
 
+var noop = require('../utils/stubs.js').noop;
+
 var QUnit = require('qunitjs');
 var _ = require('../../lodash.js');
 var lodashStable = require('lodash');

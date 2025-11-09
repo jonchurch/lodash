@@ -4,6 +4,8 @@
  * Original lines: 2679-3164
  */
 
+var noop = require('../utils/stubs.js').noop;
+
 var isNpm = require('../utils/environment.js').isNpm;
 
 var QUnit = require('qunitjs');

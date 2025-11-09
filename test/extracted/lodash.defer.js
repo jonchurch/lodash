@@ -32,7 +32,7 @@ QUnit.module('lodash.defer');
     var args;
 
     _.defer(function() {
-      args = slice.call(arguments);
+      args = Array.prototype.slice.call(arguments);
     }, 1, 2);
 
     setTimeout(function() {

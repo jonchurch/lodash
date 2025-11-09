@@ -71,7 +71,7 @@ QUnit.module('lodash.debounce and lodash.throttle');
 
       var funced = func(function() {
         var current = [this];
-        push.apply(current, arguments);
+        Array.prototype.push.apply(current, arguments);
         actual.push(current);
 
         var next = queue.shift();

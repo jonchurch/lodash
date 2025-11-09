@@ -11,7 +11,6 @@ var stubTrue = require('../utils/stubs.js').stubTrue;
 var stubFalse = require('../utils/stubs.js').stubFalse;
 var noop = require('../utils/helpers.js').noop;
 var skipAssert = require('../utils/helpers.js').skipAssert;
-var numberProto = require('../utils/helpers.js').numberProto;
 
 QUnit.module('lodash.matchesProperty');
 
@@ -380,8 +379,8 @@ QUnit.module('lodash.matchesProperty');
     QUnit.test('should match `undefined` values on primitives', function(assert) {
       assert.expect(2);
 
-      numberProto.a = 1;
-      numberProto.b = undefined;
+      Number.prototype.a = 1;
+      Number.prototype.b = undefined;
 
       try {
         var matches = _.matchesProperty('b', undefined);
@@ -389,15 +388,15 @@ QUnit.module('lodash.matchesProperty');
       } catch (e) {
         assert.ok(false, e.message);
       }
-      numberProto.a = { 'b': 1, 'c': undefined };
+      Number.prototype.a = { 'b': 1, 'c': undefined };
       try {
         matches = _.matchesProperty('a', { 'c': undefined });
         assert.strictEqual(matches(1), true);
       } catch (e) {
         assert.ok(false, e.message);
       }
-      delete numberProto.a;
-      delete numberProto.b;
+      delete Number.prototype.a;
+      delete Number.prototype.b;
     });
 
     QUnit.test('should return `true` when comparing a `srcValue` of empty arrays and objects', function(assert) {

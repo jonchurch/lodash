@@ -14,6 +14,7 @@ var noop = require('../utils/stubs.js').noop;
 var stubA = require('../utils/stubs.js').stubA;
 var stubFalse = require('../utils/stubs.js').stubFalse;
 var skipAssert = require('../utils/helpers.js').skipAssert;
+var mapCaches = require('../utils/helpers.js').mapCaches;
 
 QUnit.module('lodash.isMatchWith');
 

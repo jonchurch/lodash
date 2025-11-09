@@ -22,6 +22,7 @@ var skipAssert = require('../utils/helpers.js').skipAssert;
 var arrayViews = require('../utils/fixtures.js').arrayViews;
 var symbol = require('../utils/es6.js').symbol;
 var arrayBuffer = require('../utils/es6.js').arrayBuffer;
+var mapCaches = require('../utils/helpers.js').mapCaches;
 
 QUnit.module('clone methods');
 

@@ -11,6 +11,7 @@ var _ = require('../../lodash.js');
 var lodashStable = require('lodash');
 var noop = require('../utils/stubs.js').noop;
 var identity = require('../utils/stubs.js').identity;
+var mapCaches = require('../utils/helpers.js').mapCaches;
 
 QUnit.module('lodash.mergeWith');
 

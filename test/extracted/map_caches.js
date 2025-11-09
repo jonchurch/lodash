@@ -10,7 +10,7 @@ var lodashStable = require('lodash');
 var symbol = require('../utils/es6.js').symbol;
 var noop = require('../utils/stubs.js').noop;
 var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
-var mapCaches = require('../utils/test-utils.js').mapCaches;
+var mapCaches = require('../utils/helpers.js').mapCaches;
 
 QUnit.module('map caches');
 

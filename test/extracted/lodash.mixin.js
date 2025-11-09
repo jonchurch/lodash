@@ -11,6 +11,8 @@ var skipAssert = require('../utils/helpers.js').skipAssert;
 var stubB = require('../utils/stubs.js').stubB;
 var noop = require('../utils/stubs.js').noop;
 var LARGE_ARRAY_SIZE = require('../utils/constants.js').LARGE_ARRAY_SIZE;
+var getUnwrappedValue = require('../utils/helpers.js').getUnwrappedValue;
+var isNpm = require('../utils/environment.js').isNpm;
 var square = require('../utils/stubs.js').square;
 var isEven = require('../utils/stubs.js').isEven;
 
@@ -29,7 +31,7 @@ QUnit.module('lodash.mixin');
         return new Wrapper(value);
       }
       if (_.has(value, '__wrapped__')) {
-        var actions = slice.call(value.__actions__),
+        var actions = Array.prototype.slice.call(value.__actions__),
             chain = value.__chain__;
 
         value = value.__wrapped__;

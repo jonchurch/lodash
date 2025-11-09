@@ -12,7 +12,6 @@ var stubB = require('../utils/stubs.js').stubB;
 var stubC = require('../utils/stubs.js').stubC;
 var stubFalse = require('../utils/stubs.js').stubFalse;
 var stubTrue = require('../utils/stubs.js').stubTrue;
-var slice = require('../utils/helpers.js').slice;
 
 QUnit.module('lodash.cond');
 
@@ -39,8 +38,8 @@ QUnit.module('lodash.cond');
           expected = ['a', 'b', 'c'];
 
       var cond = _.cond([[
-        function() { args1 || (args1 = slice.call(arguments)); return true; },
-        function() { args2 || (args2 = slice.call(arguments)); }
+        function() { args1 || (args1 = Array.prototype.slice.call(arguments)); return true; },
+        function() { args2 || (args2 = Array.prototype.slice.call(arguments)); }
       ]]);
 
       cond('a', 'b', 'c');

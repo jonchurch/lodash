@@ -13,7 +13,6 @@ var falsey = require('../utils/fixtures.js').falsey;
 var stubFalse = require('../utils/stubs.js').stubFalse;
 var symbol = require('../utils/es6.js').symbol;
 var skipAssert = require('../utils/helpers.js').skipAssert;
-var create = require('../utils/helpers.js').create;
 var realm = require('../utils/environment.js').realm;
 
 QUnit.module('lodash.isPlainObject');
@@ -38,7 +37,7 @@ QUnit.module('lodash.isPlainObject');
     QUnit.test('should return `true` for objects with a `[[Prototype]]` of `null`', function(assert) {
       assert.expect(2);
 
-      var object = create(null);
+      var object = Object.create(null);
       assert.strictEqual(_.isPlainObject(object), true);
 
       object.constructor = Object.prototype.constructor;
@@ -68,7 +67,7 @@ QUnit.module('lodash.isPlainObject');
     QUnit.test('should return `false` for objects with a custom `[[Prototype]]`', function(assert) {
       assert.expect(1);
 
-      var object = create({ 'a': 1 });
+      var object = Object.create({ 'a': 1 });
       assert.strictEqual(_.isPlainObject(object), false);
     });
 
@@ -131,7 +130,7 @@ QUnit.module('lodash.isPlainObject');
       if (Symbol && Symbol.toStringTag) {
         var proto = {};
         proto[Symbol.toStringTag] = undefined;
-        var object = create(proto);
+        var object = Object.create(proto);
 
         assert.strictEqual(_.isPlainObject(object), false);
         assert.notOk(lodashStable.has(object, Symbol.toStringTag));

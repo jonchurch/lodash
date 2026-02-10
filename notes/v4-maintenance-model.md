@@ -42,7 +42,7 @@ There's no GitHub Action or any automation for building or releasing. Travis CI 
 ## What's Weird But Fine
 
 - **The monolith**: It IS lodash v4. Changing it is out of scope for v4 maintenance.
-- **Regex-based extraction**: Quirky, but relies on lodash's strict formatting conventions which haven't changed. The patterns are stable and well-tested. No reason to rewrite.
+- **Regex-based extraction**: Quirky, but relies on lodash's strict formatting conventions which haven't changed. The patterns are stable and well-tested. Fine for now, but a latent risk — if formatting changes, extraction silently breaks. A modern AST-based rewrite (~500 lines with acorn, replacing ~3400 lines of regex) is on the roadmap as a parallel workstream, validated by diffing output against the existing CLI.
 - **Build output committed to branches**: Unusual but functional. It gives published packages full git history, makes them browsable on GitHub, and supports `npm install lodash/lodash#npm` for git-based installs. Many projects do worse.
 - **Separate distribution branches**: A consequence of shipping three package formats from one source. Workspaces or a monorepo would be more modern but would be a massive structural change for no v4 benefit.
 
@@ -76,7 +76,7 @@ The dist branches (npm, es, amd) contain generated code. How and when should the
 - **Tag-triggered release**: Push `v4.17.24` tag → dispatcher triggers each branch's build workflow → each branch builds, tests, commits to itself. Human decides when to release (by pushing a tag), machines do the mechanical work.
 - **Manual dispatch for refresh**: `workflow_dispatch` on each branch for ad-hoc rebuilds, verification, or keeping branches fresh. No version implications, no tag needed.
 
-Each dist branch owns its own build workflow. The build script lives on the branch, accepts a source ref (tag, commitish, file path), and knows how to produce that branch's distribution files. The branch is self-describing — a maintainer can look at it and understand how it's built without knowing anything about main's workflows.
+Each dist branch owns its own build workflow. The build script lives on the branch, accepts a commitish (tag, SHA, branch name) or directory path, and knows how to produce that branch's distribution files. The commitish is resolved to a full source tree via `git archive` — this extracts the entire file tree at any ref from within the same repo, no cloning or network needed. The CLI gets a directory (`--source-dir`) and reads whatever it needs from it (lodash.js, package.json, mapping.js, FP build scripts). The build script never needs to know which specific files the CLI requires. The branch is self-describing — a maintainer can look at it and understand how it's built without knowing anything about main's workflows.
 
 Tags are immutable. If you need to test the full tag-triggered pipeline, use a prerelease tag (`v4.17.24-rc.1`) or just use `workflow_dispatch` (which covers most testing needs without consuming a version number).
 

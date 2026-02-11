@@ -37,45 +37,63 @@ The version string comes from `var VERSION` in lodash.js (or `package.json` in t
 
 ### 1.3 Add build scripts to distribution branches
 
-Each dist branch gets a `build.sh` and a `"build"` script in `package.json`. The build script accepts a ref or directory path, defaulting to `main`.
+Each dist branch gets build scripts in `package.json`. Since the CLI handles ref resolution via `--ref` (fetching from GitHub), the build scripts are pure orchestration — no git-awareness, no temp dirs.
 
-Since the CLI handles ref resolution via `--ref` (fetching from GitHub), the build script is pure orchestration — no `git archive`, no temp dirs, no git-awareness:
+**npm branch** — three CLI invocations + FP generation:
 
-```bash
-# build.sh (simplified):
-SOURCE="${1:-main}"
-
-if [[ -d "$SOURCE" ]]; then
-  npx lodash-cli modularize exports=node --source-dir "$SOURCE" -o ./
-else
-  npx lodash-cli modularize exports=node --ref "$SOURCE" -o ./
-fi
-
-# ... branch-specific extras (monolith copy, core, FP, minification)
+```json
+{
+  "scripts": {
+    "build": "bash build.sh && npm run build-fp",
+    "build-fp": "node build-fp.js"
+  }
+}
 ```
 
-Usage:
+```bash
+# build.sh — three lodash-cli calls, order matters:
+REF="${1:-main}"
+
+# 1. Modular CJS files (~628 files)
+npx lodash-cli modularize exports=node --ref "$REF" -o ./
+
+# 2. Monolith + minified (overwrites the barrel from step 1)
+#    Verified: lodash -d output is byte-identical to source lodash.js
+npx lodash-cli --ref "$REF" -o ./lodash.js
+
+# 3. Core builds (core.js + core.min.js)
+npx lodash-cli core --ref "$REF" -o ./core.js
+```
+
+FP modules (~415 wrappers) are separate from lodash-cli. `build-fp.js` and its FP mapping live on the npm branch — they're a property of the npm package, not the source. Can be run independently.
+
+**es branch** — one call:
+```json
+{ "scripts": { "build": "npx lodash-cli modularize exports=es --ref ${REF:-main} -o ./" } }
+```
+
+**amd branch** — two calls:
+```json
+{ "scripts": { "build": "npx lodash-cli modularize exports=amd --ref ${REF:-main} -o ./ && npx lodash-cli exports=amd -d --ref ${REF:-main} -o ./main.js" } }
+```
+
+Usage (any branch):
 ```bash
 npm run build                       # builds from main HEAD (via GitHub)
-npm run build -- v4.17.24           # builds from a tag (via GitHub)
-npm run build -- abc123f            # builds from a SHA (via GitHub)
-npm run build -- /path/to/checkout  # builds from a local directory
+REF=v4.17.24 npm run build         # builds from a tag
+REF=abc123f npm run build           # builds from a SHA
 ```
-
-**npm branch** (most involved): modularize CJS + copy raw monolith + minify + core + FP modules. The FP generator and other auxiliary files come from the fetched source tree — the CLI has the full tree internally after `--ref` resolution.
-**es branch**: modularize ES only.
-**amd branch**: modularize AMD + AMD-wrapped monolith.
 
 `lodash-cli` is a devDependency on each branch.
 
-**Effort**: One commit per dist branch.
+**Effort**: One commit per dist branch. Es and amd are one-liners. Npm needs build.sh (~10 lines) + build-fp.js (committed on the branch).
 
 **Limitation**: The CLI's bundled mapping.js must match the source's dep graph. If you change deps in lodash.js without updating the CLI's mapping, modular builds silently break. Phase 3 eliminates this risk.
 
 ### Phase 1 delivers
 
 - A maintained, hackable build tool
-- `npm run build -- v4.17.24` on any dist branch — ref as the primary interface
+- `REF=v4.17.24 npm run build` on any dist branch — ref as the primary interface
 - No local git repo dependency for builds — works from anywhere with network
 - No tribal knowledge — the build process is in source
 - Releases can ship using the existing CLI
@@ -212,7 +230,7 @@ Recommendation: Start with A + B. Consider C/D later.
 Phase 1 (unblocks releases):
   1.1 Unarchive CLI                ─── admin, no code
   1.2 Patch CLI (--ref, --source-dir) ─── one PR to CLI
-  1.3 Build scripts on dist        ─── one commit per branch
+  1.3 Build scripts on dist        ─── one commit per branch (es/amd: one-liners, npm: build.sh + build-fp.js)
           │
           ├──→ Phase 2 (automation):                  ──→ the 80%
           │      2.1 PR build verification             ─── workflow on main

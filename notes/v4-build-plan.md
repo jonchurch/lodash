@@ -52,8 +52,14 @@ curl -sfL "https://raw.githubusercontent.com/lodash/lodash/${REF}/lodash.js" -o 
 npx lodash-cli modularize exports=node --source "$SRC" -o ./  # ~628 CJS modules
 npx lodash-cli --source "$SRC" -o ./lodash.js                 # monolith + .min.js
 npx lodash-cli core --source "$SRC" -o ./core.js              # core.js + .min.js
-node build-fp.js                                               # ~415 FP wrappers
+node scripts/build-fp.js                                      # ~408 FP wrappers
 ```
+
+**FP wrinkle**: For the npm branch, lodash-cli accepting a lodash.js monolith is not enough to build the entire package. FP modules (~408 wrappers in `fp/`) require separate build tooling (`lib/fp/build-modules.js` on main) which depends on lodash itself plus async, glob, and fs-extra via `lib/common/*`. We could copy those files from main and run them here, but that would require adding lodash as a devDependency of itself on the npm branch.
+
+It's awkward that build tooling for FP — which is only published on the npm branch — lives on main. Similar to `lodash.js` source living on main, but different in that this is build tooling meant only for one dist branch. Unclear if the FP generator on main is also used in testing or elsewhere.
+
+We reimplemented it as `scripts/build-fp.js` on the npm branch (~145 lines, zero external deps, byte-identical output). This feels slightly gross as duplication, but it makes the npm branch fully self-describing for builds. Could eventually delete the FP tooling from main if it's not used for testing, but for now this unblocks us.
 
 **es branch** — one CLI call:
 

@@ -31,7 +31,7 @@ The CLI only needs the single `lodash.js` file — verified by reading the sourc
 
 ### 1.3 Add build scripts to distribution branches
 
-Each dist branch gets a `build.sh` and a `package.json` build script. The build.sh handles ref resolution (fetching source from GitHub) and passes `--source` to each CLI call. The CLI stays dumb — it builds from a file path. The shell script handles orchestration.
+Each dist branch gets a `build.sh` and a `package.json` build script. The build.sh fetches `lodash.js` from GitHub via raw URL (`https://raw.githubusercontent.com/lodash/lodash/{ref}/lodash.js`) and passes it to each CLI call via `--source`. The CLI stays dumb — it builds from a file path. The shell script handles orchestration.
 
 **npm branch** — three CLI calls + FP:
 
@@ -44,15 +44,15 @@ Each dist branch gets a `build.sh` and a `package.json` build script. The build.
 set -euo pipefail
 
 REF="${1:-main}"
-SRC=$(mktemp -d)
-trap "rm -rf $SRC" EXIT
+SRC=$(mktemp)
+trap "rm -f $SRC" EXIT
 
-curl -sL "https://github.com/lodash/lodash/archive/${REF}.tar.gz" | tar xz -C "$SRC" --strip-components=1
+curl -sfL "https://raw.githubusercontent.com/lodash/lodash/${REF}/lodash.js" -o "$SRC"
 
-npx lodash-cli modularize exports=node --source "$SRC/lodash.js" -o ./  # ~628 CJS modules
-npx lodash-cli --source "$SRC/lodash.js" -o ./lodash.js                 # monolith + .min.js
-npx lodash-cli core --source "$SRC/lodash.js" -o ./core.js              # core.js + .min.js
-node build-fp.js                                                         # ~415 FP wrappers
+npx lodash-cli modularize exports=node --source "$SRC" -o ./  # ~628 CJS modules
+npx lodash-cli --source "$SRC" -o ./lodash.js                 # monolith + .min.js
+npx lodash-cli core --source "$SRC" -o ./core.js              # core.js + .min.js
+node build-fp.js                                               # ~415 FP wrappers
 ```
 
 **es branch** — one CLI call:
@@ -62,12 +62,12 @@ node build-fp.js                                                         # ~415 
 set -euo pipefail
 
 REF="${1:-main}"
-SRC=$(mktemp -d)
-trap "rm -rf $SRC" EXIT
+SRC=$(mktemp)
+trap "rm -f $SRC" EXIT
 
-curl -sL "https://github.com/lodash/lodash/archive/${REF}.tar.gz" | tar xz -C "$SRC" --strip-components=1
+curl -sfL "https://raw.githubusercontent.com/lodash/lodash/${REF}/lodash.js" -o "$SRC"
 
-npx lodash-cli modularize exports=es --source "$SRC/lodash.js" -o ./    # ~640 ES modules
+npx lodash-cli modularize exports=es --source "$SRC" -o ./    # ~640 ES modules
 ```
 
 **amd branch** — two CLI calls:
@@ -77,23 +77,25 @@ npx lodash-cli modularize exports=es --source "$SRC/lodash.js" -o ./    # ~640 E
 set -euo pipefail
 
 REF="${1:-main}"
-SRC=$(mktemp -d)
-trap "rm -rf $SRC" EXIT
+SRC=$(mktemp)
+trap "rm -f $SRC" EXIT
 
-curl -sL "https://github.com/lodash/lodash/archive/${REF}.tar.gz" | tar xz -C "$SRC" --strip-components=1
+curl -sfL "https://raw.githubusercontent.com/lodash/lodash/${REF}/lodash.js" -o "$SRC"
 
-npx lodash-cli modularize exports=amd --source "$SRC/lodash.js" -o ./   # ~638 AMD modules
-npx lodash-cli exports=amd -d --source "$SRC/lodash.js" -o ./main.js    # monolith in AMD wrapper
+npx lodash-cli modularize exports=amd --source "$SRC" -o ./   # ~638 AMD modules
+npx lodash-cli exports=amd -d --source "$SRC" -o ./main.js    # monolith in AMD wrapper
 ```
 
 Usage (any branch):
 ```bash
 npm run build                       # builds from HEAD of main
-npm run build -- v4.17.24           # builds from a tag
+npm run build -- 4.17.24            # builds from a tag
 npm run build -- abc123f            # builds from a SHA
 ```
 
-`lodash-cli` is a devDependency on each branch. The fetch-and-extract preamble is ~4 lines, duplicated across branches (simple enough not to abstract).
+**Note**: Tags in `lodash/lodash` have no `v` prefix — they're `4.17.23`, not `v4.17.23`. Dist branch tags are suffixed: `4.17.23-npm`, `4.17.23-es`, `4.17.23-amd`.
+
+`lodash-cli` is a devDependency on each branch. The fetch preamble is ~3 lines, duplicated across branches (simple enough not to abstract).
 
 **Effort**: One commit per dist branch. Each gets a build.sh (~10-15 lines). Npm also has build-fp.js (already exists on that branch).
 
@@ -165,7 +167,7 @@ node scripts/generate-mapping.js lodash.js > mapping.js
 
 ### 3.2 Wire mapping into the CLI
 
-Add a `--mapping <path>` flag to the CLI. When provided, use that mapping.js instead of the bundled copy. Build scripts update to pass `--mapping "$SRC/mapping.js"` alongside `--source "$SRC/lodash.js"` — the mapping travels with the source in the tarball.
+Add a `--mapping <path>` flag to the CLI. When provided, use that mapping.js instead of the bundled copy. Build scripts update to fetch `mapping.js` alongside `lodash.js` from the same ref and pass both via `--source` and `--mapping`.
 
 **Effort**: ~10-line patch.
 
@@ -173,7 +175,7 @@ Add a `--mapping <path>` flag to the CLI. When provided, use that mapping.js ins
 
 The generator lives on main. Run it, commit the output as `mapping.js` on main. CI can verify freshness: run generator, diff against committed mapping, fail if stale.
 
-Build scripts get the mapping for free — it's in the tarball fetched by build.sh.
+Build scripts fetch it alongside lodash.js from the same ref.
 
 ### Phase 3 delivers
 
@@ -249,7 +251,7 @@ Phase 1 (unblocks releases):
           └──→ Phase 3 (eliminates mapping risk):     ──→ safety net
                  3.1 Build mapping generator           ─── ~200 lines, validate against existing
                  3.2 Patch CLI (--mapping flag)         ─── ~10-line PR
-                 3.3 Commit mapping on main             ─── travels with source in tarball
+                 3.3 Commit mapping on main             ─── fetched alongside lodash.js by build.sh
 
 Phase 4 (parallel, not blocking — can start anytime after phase 1):
   Modern build tool rewrite        ─── ~500 lines, validated against old CLI

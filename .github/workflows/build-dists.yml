@@ -1,0 +1,70 @@
+name: Build Package Distributions
+
+on:
+  push:
+    tags: ['4.*']
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Git ref to build from (tag, branch, SHA)'
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: [npm, es, amd]
+
+    steps:
+      - name: Determine ref
+        id: ref
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            REF="${GITHUB_REF#refs/tags/}"
+          else
+            REF="${{ inputs.ref }}"
+          fi
+          echo "ref=${REF}" >> "$GITHUB_OUTPUT"
+          SHA=$(git ls-remote "${{ github.server_url }}/${{ github.repository }}" "${REF}" | cut -f1)
+          SHORT=${SHA:+${SHA:0:7}}
+          echo "sha=${SHORT:-${REF:0:7}}" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout dist branch
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: ${{ matrix.branch }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build -- ${{ steps.ref.outputs.ref }}
+
+      - name: Version bump
+        if: github.event_name == 'push'
+        run: |
+          REF="${{ steps.ref.outputs.ref }}"
+          npm version "$REF" --no-git-tag-version --allow-same-version
+          sed -i "1s/v[0-9]\+\.[0-9]\+\.[0-9]\+/v${REF}/" README.md
+
+      - name: Open PR
+        uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7.0.9
+        with:
+          token: ${{ github.token }}
+          branch: release/${{ steps.ref.outputs.ref }}-${{ matrix.branch }}
+          base: ${{ matrix.branch }}
+          title: "[${{ matrix.branch }}] Rebuilt from ${{ steps.ref.outputs.ref }}"
+          body: "Built from `${{ steps.ref.outputs.ref }}` (${{ steps.ref.outputs.sha }})"
+          commit-message: Rebuilt from ${{ steps.ref.outputs.ref }}
+          sign-commits: true

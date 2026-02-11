@@ -133,13 +133,15 @@ Two use cases:
 
 ### 2.3 Tag-triggered dispatcher
 
-Lives on main. Trigger: tag push matching `v4.*`.
+Lives on main. Trigger: tag push matching `4.*` (no `v` prefix, per lodash convention).
 
 Dispatches each branch's build workflow with the tag as source_ref. This is the only workflow on main that touches dist branches, and all it does is trigger — no build logic.
 
-Note: GitHub Actions runs tag-triggered workflows from the tagged commit, so only main's workflows see the event. The dispatcher bridges this by dispatching to each branch's workflow via `workflow_dispatch`.
+Note: GitHub Actions runs tag-triggered workflows from the **default branch**, regardless of which branch/commit the tag points to. This means the dispatcher must live on the default branch (currently main) to fire.
 
-Tags should be immutable. `workflow_dispatch` covers testing needs without consuming version numbers. Prerelease tags (`v4.17.24-rc.1`) available if needed to test the full tag pipeline.
+**When main is no longer v4**: The v4 dispatcher workflow must stay on the default branch to fire. If v4 moves to a `4.x` branch, tags pushed there are still seen by the dispatcher on main. Build scripts are ref-based (they fetch lodash.js by the tag passed to them), so they work regardless of what's on main. However, each dist branch's `build.sh` default ref (`REF="${1:-main}"`) would need updating to `4.x`. The `workflow_dispatch` trigger on each dist branch serves as a manual fallback if the tag-based flow ever needs bypassing.
+
+Tags should be immutable. `workflow_dispatch` covers testing needs without consuming version numbers. Prerelease tags (`4.17.24-rc.1`) available if needed to test the full tag pipeline.
 
 ### Phase 2 delivers
 

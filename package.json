@@ -22,6 +22,6 @@
     "test": "echo \"See https://travis-ci.org/lodash-archive/lodash-cli for testing details.\""
   },
   "devDependencies": {
-    "lodash-cli": "jonchurch/lodash-cli#source-flag"
+    "lodash-cli": "jonchurch/lodash-cli"
   }
 }

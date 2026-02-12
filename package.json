@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "description": "Build tooling for lodash per-method npm packages.",
+  "scripts": {
+    "build": "./scripts/build.sh"
+  },
+  "devDependencies": {
+    "lodash-cli": "jonchurch/lodash-cli"
+  }
+}

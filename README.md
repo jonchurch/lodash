@@ -1,4 +1,4 @@
-# lodash v4.17.23
+# lodash v4.17.24-rc.0
 
 The [Lodash](https://lodash.com/) library exported as [Node.js](https://nodejs.org/) modules.
 

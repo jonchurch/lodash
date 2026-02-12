@@ -1,4 +1,4 @@
-# lodash-amd v4.17.23
+# lodash-amd v4.17.24-rc.0
 
 The [Lodash](https://lodash.com/) library exported as [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) modules.
 

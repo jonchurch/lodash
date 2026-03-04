@@ -1,4 +1,4 @@
-# lodash-es v4.17.23
+# lodash-es v4.21.24-rc-blahblah
 
 The [Lodash](https://lodash.com/) library exported as [ES](http://www.ecma-international.org/ecma-262/6.0/) modules.
 

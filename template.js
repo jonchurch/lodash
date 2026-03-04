@@ -55,6 +55,10 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * properties may be accessed as free variables in the template. If a setting
  * object is given, it takes precedence over `_.templateSettings` values.
  *
+ * **Security:** `_.template` is insecure and should not be used. It will be
+ * removed in Lodash v5. Avoid untrusted input. See
+ * [threat model](https://github.com/lodash/lodash/blob/main/threat-model.md).
+ *
  * **Note:** In the development build `_.template` utilizes
  * [sourceURLs](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl)
  * for easier debugging.

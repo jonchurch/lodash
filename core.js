@@ -1,7 +1,7 @@
 /**
  * @license
  * Lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash core -o ./dist/lodash.core.js`
+ * Build: `lodash core --source /var/folders/0g/146v79bn6fv74vn34krrx0qh0000gn/T/tmp.UG8aYAR1kA -o ./core.js`
  * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
@@ -1477,7 +1477,7 @@
 
   /**
    * Creates an array with all falsey values removed. The values `false`, `null`,
-   * `0`, `""`, `undefined`, and `NaN` are falsey.
+   * `0`, `-0`, `0n`, `""`, `undefined`, and `NaN` are falsy.
    *
    * @static
    * @memberOf _

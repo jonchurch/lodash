@@ -1,7 +1,7 @@
 /**
  * @license
  * Lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="es" -o ./`
+ * Build: `lodash modularize exports="es" --source /var/folders/0g/146v79bn6fv74vn34krrx0qh0000gn/T/tmp.sQXR7gFFVz -o ./`
  * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>

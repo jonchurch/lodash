@@ -1,7 +1,7 @@
 /**
  * @license
  * Lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash core --source /var/folders/0g/146v79bn6fv74vn34krrx0qh0000gn/T/tmp.UG8aYAR1kA -o ./core.js`
+ * Build: `lodash core --source /var/folders/0g/146v79bn6fv74vn34krrx0qh0000gn/T/tmp.waV33wx8dI -o ./core.js`
  * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
@@ -13,7 +13,7 @@
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.23';
+  var VERSION = '4.18.0';
 
   /** Error message constants. */
   var FUNC_ERROR_TEXT = 'Expected a function';

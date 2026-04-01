@@ -1,7 +1,7 @@
 /**
  * @license
  * Lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash exports="amd" -d --source /var/folders/0g/146v79bn6fv74vn34krrx0qh0000gn/T/tmp.wacApAgn9z -o ./main.js`
+ * Build: `lodash exports="amd" -d --source /tmp/tmp.6sb28nLArw -o ./main.js`
  * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
@@ -4380,7 +4380,6 @@
       // Prevent prototype pollution:
       // https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg
       // https://github.com/lodash/lodash/security/advisories/GHSA-f23m-r3pf-42rh
-      // https://github.com/lodash/lodash/security/advisories/GHSA-w36w-cm3g-pc62
       var index = -1,
           length = path.length;
 

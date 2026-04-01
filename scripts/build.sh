@@ -2,13 +2,15 @@
 set -euo pipefail
 
 REF="${1:-main}"
-SRC=$(mktemp)
-trap "rm -f $SRC" EXIT
 
-# TODO: change back to lodash/lodash before merging upstream
-REPO="jonchurch/lodash"
+# Resolve ref to a SHA so all CLI calls build from the same commit
+SHA=$(git ls-remote https://github.com/lodash/lodash.git "$REF" | cut -f1)
+if [ -z "$SHA" ]; then
+  # Assume it's already a SHA if ls-remote didn't match
+  SHA="$REF"
+fi
 
-echo "Fetching lodash.js (ref: $REF)..."
-curl -sfL "https://raw.githubusercontent.com/${REPO}/${REF}/lodash.js" -o "$SRC"
+REPO_REF="lodash/lodash#${SHA}"
+echo "Building from lodash/lodash @ ${SHA} (ref: ${REF})..."
 
-npx lodash-cli modularize exports=es --source "$SRC" -o ./
+npx lodash-cli modularize exports=es --repo "$REPO_REF" -o ./
